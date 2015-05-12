@@ -1,11 +1,10 @@
 class User < ActiveRecord::Base
-  validates :username, :email, :password_digest, presence: true
+  validates :username, :email, :password_digest, :session_token, presence: true
   validates :username, :email, uniqueness: true
+  validates :password, length: { minimum: 6, allow_nil: true}
 
   attr_reader :password
-  after_initialize: ensure_session_token
-
-  has_many :session_tokens
+  after_initialize :ensure_session_token
 
   def self.generate_random_token
     SecureRandom.urlsafe_base64(16)
