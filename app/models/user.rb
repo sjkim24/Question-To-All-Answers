@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   attr_reader :password
   after_initialize :ensure_session_token
 
+  has_many :annotations
+
   def self.generate_random_token
     SecureRandom.urlsafe_base64(16)
   end
