@@ -1,10 +1,6 @@
-<h2>Sign Up</h2>
-<form action="<%= users_url %>" method="post">
+<h2>Log In</h2>
+<form action="<%= session_url %>" method="post">
   <%= render "shared/_auth_token" %>
-  <label>Email Address
-    <input type="text" name="user[email]">
-  </label>
-  <br>
   <label>Username
     <input type="text" name="user[username]">
   </label>
@@ -13,5 +9,5 @@
     <input type="password" name="user[password]">
   </label>
   <br>
-  <button>Sign Up</button>
+  <button>Log In</button>
 </form>

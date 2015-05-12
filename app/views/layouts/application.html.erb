@@ -7,6 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if current_user.nil? %>
+  <a href="<%= new_user_url %>">Sign Up</a>
+  <a href="<%= new_session_url %>">Log In</a>
+<% else %>
+  <form action="<%= session_url %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <%= render "shared/auth_token" %>
+    <button>Log Out</button>
+  </form>
+<% end %>
+<br>
 
 <%= yield %>
 
