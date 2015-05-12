@@ -6,7 +6,15 @@ class User < ActiveRecord::Base
   attr_reader :password
   after_initialize :ensure_session_token
 
-  has_many :annotations
+  has_many :annotations,
+    class_name: "Annotation",
+    foreign_key: :user_id,
+    primary_key: :id
+
+  has_many :lyrics,
+    class_name: "Lyric",
+    foreign_key: :user_id,
+    primary_key: :id
 
   def self.generate_random_token
     SecureRandom.urlsafe_base64(16)

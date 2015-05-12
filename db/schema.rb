@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150512192920) do
+ActiveRecord::Schema.define(version: 20150512214441) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "annotations", force: :cascade do |t|
     t.text     "annotation", null: false
@@ -22,8 +25,8 @@ ActiveRecord::Schema.define(version: 20150512192920) do
     t.integer  "user_id",    null: false
   end
 
-  add_index "annotations", ["lyric_id"], name: "index_annotations_on_lyric_id"
-  add_index "annotations", ["user_id"], name: "index_annotations_on_user_id"
+  add_index "annotations", ["lyric_id"], name: "index_annotations_on_lyric_id", using: :btree
+  add_index "annotations", ["user_id"], name: "index_annotations_on_user_id", using: :btree
 
   create_table "artists", force: :cascade do |t|
     t.string   "name"
@@ -31,7 +34,7 @@ ActiveRecord::Schema.define(version: 20150512192920) do
     t.datetime "updated_at"
   end
 
-  add_index "artists", ["name"], name: "index_artists_on_name"
+  add_index "artists", ["name"], name: "index_artists_on_name", using: :btree
 
   create_table "lyrics", force: :cascade do |t|
     t.text     "lyric",       null: false
@@ -39,9 +42,10 @@ ActiveRecord::Schema.define(version: 20150512192920) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "track_title", null: false
+    t.integer  "user_id",     null: false
   end
 
-  add_index "lyrics", ["artist_id"], name: "index_lyrics_on_artist_id"
+  add_index "lyrics", ["artist_id"], name: "index_lyrics_on_artist_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string  "email",                                               null: false
@@ -52,7 +56,7 @@ ActiveRecord::Schema.define(version: 20150512192920) do
     t.integer "genius_iq",       default: 0
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["username"], name: "index_users_on_username", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end
