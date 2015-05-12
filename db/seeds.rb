@@ -403,7 +403,7 @@ Put yo' Loving Hand Out baby
 Beggin, Beggin You
 Put yo' Loving Hand Out Darling"
 
-lyric1 = Lyric.create(lyric: l1, artist_id: 1)
-lyric2 = Lyric.create(lyric: l2, artist_id: 1)
-lyric3 = Lyric.create(lyric: l3, artist_id: 2)
-lyric4 = Lyric.create(lyric: l4, artist_id: 3)
+lyric1 = Lyric.create(lyric: l1, artist_id: 1, track_title: "HiiiPower")
+lyric2 = Lyric.create(lyric: l2, artist_id: 1, track_title: "The Recipe")
+lyric3 = Lyric.create(lyric: l3, artist_id: 2, track_title: "J.Cole")
+lyric4 = Lyric.create(lyric: l4, artist_id: 3, track_title: "Logic")

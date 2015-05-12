@@ -1,0 +1,4 @@
+<% @lyrics.each do |lyric| %>
+  <a href="<%= lyric_url(lyric) %>"><%= lyric.track_title %></a>
+  <br>
+<% end %>

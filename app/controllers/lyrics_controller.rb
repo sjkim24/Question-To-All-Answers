@@ -7,26 +7,45 @@ class LyricsController < ApplicationController
 
   def create
     @lyric = Lyric.new(lyrics_params)
+
     if @lyric.save
       redirect_to lyric_url(@lyric)
     else
       flash.now[:errors] = @lyric.errors.full_messages
+    end
   end
 
   def new
+    @lyric = Lyric.new
+    render :new
   end
 
   def show
+    @lyric = Lyric.find(params[:id])
+    render :show
   end
 
   def edit
+    @lyric = Lyric.find(params[:id])
+    render :edit
   end
 
   def update
+    @lyric = Lyric.find(params[:id])
+
+    if @lyric.update(lyric_params)
+      redirect_to lyric_url(@lyric)
+    else
+      flash.now[:errors] = @lyric.errors.full_messages
+      render :edit
+    end
   end
 
   #genius doesn't have delete function
-  def delete
+  def destroy
+    @lyric = Lyric.find(params[:id])
+    @lyric.destroy
+    redirect_to lyrics_url
   end
 
   private

@@ -1,0 +1,17 @@
+<h2>Create Lyric</h2>
+<form action="<%= lyrics_url %>" method="post">
+  <%= render "shared/auth_token" %>
+  <label>Track Title
+    <input type="text" name="lyric[track_title]">
+  </label>
+  <br>
+  <label>Artist
+    <input type="text" name="lyric[artist_id]" value="">
+  </label>
+  <br>
+  <label>Lyric
+    <textarea name="lyric[lyric]" rows="100" cols="50"></textarea>
+  </label>
+  <br>
+  <button>Submit</button>
+</form>

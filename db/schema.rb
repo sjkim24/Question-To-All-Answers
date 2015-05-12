@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150512183658) do
+ActiveRecord::Schema.define(version: 20150512192920) do
 
   create_table "annotations", force: :cascade do |t|
     t.text     "annotation", null: false
@@ -34,10 +34,11 @@ ActiveRecord::Schema.define(version: 20150512183658) do
   add_index "artists", ["name"], name: "index_artists_on_name"
 
   create_table "lyrics", force: :cascade do |t|
-    t.text     "lyric",      null: false
-    t.integer  "artist_id",  null: false
+    t.text     "lyric",       null: false
+    t.integer  "artist_id",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "track_title", null: false
   end
 
   add_index "lyrics", ["artist_id"], name: "index_lyrics_on_artist_id"

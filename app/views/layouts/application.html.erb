@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<a href="<%= new_lyric_url %>" method="post">Create Lyric</a>
 <% if current_user.nil? %>
   <a href="<%= new_user_url %>">Sign Up</a>
   <a href="<%= new_session_url %>">Log In</a>
