@@ -11,14 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150512180909) do
+ActiveRecord::Schema.define(version: 20150512181806) do
+
+  create_table "lyrics", force: :cascade do |t|
+    t.text     "lyric",      null: false
+    t.integer  "artist_id",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "lyrics", ["artist_id"], name: "index_lyrics_on_artist_id"
 
   create_table "users", force: :cascade do |t|
-    t.string  "email",                       null: false
-    t.string  "username",                    null: false
-    t.string  "password_digest",             null: false
-    t.text    "about_me"
-    t.string  "session_token",               null: false
+    t.string  "email",                                               null: false
+    t.string  "username",                                            null: false
+    t.string  "password_digest",                                     null: false
+    t.string  "about_me",        default: "Tell us about yourself!"
+    t.string  "session_token",                                       null: false
     t.integer "genius_iq",       default: 0
   end
 
