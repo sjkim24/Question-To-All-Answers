@@ -6,7 +6,7 @@ class LyricsController < ApplicationController
   end
 
   def create
-    @lyric = Lyric.new(lyrics_params)
+    @lyrics = Lyric.new(lyrics_params)
 
     if @lyric.save
       redirect_to lyric_url(@lyric)
