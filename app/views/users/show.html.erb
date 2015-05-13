@@ -4,3 +4,6 @@
   <br>
   About Me: <%= @user.about_me %>
 </p>
+<% if logged_in? && @user.id === current_user.id %>
+  <a href="<%= edit_user_url(@user) %>">Edit About Me</a>
+<% end %>

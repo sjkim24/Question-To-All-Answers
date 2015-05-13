@@ -1,0 +1,10 @@
+<h2>About Me</h2>
+<form action="<%= user_url %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <%= render "shared/auth_token" %>
+  <textarea name="user[about_me]" rows="8" cols="40">
+    <%= @user.about_me %>
+  </textarea>
+  <br>
+  <button>Update About Me</button>
+</form>
