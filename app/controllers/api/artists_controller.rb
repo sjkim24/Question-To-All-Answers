@@ -1,4 +1,4 @@
-class Api::ArtistsController < ApplicationController
+class Api::ArtistsController < Api::ApiController
   def show
     @artist = Artist.find(params[:id])
 

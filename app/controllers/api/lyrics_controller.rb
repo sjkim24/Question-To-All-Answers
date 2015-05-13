@@ -1,9 +1,9 @@
-class Api::LyricsController < ApplicationController
+class Api::LyricsController < Api::ApiController
 
   def index
     @lyrics = Lyric.all
 
-    render json: @lyrics
+    render :index
   end
 
   def create
@@ -33,7 +33,7 @@ class Api::LyricsController < ApplicationController
   def show
     @lyric = Lyric.find(params[:id])
 
-    render json: @lyric
+    render :show
   end
 
   # def edit

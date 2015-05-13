@@ -4,7 +4,8 @@ window.Genius = {
   Views: {},
   Routers: {},
   initialize: function() {
-    
+    new Genius.Routers.Router;
+    Backbone.history.start();
   }
 };
 
