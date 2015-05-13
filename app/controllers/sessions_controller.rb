@@ -1,15 +1,13 @@
 class SessionsController < ApplicationController
 
   def new
-    render :new
+    render :new, layout: false
   end
 
   def create
     @user = User.find_by_credentials(
-
       params[:user][:username],
       params[:user][:password]
-
     )
 
     if @user
