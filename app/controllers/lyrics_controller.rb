@@ -38,6 +38,7 @@ class LyricsController < ApplicationController
 
   def edit
     @lyric = Lyric.find(params[:id])
+
     render :edit
   end
 

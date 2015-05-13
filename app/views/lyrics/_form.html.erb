@@ -1,0 +1,23 @@
+<form action="<%= url %>" method="post">
+  <input type="hidden" name="_method" value="<%= method %>">
+  <%= render "shared/auth_token" %>
+  <label>Track Title
+    <input type="text" name="lyric[track_title]"
+           value="<%= lyric.track_title %>">
+  </label>
+  <br>
+  <label>Artist
+    <input type="text" name="lyric[artist_id]"
+           "<% if !lyric.artist.nil? %>"
+              value="<%= lyric.artist.name %>"
+           "<% end %>">
+  </label>
+  <br>
+  <label>Lyric
+    <textarea name="lyric[lyric]" rows="100" cols="50">
+      <%= lyric.lyric %>
+    </textarea>
+  </label>
+  <br>
+  <button>Submit</button>
+</form>
