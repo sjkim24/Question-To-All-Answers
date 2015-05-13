@@ -1,17 +1,17 @@
 Genius.Routers.Router = Backbone.Router.extend({
 
-  initialize: function () {
-    this.$rootEl = $('#main');
+  initialize: function (options) {
+    this.$rootEl = options.$rootEl
   },
 
   routes: {
     '': 'index'
   },
 
-  rootIndex: function () {
+  index: function () {
     var lyrics = new Genius.Collections.Lyrics ();
     lyrics.fetch();
-    var indexView = new Genius.Views.LyricIndex ({ collection: lyrics})
+    var indexView = new Genius.Views.LyricsIndex ({ collection: lyrics})
     this._swapView(indexView);
   },
 

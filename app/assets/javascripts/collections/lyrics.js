@@ -1,6 +1,6 @@
 Genius.Collections.Lyrics = Backbone.Collection.extend ({
 
-  url: '/api/genius',
+  url: '/api/lyrics',
 
   model: Genius.Models.Lyric,
 
@@ -14,7 +14,7 @@ Genius.Collections.Lyrics = Backbone.Collection.extend ({
       lyric.fetch({
         success: function () {
           lyrics.add(lyric)
-        })
+        }
       })
     }
 

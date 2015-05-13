@@ -4,7 +4,9 @@ window.Genius = {
   Views: {},
   Routers: {},
   initialize: function() {
-    new Genius.Routers.Router;
+    new Genius.Routers.Router ({
+      $rootEl: $('#main')
+    });
     Backbone.history.start();
   }
 };
