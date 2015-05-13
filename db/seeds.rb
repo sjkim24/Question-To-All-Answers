@@ -405,5 +405,5 @@ Put yo' Loving Hand Out Darling"
 
 lyric1 = Lyric.create(lyric: l1, artist_id: 1, track_title: "HiiiPower", user_id: 1)
 lyric2 = Lyric.create(lyric: l2, artist_id: 1, track_title: "The Recipe", user_id: 1)
-lyric3 = Lyric.create(lyric: l3, artist_id: 2, track_title: "J.Cole", user_id: 1)
-lyric4 = Lyric.create(lyric: l4, artist_id: 3, track_title: "Logic", user_id: 2)
+lyric3 = Lyric.create(lyric: l3, artist_id: 2, track_title: "Return of Simba", user_id: 1)
+lyric4 = Lyric.create(lyric: l4, artist_id: 3, track_title: "Beggin'", user_id: 2)

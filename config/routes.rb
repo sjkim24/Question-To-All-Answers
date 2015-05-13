@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :users, except: [:index, :destroy]
   resource :session, only: [:create, :new, :destroy]
   resources :lyrics
-  resources :artists
+  resources :artists, only: [:show]
 end

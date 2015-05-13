@@ -1,4 +1,6 @@
-<%= @lyric.track_title %>
+<h3><%= @lyric.track_title %> by
+  <a href="<%= artist_url(@lyric.artist) %>"><%= @lyric.artist.name %></a>
+</h3>
 <br>
 <%= @lyric.lyric %>
 <br>

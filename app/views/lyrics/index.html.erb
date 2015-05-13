@@ -1,6 +1,11 @@
 <h1>Genius is not the answer to all questions.</h1>
 <h1>It's the question to all answers -Tablo</h1>
 <% @lyrics.each do |lyric| %>
-  <a href="<%= lyric_url(lyric) %>"><%= lyric.track_title %></a>
+  <a href="<%= lyric_url(lyric) %>">
+    <%= lyric.track_title %>
+  </a> -
+  <a href="<%= artist_url(lyric.artist_id)%>">
+    <%= lyric.artist.name %>
+  </a>
   <br>
 <% end %>

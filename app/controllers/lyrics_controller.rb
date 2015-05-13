@@ -2,15 +2,17 @@ class LyricsController < ApplicationController
 
   def index
     @lyrics = Lyric.all
+
     render :index
   end
 
   def create
     @lyric = Lyric.new(lyrics_params)
-    artist_name = params[:lyric][:artist_id]
-    id = Artist.find_or_create_by(name: artist_name).id
-    params[:lyric][:artist_id] = id
-    params[:lyric][:user_id] = current_user.id
+    lyric = params[:lyric]
+    artist_name = lyric[:artist_id]
+
+    lyric[:artist_id] = Artist.find_or_create_by(name: artist_name).id
+    lyric[:user_id] = current_user.id
 
     if @lyric.save
       redirect_to lyric_url(@lyric)

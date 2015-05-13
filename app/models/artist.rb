@@ -1,8 +1,10 @@
 class Artist < ActiveRecord::Base
 
+  validates :name, uniqueness: true
+
   has_many :lyrics,
     class_name: "Lyric",
-    foreign_key: :lyric_id,
+    foreign_key: :artist_id,
     primary_key: :id
 
 end

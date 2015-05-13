@@ -1,0 +1,8 @@
+<h2><%= @artist.name %></h2>
+<ul>
+  <% @artist.lyrics.each do |lyric| %>
+    <li>
+      <a href="<%= lyric_url(lyric)%>"><%= lyric.track_title %></a>
+    </li>
+  <% end %>
+</ul>
