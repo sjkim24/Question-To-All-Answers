@@ -2,17 +2,26 @@ Genius.Routers.Router = Backbone.Router.extend({
 
   initialize: function (options) {
     this.$rootEl = options.$rootEl
+    this.lyrics = new Genius.Collections.Lyrics ();
+    
   },
 
   routes: {
-    '': 'index'
+    '': 'lyricsIndex',
+    'lyrics/:id': 'lyricShow'
   },
 
-  index: function () {
-    var lyrics = new Genius.Collections.Lyrics ();
-    lyrics.fetch();
-    var indexView = new Genius.Views.LyricsIndex ({ collection: lyrics})
+  lyricsIndex: function () {
+    this.lyrics.fetch();
+    // it knows where to fetch by the url in collection
+    var indexView = new Genius.Views.LyricsIndex ({ collection: this.lyrics})
     this._swapView(indexView);
+  },
+
+  lyricShow: function (id) {
+    var lyric = this.lyrics.getOrFetch(id);
+    var showView = new Genius.Views.LyricShow ({ model: lyric });
+    this._swapView(showView);
   },
 
   _swapView: function (view) {
