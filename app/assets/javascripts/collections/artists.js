@@ -1,4 +1,4 @@
-Genius.Artists.Collections = Backbone.Collection.extend ({
+Genius.Collections.Artists = Backbone.Collection.extend ({
 
   url: '/api/artist',
 
@@ -18,7 +18,7 @@ Genius.Artists.Collections = Backbone.Collection.extend ({
       });
     }
 
-    return artist
+    return artist;
   }
 
 })
