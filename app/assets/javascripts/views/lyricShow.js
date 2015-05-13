@@ -2,6 +2,8 @@ Genius.Views.LyricShow = Backbone.CompositeView.extend ({
 
   tagName: 'li',
 
+  className: 'lyric-track-title',
+
   template: JST['lyrics/show'],
 
   initialize: function () {
@@ -9,7 +11,7 @@ Genius.Views.LyricShow = Backbone.CompositeView.extend ({
   },
 
   render: function () {
-    
+    debugger
     var content = this.template({ lyric: this.model });
     this.$el.html(content);
     return this

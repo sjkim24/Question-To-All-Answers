@@ -9,7 +9,7 @@ Genius.Models.Aritst = Backbone.Model.extend ({
       delete response.lyrics;
     }
 
-    return response
+    return response;
   },
 
   lyrics: function () {
