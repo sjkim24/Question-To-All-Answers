@@ -1,6 +1,6 @@
 Genius.Collections.Artists = Backbone.Collection.extend ({
 
-  url: '/api/artist',
+  url: '/api/artists',
 
   model: Genius.Models.Artist,
 

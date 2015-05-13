@@ -10,33 +10,33 @@ Genius.Routers.Router = Backbone.Router.extend({
   routes: {
     '': 'lyricsIndex',
     'lyrics/:id': 'lyricShow',
+    'artists': 'artistsIndex',
     'artists/:id': 'artistShow'
   },
 
   lyricsIndex: function () {
     this.lyrics.fetch();
     // it knows where to fetch by the url in collection
-    var lyricsIndex = new Genius.Views.LyricsIndex ({ collection: this.lyrics })
-    this._swapView(lyricsIndex);
+    var indexView = new Genius.Views.LyricsIndex ({ collection: this.lyrics })
+    this._swapView(indexView);
   },
 
   lyricShow: function (id) {
     var lyric = this.lyrics.getOrFetch(id);
-    var lyricShow = new Genius.Views.LyricShow ({ model: lyric });
-    this._swapView(lyricShow);
+    var showView = new Genius.Views.LyricShow ({ model: lyric });
+    this._swapView(showView);
   },
 
-  artistIndex: function (id) {
+  artistsIndex: function () {
     this.artists.fetch();
-    var artistsIndex = new Genius.Views.ArtistsIndex ({ collection: this.artists })
-    this._swapView(artistsIndex)
+    var indexView = new Genius.Views.ArtistsIndex ({ collection: this.artists })
+    this._swapView(indexView)
   },
 
   artistShow: function (id) {
-    this.artists.fetch();
     var artist = this.artists.getOrFetch(id);
-    var artistShow = new Genius.Views.ArtistShow ( { model: artist });
-    this._swapView(artistShow)
+    var showView = new Genius.Views.ArtistShow ({ model: artist });
+    this._swapView(showView)
   },
 
   _swapView: function (view) {

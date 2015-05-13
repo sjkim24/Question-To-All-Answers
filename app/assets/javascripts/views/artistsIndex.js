@@ -7,7 +7,7 @@ Genius.Views.ArtistsIndex = Backbone.CompositeView.extend ({
   },
 
   render: function () {
-    var content = this.template({ lyric: this.collection });
+    var content = this.template({ artists: this.collection });
     this.$el.html(content);
     return this
   }
