@@ -8,6 +8,6 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :lyrics
-    resources :artists, only: [:show]
+    resources :artists, only: [:index, :show]
   end
 end
