@@ -33,6 +33,7 @@ class LyricsController < ApplicationController
 
   def show
     @lyric = Lyric.find(params[:id])
+
     render :show
   end
 
@@ -44,8 +45,10 @@ class LyricsController < ApplicationController
 
   def update
     @lyric = Lyric.find(params[:id])
+    artist_name = lyrics_params[:artist_id]
 
-    if @lyric.update(lyric_params)
+    params[:lyric][:artist_id] = Artist.find_or_create_by(name: artist_name).id
+    if @lyric.update(lyrics_params)
       redirect_to lyric_url(@lyric)
     else
       flash.now[:errors] = @lyric.errors.full_messages

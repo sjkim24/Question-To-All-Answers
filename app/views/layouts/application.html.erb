@@ -13,6 +13,7 @@
   <a href="<%= new_user_url %>">Sign Up</a>
   <a href="<%= new_session_url %>">Log In</a>
 <% else %>
+  <a href="<%= user_url(current_user) %>"><%= current_user.username %></a>
   <form action="<%= session_url %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <%= render "shared/auth_token" %>
