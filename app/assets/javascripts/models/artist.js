@@ -1,13 +1,15 @@
 Genius.Models.Aritst = Backbone.Model.extend ({
 
-  url: '/api/artists',
+  urlRoot: '/api/artists',
 
   parse: function (response) {
     var artist = this;
     if (response.lyrics) {
-      atist.lyrics().set(response.lyrics);
+      artist.lyrics().set(response.lyrics);
       delete response.lyrics;
     }
+
+    return response
   },
 
   lyrics: function () {
