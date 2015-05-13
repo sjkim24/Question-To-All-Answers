@@ -5,3 +5,10 @@
 <%= @lyric.lyric %>
 <br>
 <a href="<%= edit_lyric_url %>">Edit Lyric</a>
+<% if logged_in? && @lyric.user.id == current_user.id %>
+  <form action="<%= lyric_url %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <%= render "shared/auth_token" %>
+      <button>Delete Lyric</button>
+  </form>
+<% end %>
