@@ -7,6 +7,10 @@ class LyricsController < ApplicationController
 
   def create
     @lyric = Lyric.new(lyrics_params)
+    artist_name = params[:lyric][:artist_id]
+    id = Artist.find_or_create_by(name: artist_name).id
+    params[:lyric][:artist_id] = id
+    params[:lyric][:user_id] = current_user.id
 
     if @lyric.save
       redirect_to lyric_url(@lyric)
@@ -16,8 +20,13 @@ class LyricsController < ApplicationController
   end
 
   def new
-    @lyric = Lyric.new
-    render :new
+    if logged_in?
+      @lyric = Lyric.new
+      render :new
+    else
+      flash[:errors] = ["You must log in to create lyrics."]
+      redirect_to new_session_url
+    end
   end
 
   def show
@@ -50,7 +59,13 @@ class LyricsController < ApplicationController
 
   private
     def lyrics_params
-      params.require(:lyric).permit(:lyric, :artist_id)
+      params.require(:lyric).permit(:lyric, :artist_id, :track_title, :user_id)
+    end
+
+    def has_artist?(name)
+      artist_names = []
+      Artist.all.each { |artist| artist_names << artist.name }
+      artist_names.include?(name) ? true : false
     end
 
 end
