@@ -4,7 +4,7 @@ Genius.Routers.Router = Backbone.Router.extend({
     this.$rootEl = options.$rootEl;
     this.lyrics = new Genius.Collections.Lyrics ();
     this.artists = new Genius.Collections.Artists ();
-
+    this.annotations = new Genius.Collections.Annotations();
   },
 
   routes: {
@@ -68,6 +68,24 @@ Genius.Routers.Router = Backbone.Router.extend({
       model: artist
     });
     this._swapView(showView);
+  },
+
+  annotationForm: function () {
+    this.annotations.fetch();
+    var annotation = new Genius.Models.Annotation ();
+    var formView = new Genius.Views.AnnotationForm ({
+      collection: this.annotations,
+      model: annotation
+    });
+    this._swapView(formView);
+  },
+
+  annotationShow: function (id) {
+    var annotation = this.annotations.getOrFetch(id);
+    var showView = new Genius.Views.AnnotationShow ({
+      model: annotation
+    });
+    this._swapView(showView)
   },
 
   _swapView: function (view) {

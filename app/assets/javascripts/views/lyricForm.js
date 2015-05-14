@@ -7,12 +7,11 @@ Genius.Views.LyricForm = Backbone.CompositeView.extend ({
   template: JST['lyrics/form'],
 
   events: {
-    'click .submit-lyric': 'createLyric'
+    'click .submit-lyric': 'submitLyric'
   },
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
-    console.log("hello")
   },
 
   render: function () {
@@ -21,7 +20,7 @@ Genius.Views.LyricForm = Backbone.CompositeView.extend ({
     return this;
   },
 
-  createLyric: function (event) {
+  submitLyric: function (event) {
     event.preventDefault();
     var attrs = this.$el.serializeJSON().lyric;
     var that = this;
