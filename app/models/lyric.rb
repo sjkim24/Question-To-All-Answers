@@ -1,5 +1,7 @@
 class Lyric < ActiveRecord::Base
 
+  validates :lyric, :track_title, presence: true
+
   belongs_to :artist,
     class_name: "Artist",
     foreign_key: :artist_id,
