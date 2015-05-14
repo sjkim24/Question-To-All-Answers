@@ -35,9 +35,9 @@ class Api::LyricsController < Api::ApiController
 
   def update
     @lyric = Lyric.find(params[:id])
-    artist_name = lyrics_params[:artist_id]
-
-    params[:lyric][:artist_id] = Artist.find_or_create_by(name: artist_name).id
+    artist_name = params[:lyric][:artist_name]
+    puts artist_name
+    @lyric.artist_id = Artist.find_or_create_by(name: artist_name).id
     if @lyric.update(lyrics_params)
       render json: @lyric
     else

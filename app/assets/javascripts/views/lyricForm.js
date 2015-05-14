@@ -7,7 +7,7 @@ Genius.Views.LyricForm = Backbone.CompositeView.extend ({
   template: JST['lyrics/form'],
 
   events: {
-    'click .create-lyric': 'createLyric'
+    'click .submit-lyric': 'createLyric'
   },
 
   render: function () {
