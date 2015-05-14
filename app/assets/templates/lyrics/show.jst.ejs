@@ -1,8 +1,7 @@
+
 <h2><%= lyric.escape("track_title") %></h2>
 <a href="#/artists/<%= lyric.artist().id %>">
          <%= lyric.artist().escape("name") %>
        </a>
-<br>
 <a href="#/lyrics/<%= lyric.id %>/edit">Edit Lyric</a>
-<br>
-<%= lyric.get("lyric") %>
+<section class="lyric"><%= lyric.formatLyric() %></section>
