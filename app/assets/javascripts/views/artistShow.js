@@ -4,9 +4,8 @@ Genius.Views.ArtistShow = Backbone.CompositeView.extend ({
 
   initialize: function (options) {
     this.listenTo(this.model, 'sync', this.render);
-    this.lyrics = options.lyrics
-    this.listenTo(this.lyrics, 'add', this.addLyricView)
-    this.lyrics.each(this.addLyricView.bind(this));
+    this.listenTo(this.model.lyrics(), 'add', this.addLyricView)
+    this.model.lyrics().each(this.addLyricView.bind(this));
   },
 
   addLyricView: function (lyric) {
@@ -20,7 +19,5 @@ Genius.Views.ArtistShow = Backbone.CompositeView.extend ({
     this.attachSubviews();
     return this
   }
-
-
 
 })

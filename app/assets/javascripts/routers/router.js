@@ -34,11 +34,9 @@ Genius.Routers.Router = Backbone.Router.extend({
   },
 
   artistShow: function (id) {
-    this.lyrics.fetch()
     var artist = this.artists.getOrFetch(id);
     var showView = new Genius.Views.ArtistShow ({
-      model: artist ,
-      lyrics: this.lyrics
+      model: artist
     });
     this._swapView(showView)
   },

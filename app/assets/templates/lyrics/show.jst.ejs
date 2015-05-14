@@ -1,3 +1,7 @@
 <a href="/#/lyrics/<%= lyric.id %>">
   <%= lyric.escape("track_title") %>
 <a>
+<br>
+<% if (Backbone.history.fragment !== "") { %>
+  <%= lyric.escape("lyric") %>
+<% } %>
