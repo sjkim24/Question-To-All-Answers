@@ -8,11 +8,10 @@ class Api::LyricsController < Api::ApiController
 
   def create
     @lyric = Lyric.new(lyrics_params)
-    lyric = params[:lyric]
-    artist_name = lyric[:artist_id]
+    @lyric.user_id = current_user.id
+    artist_name = params[:lyric][:artist_name]
+    @lyric.artist_id = Artist.find_or_create_by(name: artist_name).id
 
-    lyric[:artist_id] = Artist.find_or_create_by(name: artist_name).id
-    lyric[:user_id] = current_user.id
 
     if @lyric.save
       render json: @lyric
@@ -63,7 +62,7 @@ class Api::LyricsController < Api::ApiController
 
   private
     def lyrics_params
-      params.require(:lyric).permit(:lyric, :artist_id, :track_title, :user_id)
+      params.require(:lyric).permit(:lyric, :track_title)
     end
 
     def has_artist?(name)

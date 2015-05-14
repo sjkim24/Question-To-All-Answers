@@ -19,6 +19,10 @@ Genius.Models.Lyric = Backbone.Model.extend ({
     }
 
     return this._artist;
+  },
+
+  toJSON: function () {
+    return { lyric: _.clone(this.attributes) }
   }
 
 })
