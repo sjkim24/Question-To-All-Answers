@@ -10,6 +10,11 @@ Genius.Views.LyricForm = Backbone.CompositeView.extend ({
     'click .submit-lyric': 'createLyric'
   },
 
+  initialize: function () {
+    this.listenTo(this.model, 'sync', this.render);
+    console.log("hello")
+  },
+
   render: function () {
     var content = this.template({ lyric: this.model });
     this.$el.html(content);

@@ -13,7 +13,11 @@ Genius.Routers.Router = Backbone.Router.extend({
     'lyrics/:id': 'lyricShow',
     'lyrics/:id/edit': 'lyricEdit',
     'artists': 'artistsIndex',
-    'artists/:id': 'artistShow'
+    'artists/:id': 'artistShow',
+    'annotations/new': 'annoNew',
+    'annotations/:id': 'annoShow',
+    'annotations/:id/edit': 'annoEdit'
+
   },
 
   lyricsIndex: function () {

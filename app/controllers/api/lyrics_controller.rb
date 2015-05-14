@@ -20,7 +20,6 @@ class Api::LyricsController < Api::ApiController
     end
   end
 
-
   def show
     @lyric = Lyric.find(params[:id])
 
