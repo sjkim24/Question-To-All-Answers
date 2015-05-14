@@ -11,6 +11,7 @@ Genius.Views.LyricForm = Backbone.CompositeView.extend ({
   },
 
   render: function () {
+    console.log(this.model.get("lyric"))
     var content = this.template({ lyric: this.model });
     this.$el.html(content);
     return this;
@@ -20,7 +21,6 @@ Genius.Views.LyricForm = Backbone.CompositeView.extend ({
     event.preventDefault();
     var attrs = this.$el.serializeJSON().lyric;
     var that = this;
-
     this.model.set(attrs);
     this.model.save({}, {
       success: function () {

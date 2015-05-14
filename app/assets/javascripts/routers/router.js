@@ -23,16 +23,26 @@ Genius.Routers.Router = Backbone.Router.extend({
     this._swapView(indexView);
   },
 
+  lyricNew: function () {
+    this.lyrics.fetch();
+    var lyric = new Genius.Models.Lyric ();
+    var formView = new Genius.Views.LyricForm ({
+      model: lyric,
+      collection: this.lyrics
+    })
+    this._swapView(formView);
+  },
+
+
   lyricShow: function (id) {
     var lyric = this.lyrics.getOrFetch(id);
     var showView = new Genius.Views.LyricShow ({ model: lyric });
     this._swapView(showView);
   },
 
-  lyricNew: function () {
-
-    this.lyrics.fetch()
-    var lyric = new Genius.Models.Lyric ();
+  lyricEdit: function (id) {
+    this.lyrics.fetch();
+    var lyric = this.lyrics.getOrFetch(id);
     var formView = new Genius.Views.LyricForm ({
       model: lyric,
       collection: this.lyrics

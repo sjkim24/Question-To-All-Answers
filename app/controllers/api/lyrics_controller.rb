@@ -20,14 +20,6 @@ class Api::LyricsController < Api::ApiController
     end
   end
 
-  # def new
-  #   if logged_in?
-  #     @lyric = Lyric.new
-  #     render json: @lyric
-  #   else
-  #     render json: @lyric.errors.full_messages
-  #   end
-  # end
 
   def show
     @lyric = Lyric.find(params[:id])
@@ -35,11 +27,11 @@ class Api::LyricsController < Api::ApiController
     render :show
   end
 
-  # def edit
-  #   @lyric = Lyric.find(params[:id])
-  #
-  #   render json: @lyric
-  # end
+  def edit
+    @lyric = Lyric.find(params[:id])
+
+    render :edit
+  end
 
   def update
     @lyric = Lyric.find(params[:id])
