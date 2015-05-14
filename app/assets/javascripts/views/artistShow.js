@@ -9,7 +9,7 @@ Genius.Views.ArtistShow = Backbone.CompositeView.extend ({
   },
 
   addLyricView: function (lyric) {
-    var subview = new Genius.Views.LyricShow({ model: lyric });
+    var subview = new Genius.Views.LyricIndexItem({ model: lyric });
     this.addSubview('.artist-lyrics', subview)
   },
 

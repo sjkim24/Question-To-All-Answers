@@ -9,11 +9,12 @@ Genius.Views.LyricsIndex = Backbone.CompositeView.extend ({
   },
 
   addLyricView: function (lyric) {
-    var subview = new Genius.Views.LyricShow({ model: lyric });
+    var subview = new Genius.Views.LyricIndexItem({ model: lyric });
     this.addSubview('.lyrics', subview);
   },
 
   render: function () {
+
     var content = this.template({ lyrics: this.collection });
     this.$el.html(content);
     this.attachSubviews();

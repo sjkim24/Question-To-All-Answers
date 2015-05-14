@@ -14,6 +14,7 @@ Genius.Models.Lyric = Backbone.Model.extend ({
 
   artist: function () {
     if (!this._artist) {
+
       this._artist = new Genius.Models.Artist( {}, { lyric: this });
     }
 

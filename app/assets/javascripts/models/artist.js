@@ -1,4 +1,4 @@
-Genius.Models.Aritst = Backbone.Model.extend ({
+Genius.Models.Artist = Backbone.Model.extend ({
 
   urlRoot: '/api/artists',
 

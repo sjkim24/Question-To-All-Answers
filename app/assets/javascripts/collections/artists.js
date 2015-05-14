@@ -10,7 +10,7 @@ Genius.Collections.Artists = Backbone.Collection.extend ({
     if (artist) {
       artist.fetch();
     } else {
-      artist = new Genius.Models.Aritst ({ id: id });
+      artist = new Genius.Models.Artist ({ id: id });
       artist.fetch({
         success: function () {
           artists.add(artist)
