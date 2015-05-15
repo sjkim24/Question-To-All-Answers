@@ -1,7 +1,7 @@
 class Api::ArtistsController < Api::ApiController
 
   def create
-    @annotation = Annotation.new
+    # @annotation = Annotation.new
   end
 
   def new
@@ -20,9 +20,9 @@ class Api::ArtistsController < Api::ApiController
   def destroy
   end
 
-  private
-    def anno_params
-      params.require(:annotation).permit(:)
-    end
+  # private
+  #   def anno_params
+  #     params.require(:annotation).permit(:)
+  #   end
 
 end
