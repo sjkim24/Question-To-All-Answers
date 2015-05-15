@@ -4,6 +4,7 @@ window.Genius = {
   Views: {},
   Routers: {},
   initialize: function() {
+    rangy.init();
     new Genius.Routers.Router ({
       $rootEl: $('#main')
     });

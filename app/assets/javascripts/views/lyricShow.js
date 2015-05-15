@@ -6,6 +6,7 @@ Genius.Views.LyricShow = Backbone.CompositeView.extend ({
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
+    rangy.addInitListener(this.yoyo)
   },
 
   render: function () {
@@ -14,6 +15,9 @@ Genius.Views.LyricShow = Backbone.CompositeView.extend ({
     return this
   },
 
+  yoyo: function () {
+    console.log("hello")
+  }
 
 
 
