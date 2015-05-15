@@ -13,10 +13,7 @@ Genius.Routers.Router = Backbone.Router.extend({
     'lyrics/:id': 'lyricShow',
     'lyrics/:id/edit': 'lyricEdit',
     'artists': 'artistsIndex',
-    'artists/:id': 'artistShow',
-    'annotations/new': 'annoNew',
-    'annotations/:id': 'annoShow',
-    'annotations/:id/edit': 'annoEdit'
+    'artists/:id': 'artistShow'
 
   },
 
@@ -40,7 +37,10 @@ Genius.Routers.Router = Backbone.Router.extend({
 
   lyricShow: function (id) {
     var lyric = this.lyrics.getOrFetch(id);
-    var showView = new Genius.Views.LyricShow ({ model: lyric });
+    var showView = new Genius.Views.LyricShow ({
+      model: lyric,
+      $rootEl: this.$rootEl
+     });
     this._swapView(showView);
   },
 
@@ -70,23 +70,23 @@ Genius.Routers.Router = Backbone.Router.extend({
     this._swapView(showView);
   },
 
-  annotationForm: function () {
-    this.annotations.fetch();
-    var annotation = new Genius.Models.Annotation ();
-    var formView = new Genius.Views.AnnotationForm ({
-      collection: this.annotations,
-      model: annotation
-    });
-    this._swapView(formView);
-  },
+  // annotationForm: function () {
+  //   this.annotations.fetch();
+  //   var annotation = new Genius.Models.Annotation ();
+  //   var formView = new Genius.Views.AnnotationForm ({
+  //     collection: this.annotations,
+  //     model: annotation
+  //   });
+  //   this._swapView(formView);
+  // },
 
-  annotationShow: function (id) {
-    var annotation = this.annotations.getOrFetch(id);
-    var showView = new Genius.Views.AnnotationShow ({
-      model: annotation
-    });
-    this._swapView(showView)
-  },
+  // annotationShow: function (id) {
+  //   var annotation = this.annotations.getOrFetch(id);
+  //   var showView = new Genius.Views.AnnotationShow ({
+  //     model: annotation
+  //   });
+  //   this._swapView(showView)
+  // },
 
   _swapView: function (view) {
     this._currentView && this._currentView.remove();

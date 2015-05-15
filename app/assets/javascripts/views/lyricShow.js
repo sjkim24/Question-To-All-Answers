@@ -4,7 +4,12 @@ Genius.Views.LyricShow = Backbone.CompositeView.extend ({
 
   template: JST['lyrics/show'],
 
-  initialize: function () {
+  events: {
+    'mouseup #lyric': 'renderAnnoForm'
+  },
+
+  initialize: function (options) {
+    this.$rootEl = options.$rootEl;
     this.listenTo(this.model, 'sync', this.render);
   },
 
@@ -12,6 +17,20 @@ Genius.Views.LyricShow = Backbone.CompositeView.extend ({
     var content = this.template({ lyric: this.model });
     this.$el.html(content);
     return this
+  },
+
+  renderAnnoForm: function (event) {
+    event.preventDefault();
+    var sel = rangy.getSelection().toString()
+    if (sel !== "") {
+      var anno = new Genius.Models.Annotation ()
+      var annoForm = new Genius.Views.AnnoForm ({
+        model: anno,
+        $rootEl: this.$rootEl
+      })
+      annoForm.render()
+    }
+
   }
 
 

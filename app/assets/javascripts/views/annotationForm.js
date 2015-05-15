@@ -4,19 +4,20 @@ Genius.Views.AnnoForm = Backbone.CompositeView.extend ({
 
   className: 'annotation-form',
 
-  template: JST['annotations/new'],
+  template: JST['annotations/form'],
 
   events: {
     'click .submit-annotation': 'submitAnnotation'
   },
 
-  initialize: function () {
+  initialize: function (options) {
+    this.$rootEl = options.$rootEl
     this.listenTo(this.model, 'sync', this.render);
   },
 
   render: function () {
     var content = this.template({ annotation: this.model });
-    this.$el.html(content);
+    this.$rootEl.append(content);
     return this;
   },
 
@@ -28,8 +29,7 @@ Genius.Views.AnnoForm = Backbone.CompositeView.extend ({
     this.model.save({}, {
       success: function () {
         that.collection.add(that.model, { merge: true });
-        // i need to set data-if of the lyric id in the lyric show view
-        Backbone.history.navigate('lyrics/' +  $('select').data('id'), { trigger: true });
+        // i need to remove the form after successful add
       }
     })
   }
