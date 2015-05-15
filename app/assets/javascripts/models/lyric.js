@@ -20,6 +20,7 @@ Genius.Models.Lyric = Backbone.Model.extend ({
 
     return this._artist;
   },
+  
 
   formatLyric: function () {
     var re = /\n/g
