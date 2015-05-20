@@ -5,11 +5,12 @@ Genius.Views.LyricShow = Backbone.CompositeView.extend ({
   template: JST['lyrics/show'],
 
   events: {
-    'mouseup #lyric': 'renderAnnoForm'
+    'mouseup #lyric': 'getRange'
   },
 
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
+    this.annotations = options.annotations;
     this.listenTo(this.model, 'sync', this.render);
   },
 
@@ -19,24 +20,33 @@ Genius.Views.LyricShow = Backbone.CompositeView.extend ({
     return this
   },
 
-  renderAnnoForm: function (event) {
-    $('.anno-form').remove();
+  getRange: function (event) {
+    var lyric = document.getElementById("lyric")
     event.preventDefault();
-    // this.getMyRange("lyric")
-
-    var sel = rangy.getSelection().toString()
-
-    var selLength = sel.length
-    console.log(selLength)
-    if (sel) {
-      var anno = new Genius.Models.Annotation ()
-      var annoForm = new Genius.Views.AnnoForm ({
-        model: anno,
-        $rootEl: this.$rootEl
-      })
-      annoForm.render()
+    var sel = rangy.getSelection();
+    var selRange = sel.getRangeAt(0);
+    var charRange = selRange.toCharacterRange(lyric);
+    // string indices to add my anchor tags
+    var startPos = charRange.start
+    var endPos = charRange.end
+    console.log(charRange)
+    if (sel.toString() && charRange.start >= 0) {
+      this.renderAnnoForm(startPos, endPos);
     }
+  },
 
+  renderAnnoForm: function (startPos, endPos) {
+    $('.anno-form').remove();
+    var lyricId = this.model.id;
+    var anno = new Genius.Models.Annotation ();
+    var annoForm = new Genius.Views.AnnoForm ({
+      model: anno,
+      collection: this.annotations,
+      lyricId: lyricId,
+      startPos: startPos,
+      endPos: endPos
+    })
+    this.$rootEl.append(annoForm.render().$el)
   }
 
 })

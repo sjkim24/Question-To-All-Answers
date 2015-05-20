@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     resources :lyrics
     resources :users, only: [:index, :show]
     resources :artists, only: [:index, :show]
-    resources :annotations, except:[:index]
+    resources :annotations, except:[:new]
   end
 end

@@ -1,11 +1,19 @@
-class Api::ArtistsController < Api::ApiController
+class Api::AnnotationsController < Api::ApiController
 
-  def create
+  def index
+    @annotations = Annotation.all
 
-    # @annotation = Annotation.new
+    render :index
   end
 
-  def new
+  def create
+    @annotation = Annotation.new(anno_params)
+    @annotation.user_id = current_user.id
+    if @annotation.save
+      render json: @annotation
+    else
+      render json: @annotation.errors.full_messages, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -23,7 +31,7 @@ class Api::ArtistsController < Api::ApiController
 
   private
     def anno_params
-      params.require(:annotation).permit(:annotation, :lyric_id, :lyric_text, :user_id, :start_post, :end_post)
+      params.require(:annotation).permit(:annotation, :lyric_id, :start_pos, :end_pos)
     end
 
 end

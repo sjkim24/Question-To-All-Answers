@@ -15,6 +15,8 @@
 //= require underscore
 //= require backbone
 //= require rangy/rangy-core
+//= require rangy/rangy-textrange
+//= require rangy/rangy-classapplier
 //= require genius
 //= require_tree ../templates
 //= require_tree ./models

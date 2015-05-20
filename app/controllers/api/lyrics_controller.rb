@@ -55,10 +55,4 @@ class Api::LyricsController < Api::ApiController
       params.require(:lyric).permit(:lyric, :track_title)
     end
 
-    def has_artist?(name)
-      artist_names = []
-      Artist.all.each { |artist| artist_names << artist.name }
-      artist_names.include?(name) ? true : false
-    end
-
 end

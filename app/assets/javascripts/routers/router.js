@@ -25,7 +25,6 @@ Genius.Routers.Router = Backbone.Router.extend({
   },
 
   lyricNew: function () {
-    this.lyrics.fetch();
     var lyric = new Genius.Models.Lyric ();
     var formView = new Genius.Views.LyricForm ({
       model: lyric,
@@ -39,13 +38,13 @@ Genius.Routers.Router = Backbone.Router.extend({
     var lyric = this.lyrics.getOrFetch(id);
     var showView = new Genius.Views.LyricShow ({
       model: lyric,
+      annotations: this.annotations,
       $rootEl: this.$rootEl
      });
     this._swapView(showView);
   },
 
   lyricEdit: function (id) {
-    this.lyrics.fetch();
     var lyric = this.lyrics.getOrFetch(id);
     var formView = new Genius.Views.LyricForm ({
       model: lyric,

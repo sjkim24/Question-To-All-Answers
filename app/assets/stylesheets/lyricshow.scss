@@ -6,7 +6,7 @@
 .genius article {
   float: left;
   font-family: 'Roboto', sans-serif;
-  padding: 20px 0 0 20px;
+  padding: 20px 0 0 0;
 }
 
 .genius .lyric-title {
@@ -33,4 +33,18 @@
 
 .genius .anno-textarea {
   border: 1px solid #ccc;
+}
+
+.genius .submit-anno {
+  border-radius: 25px;
+  text-transform: uppercase;
+  padding: 0 10px 0 10px;
+  border: solid 1px #ccc;
+  text-align: center
+
+}
+
+.genius .submit-anno:hover {
+  cursor: pointer;
+  background: #ccc;
 }
