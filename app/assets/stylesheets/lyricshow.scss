@@ -1,10 +1,15 @@
-.genius {
+.genius #main {
+  width: 1000px;
+  margin: auto;
+}
+
+.genius article {
+  float: left;
   font-family: 'Roboto', sans-serif;
   padding: 20px 0 0 20px;
 }
 
-.genius h2 {
-  display: block;
+.genius .lyric-title {
   padding: 0 0 10px 0;
   font-weight: bold;
   font-size: 24px;
@@ -17,4 +22,15 @@
 
 .genius a:hover {
   background: #eee;
+}
+
+.genius .anno-form {
+  padding: 50px;
+  float: right;
+  width: 300px;
+  height: 400px;
+}
+
+.genius .anno-textarea {
+  border: 1px solid #ccc;
 }

@@ -21,6 +21,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'backbone-on-rails'
 gem 'bcrypt', require: 'bcrypt'
+gem 'rangy-rails'
+#getRangeAt
+#toCharacterRabge(container)
 
 
 # Use ActiveModel has_secure_password

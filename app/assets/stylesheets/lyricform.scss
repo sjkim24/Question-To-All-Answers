@@ -1,9 +1,11 @@
 .lyric-form {
+  display: block;
   width: 700px;
   margin: auto;
   border: 1px solid #ccc;
   vertical-align: top;
-  text-align: center
+  text-align: center;
+
 }
 
 .lyric-form h2 {
@@ -26,15 +28,18 @@
 .lyric-form .title {
   border: solid 1px #ccc;
   padding: 0 275px 0 0;
+  text-align: left;
 }
 
 .lyric-form .artist {
   border: solid 1px #ccc;
   padding: 0 275px 0 0;
+  text-align: left;
 }
 
 .lyric-form textarea {
   border: solid 1px #ccc;
+  text-align: left;
 }
 
 .lyric-form .submit-lyric {
@@ -42,6 +47,7 @@
   text-transform: uppercase;
   padding: 0 10px 0 10px;
   border: solid 1px #ccc;
+  text-align: center
 }
 
 .lyric-form .submit-lyric:hover {
