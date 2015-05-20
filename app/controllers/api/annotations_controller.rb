@@ -20,9 +20,9 @@ class Api::ArtistsController < Api::ApiController
   def destroy
   end
 
-  # private
-  #   def anno_params
-  #     params.require(:annotation).permit(:)
-  #   end
+  private
+    def anno_params
+      params.require(:annotation).permit(:annotation, :lyric_id, :lyric_text, :user_id, :start_post, :end_post)
+    end
 
 end

@@ -20,9 +20,10 @@ Genius.Views.LyricShow = Backbone.CompositeView.extend ({
   },
 
   renderAnnoForm: function (event) {
+    $('.anno-form').remove();
     event.preventDefault();
     var sel = rangy.getSelection().toString()
-    if (sel !== "") {
+    if (sel) {
       var anno = new Genius.Models.Annotation ()
       var annoForm = new Genius.Views.AnnoForm ({
         model: anno,
