@@ -38,7 +38,6 @@ Genius.Routers.Router = Backbone.Router.extend({
     var lyric = this.lyrics.getOrFetch(id);
     var showView = new Genius.Views.LyricShow ({
       model: lyric,
-      annotations: this.annotations,
       $rootEl: this.$rootEl
      });
     this._swapView(showView);

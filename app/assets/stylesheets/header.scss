@@ -5,13 +5,19 @@
   color: white;
   background: black;
   margin: auto;
-  width: 1000px;
+  width: 1050px;
 }
 
 .header a {
   display: block;
   padding: 10px 20px;
   border-left: 1px solid #ccc;
+}
+
+.header .slogan {
+  float: left;
+  padding: 10px 20px;
+
 }
 
 .header-nav {

@@ -10,7 +10,6 @@ Genius.Views.LyricShow = Backbone.CompositeView.extend ({
 
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
-    this.annotations = options.annotations;
     this.listenTo(this.model, 'sync', this.render);
   },
 
@@ -41,7 +40,6 @@ Genius.Views.LyricShow = Backbone.CompositeView.extend ({
     var anno = new Genius.Models.Annotation ();
     var annoForm = new Genius.Views.AnnoForm ({
       model: anno,
-      collection: this.annotations,
       lyricId: lyricId,
       startPos: startPos,
       endPos: endPos

@@ -37,7 +37,6 @@ Genius.Views.AnnoForm = Backbone.CompositeView.extend ({
     })
     this.model.save({}, {
       success: function () {
-        that.collection.add(that.model, { merge: true })
         $('.anno-form').remove();
       }
     })
