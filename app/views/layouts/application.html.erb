@@ -6,33 +6,9 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-
-<header class="header">
-  <nav class="header-nav group">
-    <h1 class="header-logo">
-      <a href="<%= root_url %>">GENIUS</a>
-    </h1>
-
-    <ul class="header-list group">
-      <a class="create-lyric" href="#/lyrics/new">Create Lyric</a>
-      <% if current_user.nil? %>
-        <li><a href="<%= new_user_url %>">Sign Up</a></li>
-        <li><a href="<%= new_session_url %>">Log In</a></li>
-      <% else %>
-        <li><a href="<%= user_url(current_user) %>"><%= current_user.username %></a></li>
-        <form action="<%= session_url %>" method="post">
-          <input type="hidden" name="_method" value="delete">
-          <%= render "shared/auth_token" %>
-          <button class="logout">Log Out</button>
-        </form>
-      <% end %>
-    </ul>
-  </nav>
-<header>
-
 <body>
+  <%= render "layouts/header" %>
   <%= render "shared/errors" %>
-  <br>
   <%= yield %>
 </body>
 </html>

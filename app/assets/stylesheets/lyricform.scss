@@ -1,0 +1,49 @@
+.lyric-form {
+  width: 700px;
+  margin: auto;
+  border: 1px solid #ccc;
+  vertical-align: top;
+  text-align: center
+}
+
+.lyric-form h2 {
+  font-size: 24px;
+  padding: 10px 0 0 0;
+}
+
+.lyric-form .title-label {
+  display: block;
+  font-size: 18px;
+  padding: 20px 0 0 15px;
+}
+
+.lyric-form label {
+  display: block;
+  font-size: 18px;
+  padding: 20px 0 0 10px;
+}
+
+.lyric-form .title {
+  border: solid 1px #ccc;
+  padding: 0 275px 0 0;
+}
+
+.lyric-form .artist {
+  border: solid 1px #ccc;
+  padding: 0 275px 0 0;
+}
+
+.lyric-form textarea {
+  border: solid 1px #ccc;
+}
+
+.lyric-form .submit-lyric {
+  border-radius: 25px;
+  text-transform: uppercase;
+  padding: 0 10px 0 10px;
+  border: solid 1px #ccc;
+}
+
+.lyric-form .submit-lyric:hover {
+  background: #ccc;
+}

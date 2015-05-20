@@ -1,6 +1,7 @@
 class Api::ArtistsController < Api::ApiController
 
   def create
+
     # @annotation = Annotation.new
   end
 

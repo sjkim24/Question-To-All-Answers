@@ -1,0 +1,36 @@
+/* --- HEADER --- */
+
+.header {
+  font-family: 'Roboto', sans-serif;
+}
+
+.header a {
+  display: block;
+  padding: 10px 20px;
+  border-left: 1px solid #ccc;
+}
+
+.header-nav {
+  border-bottom: 1px solid #ccc;
+}
+
+.header-logo {
+  float: left;
+  border-right: 1px solid #ccc;
+  font-weight: bold;
+}
+
+.header-list {
+  float: right;
+}
+
+.header-list > li {
+  float: left;
+}
+
+.header-list .logout {
+  display: block;
+  padding: 10px 20px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}

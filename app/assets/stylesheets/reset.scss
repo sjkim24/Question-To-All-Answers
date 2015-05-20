@@ -1,4 +1,4 @@
-/*html, body, header, nav, h1, a,
+html, body, header, nav, h1, a,
 ul, li, strong, main, button, i,
 section, img, div, h2, p, form,
 fieldset, label, input, textarea,
@@ -26,25 +26,10 @@ img {
   height: auto;
 }
 
-input[type="password"],
-input[type="email"],
-input[type="text"],
-input[type="submit"],
-textarea,
-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-button,
-input[type="submit"] {
-  cursor: pointer;
-}
 
 /* Clearfix */
-/*
 .group:after {
   content: "";
   display: block;
   clear: both;
-}*/
+}
