@@ -1,7 +1,7 @@
 .anno-show {
   float: right;
   padding: 20px;
-  margin: 20px;
+  margin: 20px 0 0 0;
   width: 200px;
   border: 1px solid #000;
   background: #FFFF99;
@@ -16,6 +16,10 @@
   display: block;
   padding: 20px 0 10px 0 ;
   font-weight: bold;
+}
+
+.anno-show h3 {
+  font-style: italic;
 }
 
 .anno-show .lyric-text {
