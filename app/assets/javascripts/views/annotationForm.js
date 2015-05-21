@@ -27,10 +27,8 @@ Genius.Views.AnnotationForm = Backbone.View.extend ({
   submitAnnotation: function (event) {
     event.preventDefault();
     var attrs = this.$el.serializeJSON().annotation;
-
     var that = this;
     this.model.set(attrs);
-
     this.model.set({
       lyric_id: this.lyricId,
       start_pos: this.startPos,
@@ -40,6 +38,7 @@ Genius.Views.AnnotationForm = Backbone.View.extend ({
     this.model.save({}, {
       success: function () {
         $('.anno-form').remove();
+        Backbone.history.navigate("#/lyrics/" + that.lyricId, { trigger: true });
       }
     })
   }

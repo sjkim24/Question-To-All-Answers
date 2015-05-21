@@ -4,7 +4,8 @@ Genius.Routers.Router = Backbone.Router.extend({
     this.$rootEl = options.$rootEl;
     this.lyrics = new Genius.Collections.Lyrics ();
     this.artists = new Genius.Collections.Artists ();
-    this.annotations = new Genius.Collections.Annotations();
+    this.annotations = new Genius.Collections.Annotations ();
+    this.users = new Genius.Collections.Users ();
   },
 
   routes: {
@@ -13,12 +14,12 @@ Genius.Routers.Router = Backbone.Router.extend({
     'lyrics/:id': 'lyricShow',
     'lyrics/:id/edit': 'lyricEdit',
     'artists': 'artistsIndex',
-    'artists/:id': 'artistShow'
+    'artists/:id': 'artistShow',
+    'users/:id': 'userShow'
   },
 
   lyricsIndex: function () {
     this.lyrics.fetch();
-    // it knows where to fetch by the url in collection
     var indexView = new Genius.Views.LyricsIndex ({ collection: this.lyrics });
     this._swapView(indexView);
   },
@@ -63,6 +64,14 @@ Genius.Routers.Router = Backbone.Router.extend({
     var artist = this.artists.getOrFetch(id);
     var showView = new Genius.Views.ArtistShow ({
       model: artist
+    });
+    this._swapView(showView);
+  },
+
+  userShow: function(id) {
+    var user = this.users.getOrFetch(id);
+    var showView = new Genius.Views.UserShow ({
+      model: user
     });
     this._swapView(showView);
   },

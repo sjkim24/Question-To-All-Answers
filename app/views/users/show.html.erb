@@ -1,9 +1,17 @@
-<%= @user.username %>
-<p>
-  Genius IQ: <%= @user.genius_iq %>
-  <br>
-  About Me: <%= @user.about_me %>
-</p>
-<% if logged_in? && @user.id === current_user.id %>
-  <a href="<%= edit_user_url(@user) %>">Edit About Me</a>
-<% end %>
+<article class="profile">
+  <img>
+  <section class="username">
+    <%= @user.username %>
+  </section>
+  <section class="genius-iq">
+    Genius IQ: <%= @user.genius_iq %>
+  </section>
+  <section class="about-me">
+    About Me: <%= @user.about_me %>
+  </section>
+  <section class="edit-about-me">
+    <% if logged_in? && @user.id === current_user.id %>
+      <a href="<%= edit_user_url(@user) %>">Edit About Me</a>
+    <% end %>
+  </section>
+</article>
