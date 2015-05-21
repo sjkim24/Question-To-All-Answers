@@ -3,7 +3,7 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
   tagName: 'section',
 
   className: 'anno-show',
-
+  
   template: JST['annotations/show'],
 
   events: {

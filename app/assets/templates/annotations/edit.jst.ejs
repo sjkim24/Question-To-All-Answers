@@ -1,4 +1,9 @@
+<h1>Edit Annotation</h1>
+<h2>Lyric</h2>
+<h3><%= annotation.escape("lyric_text") %></h3>
+<h2>Annotation</h2>
 <form class="anno-edit-form">
-
+  <textarea class="anno-textarea" name="annotation[annotation]"
+            rows="10" cols="25"><%= annotation.escape("annotation") %></textarea>
 </form>
-<button class="edit-button">Submit</button>
+<button class="submit-edit-anno">Submit</button>

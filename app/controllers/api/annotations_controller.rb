@@ -23,14 +23,14 @@ class Api::AnnotationsController < Api::ApiController
     render :show
   end
 
-  def edit
-
-  end
-
   def update
-  end
+    @annotation = Annotation.find(params[:id])
 
-  def destroy
+    if @annotation.update(anno_params)
+      render json: @annotation
+    else
+      render json: @annotation.errors.full_messages, status: :unprocessable_entity
+    end
   end
 
   private
