@@ -33,7 +33,6 @@ Genius.Routers.Router = Backbone.Router.extend({
     this._swapView(formView);
   },
 
-
   lyricShow: function (id) {
     var lyric = this.lyrics.getOrFetch(id);
     var showView = new Genius.Views.LyricShow ({

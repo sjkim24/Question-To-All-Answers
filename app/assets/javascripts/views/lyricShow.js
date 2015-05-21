@@ -14,6 +14,7 @@ Genius.Views.LyricShow = Backbone.CompositeView.extend ({
   },
 
   render: function () {
+    debugger
     var content = this.template({ lyric: this.model });
     this.$el.html(content);
     return this

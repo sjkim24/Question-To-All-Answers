@@ -9,18 +9,31 @@ Genius.Models.Lyric = Backbone.Model.extend ({
       delete response.artist;
     }
 
+    if (response.annotations) {
+      lyric.annotations().set(response.annotations);
+      delete response.annotations;
+    }
+
     return response;
   },
 
   artist: function () {
     if (!this._artist) {
-
-      this._artist = new Genius.Models.Artist( {}, { lyric: this });
+      this._artist = new Genius.Models.Artist ( {}, { lyric: this });
     }
 
     return this._artist;
   },
 
+  annotations: function () {
+    if (!this._annotations) {
+      this._annotations = new Genius.Collections.Annotations ( [], {
+        lyric: this
+      })
+    }
+
+    return this._annotations;
+  },
 
   formatLyric: function () {
     var re = /\n/g
