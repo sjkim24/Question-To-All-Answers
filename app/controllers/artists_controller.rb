@@ -1,9 +1,9 @@
-class ArtistsController < ApplicationController
-
-  def show
-    @artist = Artist.find(params[:id])
-
-    render :show
-  end
-
-end
+# class ArtistsController < ApplicationController
+#
+#   def show
+#     @artist = Artist.find(params[:id])
+#
+#     render :show
+#   end
+#
+# end

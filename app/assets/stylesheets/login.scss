@@ -1,4 +1,4 @@
-.signup {
+.login {
   display:block;
   margin: 20px auto;
   padding: 20px 0 20px 0;
@@ -7,45 +7,33 @@
   text-align: center;
 }
 
-.signup h2 {
+.login h2 {
   font-size: 24px;
   font-weight: bold;
   text-align: center;
   padding: 0 0 20px 0;
 }
 
-.signup .email-label {
+.login label {
   display: block;
   font-size: 18px;
-  padding: 2px 20px 0 0px;
 }
 
-.signup label {
-  display: block;
-  font-size: 18px;
-  padding: 2px 0 0 10px;
-}
-
-.signup input {
+.login input {
   text-align: left;
 }
 
-.signup .username {
+.login .username {
   border: solid 1px #ccc;
   padding: 0 100px 0 0 ;
 }
 
-.signup .email {
+.login .password {
   border: solid 1px #ccc;
   padding: 0 100px 0 0 ;
 }
 
-.signup .password {
-  border: solid 1px #ccc;
-  padding: 0 100px 0 0 ;
-}
-
-.signup button {
+.login button {
   border-radius: 25px;
   text-transform: uppercase;
   padding: 0 10px 0 10px;
@@ -53,7 +41,7 @@
   text-align: center
 }
 
-.signup button:hover {
+.login button:hover {
   background: #ccc;
   cursor: pointer;
 }
