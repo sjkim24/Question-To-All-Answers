@@ -1,0 +1,26 @@
+.signup {
+  display:block;
+  margin: 20px auto;
+  width: 700px;
+  border: 1px solid #ccc;
+}
+
+.signup h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0 0 20px 0;
+}
+
+.signup button {
+  border-radius: 25px;
+  text-transform: uppercase;
+  padding: 0 10px 0 10px;
+  border: solid 1px #ccc;
+  text-align: center
+}
+
+.signup button:hover {
+  background: #ccc;
+  cursor: pointer;
+}
