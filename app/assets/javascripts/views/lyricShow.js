@@ -28,7 +28,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     var sel = rangy.getSelection();
     var selLength = sel.toString().length
     if (sel.toString()[0] === " " || sel.toString()[selLength - 1] === " ") {
-      sel = sel.trim();
+      sel.trim();
     }
     var selRange = sel.getRangeAt(0);
     var charRange = selRange.toCharacterRange(lyric);
