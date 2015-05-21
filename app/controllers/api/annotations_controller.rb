@@ -18,6 +18,9 @@ class Api::AnnotationsController < Api::ApiController
   end
 
   def show
+    @annotation = Annotation.find(params[:id])
+
+    render :show
   end
 
   def edit

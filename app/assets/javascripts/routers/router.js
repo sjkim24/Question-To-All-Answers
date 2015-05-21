@@ -15,7 +15,7 @@ Genius.Routers.Router = Backbone.Router.extend({
     'artists': 'artistsIndex',
     'artists/:id': 'artistShow'
   },
-  
+
   lyricsIndex: function () {
     this.lyrics.fetch();
     // it knows where to fetch by the url in collection
@@ -36,6 +36,7 @@ Genius.Routers.Router = Backbone.Router.extend({
     var lyric = this.lyrics.getOrFetch(id);
     var showView = new Genius.Views.LyricShow ({
       model: lyric,
+      annotations: this.annotations,
       $rootEl: this.$rootEl
      });
     this._swapView(showView);

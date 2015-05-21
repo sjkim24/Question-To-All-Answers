@@ -36,11 +36,32 @@ Genius.Models.Lyric = Backbone.Model.extend ({
   },
 
   formatLyric: function () {
-    var re = /\n/g
+    var annotations = this.annotations();
+    var that = this
     if (this.get("lyric")) {
-      // cloning lyric because i don't want to modify the original attribute
-      return _.clone(this.get("lyric")).replace(re, '<br>')
+      var annoLyric = _.clone(this.get("lyric"));
+      annotations.each(function(annotation) {
+
+        var lyric = that.get("lyric");
+        var annoId = annotation.get("id");
+        var startPos = annotation.get("start_pos");
+        var endPos = annotation.get("end_pos");
+
+        var annotated = '<a class="annotation" data-id="'
+          + annoId + '" href="#/annotations/' + annoId + '">'
+          + (lyric.slice(startPos, endPos)) + "</a>";
+        annoLyric = annoLyric.replace(
+          lyric.slice(startPos, endPos), annotated);
+        // clone the lyric before adding anchor tags
+
+
+      })
+      var re = /\n/g;
+      return annoLyric.replace(re, '<br>');
     }
+
+
+
   },
 
   // when you set attrs on a model, it calls toJSON

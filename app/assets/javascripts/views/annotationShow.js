@@ -8,7 +8,7 @@ Genius.Views.AnnotationShow = Backbone.CompositeView.extend ({
 
   render: function () {
     var content = this.template({ annotation: this.model })
-    this.$el.html(content);
+    this.$el.append(content);
     return this
   }
 
