@@ -14,10 +14,11 @@ json.annotations @lyric.annotations do |annotation|
   json.end_pos annotation.end_pos
 end
 
-json.current_user do
-  if current_user.nil?
-    json.null!
-  else
-    json.id
-  end
-end
+# json.current_user do
+#   if current_user.nil?
+#     json.null!
+#   else
+#     json.id
+#   end
+# end
+#

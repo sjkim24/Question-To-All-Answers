@@ -32,7 +32,6 @@ Genius.Views.LyricShow = Backbone.CompositeView.extend ({
     }
     var selRange = sel.getRangeAt(0);
     var charRange = selRange.toCharacterRange(lyric);
-    console.log(charRange)
     // string indices to add my anchor tags
     var startPos = charRange.start
     var endPos = charRange.end
@@ -55,6 +54,7 @@ Genius.Views.LyricShow = Backbone.CompositeView.extend ({
   },
 
   renderAnno: function (event) {
+    $('.anno-show').remove();
     event.preventDefault();
     var id = $(event.currentTarget).attr("data-id");
     var annotation = this.annotations.getOrFetch(id);

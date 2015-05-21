@@ -19,7 +19,7 @@ Genius.Views.AnnoForm = Backbone.CompositeView.extend ({
 
   render: function () {this
     var content = this.template({ annotation: this.model });
-    this.$el.append(content);
+    this.$el.html(content);
     return this;
   },
 

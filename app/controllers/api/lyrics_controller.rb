@@ -19,6 +19,12 @@ class Api::LyricsController < Api::ApiController
     end
   end
 
+  def new
+    @lyric = Lyric.new
+
+    render :new
+  end
+
   def show
     @lyric = Lyric.find(params[:id])
 
