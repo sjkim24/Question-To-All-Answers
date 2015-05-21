@@ -12,7 +12,6 @@ class Api::LyricsController < Api::ApiController
     artist_name = params[:lyric][:artist_name]
     @lyric.artist_id = Artist.find_or_create_by(name: artist_name).id
 
-
     if @lyric.save
       render json: @lyric
     else

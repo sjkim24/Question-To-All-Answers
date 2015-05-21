@@ -14,9 +14,8 @@ Genius.Routers.Router = Backbone.Router.extend({
     'lyrics/:id/edit': 'lyricEdit',
     'artists': 'artistsIndex',
     'artists/:id': 'artistShow'
-
   },
-
+  
   lyricsIndex: function () {
     this.lyrics.fetch();
     // it knows where to fetch by the url in collection
