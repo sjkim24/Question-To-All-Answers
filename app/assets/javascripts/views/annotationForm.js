@@ -15,6 +15,7 @@ Genius.Views.AnnoForm = Backbone.CompositeView.extend ({
     this.lyricId = options.lyricId;
     this.startPos = options.startPos;
     this.endPos = options.endPos;
+    this.sel = options.sel;
   },
 
   render: function () {this
@@ -33,7 +34,8 @@ Genius.Views.AnnoForm = Backbone.CompositeView.extend ({
     this.model.set({
       lyric_id: this.lyricId,
       start_pos: this.startPos,
-      end_pos: this.endPos
+      end_pos: this.endPos,
+      lyric_text: this.sel
     })
     this.model.save({}, {
       success: function () {

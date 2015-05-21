@@ -36,25 +36,28 @@ Genius.Views.LyricShow = Backbone.CompositeView.extend ({
     var startPos = charRange.start
     var endPos = charRange.end
     if (sel.toString() && charRange.start >= 0) {
-      this.renderAnnoForm(startPos, endPos);
+      this.renderAnnoForm(startPos, endPos, sel.toString());
     }
   },
 
-  renderAnnoForm: function (startPos, endPos) {
+  renderAnnoForm: function (startPos, endPos, sel) {
     $('.anno-form').remove();
+    $('.anno-show').remove();
     var lyricId = this.model.id;
     var anno = new Genius.Models.Annotation ();
     var annoForm = new Genius.Views.AnnoForm ({
       model: anno,
       lyricId: lyricId,
       startPos: startPos,
-      endPos: endPos
+      endPos: endPos,
+      sel: sel
     })
     this.$rootEl.append(annoForm.render().$el);
   },
 
   renderAnno: function (event) {
     $('.anno-show').remove();
+    $('.anno-form').remove();
     event.preventDefault();
     var id = $(event.currentTarget).attr("data-id");
     var annotation = this.annotations.getOrFetch(id);

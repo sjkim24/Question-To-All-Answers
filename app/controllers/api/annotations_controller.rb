@@ -35,7 +35,7 @@ class Api::AnnotationsController < Api::ApiController
 
   private
     def anno_params
-      params.require(:annotation).permit(:annotation, :lyric_id, :start_pos, :end_pos)
+      params.require(:annotation).permit(:annotation, :lyric_id, :start_pos, :end_pos, :lyric_text)
     end
 
 end

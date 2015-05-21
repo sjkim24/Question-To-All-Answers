@@ -1,8 +1,24 @@
 .anno-show {
   float: right;
   padding: 20px;
+  margin: 20px;
   width: 200px;
   border: 1px solid #ccc;
+}
+
+.anno-show h2 {
+  display: block;
+  padding: 20px 0 10px 0 ;
+  font-weight: bold;
+  border-bottm: 1px solid #ccc;
+}
+
+.anno-show .lyric-text {
+  font-style: italic;
+}
+
+.anno-show .lyric-anno {
+  padding: 0 0 20px 0;
 }
 
 .anno-show .edit-anno {
@@ -12,4 +28,9 @@
   padding: 0 10px 0 10px;
   border: solid 1px #ccc;
   text-align: center
+}
+
+.anno-show .edit-anno:hover {
+  background: #ccc;
+  cursor: pointer;
 }

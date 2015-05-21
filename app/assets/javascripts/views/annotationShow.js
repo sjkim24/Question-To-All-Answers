@@ -6,6 +6,10 @@ Genius.Views.AnnotationShow = Backbone.CompositeView.extend ({
 
   template: JST['annotations/show'],
 
+  events: {
+    'click .edit-anno': 'editAnno'
+  },
+
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
   },
@@ -14,6 +18,10 @@ Genius.Views.AnnotationShow = Backbone.CompositeView.extend ({
     var content = this.template({ annotation: this.model })
     this.$el.html(content);
     return this
+  },
+
+  editAnno: function () {
+
   }
 
 })
