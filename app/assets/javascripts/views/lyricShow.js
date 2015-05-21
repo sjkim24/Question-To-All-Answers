@@ -1,4 +1,4 @@
-Genius.Views.LyricShow = Backbone.CompositeView.extend ({
+Genius.Views.LyricShow = Backbone.View.extend ({
 
   tagName: 'article',
 
@@ -45,7 +45,7 @@ Genius.Views.LyricShow = Backbone.CompositeView.extend ({
     $('.anno-show').remove();
     var lyricId = this.model.id;
     var anno = new Genius.Models.Annotation ();
-    var annoForm = new Genius.Views.AnnoForm ({
+    var annoForm = new Genius.Views.AnnotationForm ({
       model: anno,
       lyricId: lyricId,
       startPos: startPos,

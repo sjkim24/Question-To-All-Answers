@@ -1,4 +1,4 @@
-Genius.Views.LyricForm = Backbone.CompositeView.extend ({
+Genius.Views.LyricForm = Backbone.View.extend ({
 
   tagName: 'form',
 

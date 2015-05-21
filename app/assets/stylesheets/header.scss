@@ -14,10 +14,17 @@
   border-left: 1px solid #ccc;
 }
 
+.header a:hover {
+  color: #FFFF99;
+}
+
 .header .slogan {
   float: left;
   padding: 10px 20px;
+}
 
+.header .slogan:hover {
+  cursor: default;
 }
 
 .header-nav {
@@ -43,4 +50,9 @@
   padding: 10px 20px;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
+}
+
+.header-list .logout:hover {
+  color: #FFFF99;
+  cursor: pointer;
 }

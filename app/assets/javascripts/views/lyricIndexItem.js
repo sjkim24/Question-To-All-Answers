@@ -1,4 +1,4 @@
-Genius.Views.LyricIndexItem = Backbone.CompositeView.extend ({
+Genius.Views.LyricIndexItem = Backbone.View.extend ({
 
   tagName: 'li',
 

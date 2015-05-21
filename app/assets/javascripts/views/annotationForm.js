@@ -1,4 +1,4 @@
-Genius.Views.AnnoForm = Backbone.CompositeView.extend ({
+Genius.Views.AnnotationForm = Backbone.View.extend ({
 
   tagName: 'form',
 

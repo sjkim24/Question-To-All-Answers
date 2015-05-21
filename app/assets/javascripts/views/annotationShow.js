@@ -1,4 +1,4 @@
-Genius.Views.AnnotationShow = Backbone.CompositeView.extend ({
+Genius.Views.AnnotationShow = Backbone.View.extend ({
 
   tagName: 'section',
 
@@ -21,7 +21,10 @@ Genius.Views.AnnotationShow = Backbone.CompositeView.extend ({
   },
 
   editAnno: function () {
-
+    var annoEdit = new Genius.Views.AnnotationEdit ({
+      model: this.model
+    })
+    this.$el.html(annoEdit.render().$el)
   }
 
 })

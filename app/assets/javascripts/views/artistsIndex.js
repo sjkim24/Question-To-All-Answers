@@ -1,4 +1,4 @@
-Genius.Views.ArtistsIndex = Backbone.CompositeView.extend ({
+Genius.Views.ArtistsIndex = Backbone.View.extend ({
 
   template: JST['artists/index'],
 
