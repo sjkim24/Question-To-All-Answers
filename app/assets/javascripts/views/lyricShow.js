@@ -46,13 +46,28 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     var charRange = selRange.toCharacterRange(lyric);
     var startPos = charRange.start;
     var endPos = charRange.end;
+    var selString = sel.toString();
     if (sel.toString() && charRange.start >= 0) {
-      // var selSplit = sel.toString().split("")
-      // var selSpaced = selSplit.each(function(char) {
-      //
-      // })
-      this.renderAnnoForm(startPos, endPos, sel.toString());
+      var selSpaced = this.insertSpace(selString);
+      this.renderAnnoForm(startPos, endPos, selSpaced);
     }
+  },
+
+  insertSpace: function (sel) {
+    var selSplit = sel.split("");
+    var i = 0;
+    var selLength = selSplit.length;
+    while (i < selLength - 1) {
+      console.log(i)
+      var first = selSplit[i].charCodeAt();
+      var second = selSplit[i + 1].charCodeAt();
+      if ((first >= 97 && first <= 122) && (second >= 65 && second <= 90)) {
+        selSplit.splice(i + 1, 0, " ");
+        selLength += 1;
+      }
+      i += 1;
+    }
+    return selSplit.join("");
   },
 
   renderAnnoForm: function (startPos, endPos, sel) {
