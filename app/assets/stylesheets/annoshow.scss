@@ -31,13 +31,28 @@
 }
 
 .anno-show .edit-anno {
-  display: block;
+  float: right;
   border-radius: 25px;
   text-transform: uppercase;
   padding: 0 10px 0 10px;
   border: solid 1px #000;
   text-align: center;
   background: #fff;
+}
+
+.anno-show .upvote {
+  float: left;
+  border-radius: 25px;
+  text-transform: uppercase;
+  padding: 0 10px 0 10px;
+  border: solid 1px #000;
+  text-align: center;
+  background: #fff;
+}
+
+.anno-show .upvote:hover {
+  background: #ccc;
+  cursor: pointer;
 }
 
 .anno-show .edit-anno:hover {

@@ -7,13 +7,11 @@ Genius.Views.UserShow = Backbone.View.extend ({
   },
 
   currentUser: function () {
-    debugger
     var loggedin = Genius.CurrentUser.get("loggedin")
     return loggedin;
   },
 
   render: function () {
-    debugger
     var content = this.template({
       user: this.model,
       currentUserId: Genius.CurrentUser.get("id")

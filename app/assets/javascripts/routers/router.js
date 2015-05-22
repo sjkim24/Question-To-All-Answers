@@ -77,7 +77,9 @@ Genius.Routers.Router = Backbone.Router.extend({
     var showView = new Genius.Views.UserShow ({
       model: user
     });
-    showView.currentUser();
+
+    this._swapView(showView);
+    // showView.currentUser();
     // if (currentUser || !currentUser) {
     //   this._swapView(showView);
     // }

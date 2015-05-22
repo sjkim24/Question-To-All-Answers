@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :lyrics
-    resources :users, only: [:index, :show]
+    resources :users, only: [:index, :show, :update]
     resources :artists, only: [:index, :show]
     resources :annotations, except:[:new]
     resource :currentuser, only: [:show]
