@@ -16,10 +16,22 @@ Genius.Views.LyricShow = Backbone.View.extend ({
   },
 
   render: function () {
+    var that = this;
+    var userId = this.model.get("user_id");
+    var user = new Genius.Models.User({ id: userId });
+    user.fetch({
+      success: function () {
+        var username = user.get("username");
+        var content = that.template({
+          lyric: that.model,
+          username: username,
+          userId: userId
+        });
+        that.$el.html(content);
+      }
+    })
 
-    var content = this.template({ lyric: this.model });
-    this.$el.html(content);
-    return this
+    return this;
   },
 
   getRange: function (event) {

@@ -25,7 +25,7 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
   },
 
   render: function () {
-    var that = this
+    var that = this;
     var userId = this.model.get("user_id");
     var user = new Genius.Models.User({ id: userId });
     user.fetch({

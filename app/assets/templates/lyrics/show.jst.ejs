@@ -4,6 +4,6 @@
            <%= lyric.artist().escape("name") %>
          </a> |
   <a href="#/lyrics/<%= lyric.id %>/edit" class="edit">Edit Lyric</a>
-
+<h3 class="contributor">Submitted by <a href="#/users/<%= userId %>"><%= username %></a></h3>
 </section>
 <section id="lyric"><%= lyric.formatLyric() %></section>
