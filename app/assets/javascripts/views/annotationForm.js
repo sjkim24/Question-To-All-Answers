@@ -11,11 +11,21 @@ Genius.Views.AnnotationForm = Backbone.View.extend ({
   },
 
   initialize: function (options) {
+    this.listenTo(Genius.CurrentUser, 'sync', this.currentUserChecker);
     this.listenTo(this.model, 'sync', this.render);
     this.lyricId = options.lyricId;
     this.startPos = options.startPos;
     this.endPos = options.endPos;
     this.sel = options.sel;
+  },
+
+  currentUserChecker: function () {
+    var currentUser = Genius.CurrentUser.get("signedin");
+    if (currentUser) {
+      return currentUser;
+    } else {
+      window.location = "/session/new"
+    }
   },
 
   render: function () {this
