@@ -5,11 +5,14 @@ window.Genius = {
   Routers: {},
   initialize: function() {
     Genius.CurrentUser = new Genius.Models.CurrentUser ();
-    Genius.CurrentUser.fetch();
-    new Genius.Routers.Router ({
-      $rootEl: $('#main')
+    Genius.CurrentUser.fetch({
+      success: function () {
+        new Genius.Routers.Router ({
+          $rootEl: $('#main')
+        });
+        Backbone.history.start();
+      }
     });
-    Backbone.history.start();
   }
 };
 

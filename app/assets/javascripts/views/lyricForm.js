@@ -11,12 +11,11 @@ Genius.Views.LyricForm = Backbone.View.extend ({
   },
 
   initialize: function () {
-    this.listenTo(Genius.CurrentUser, 'sync', this.currentUserChecker);
     this.listenTo(this.model, 'sync', this.render);
   },
 
   currentUserChecker: function () {
-    var currentUser = Genius.CurrentUser.get("signedin");
+    var currentUser = Genius.CurrentUser.get("loggedin");
     if (currentUser) {
       return currentUser;
     } else {

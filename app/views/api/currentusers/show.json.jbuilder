@@ -1,6 +1,6 @@
-json.signedin logged_in?
-json.id do
-  if logged_in?
-    json.id current_user.id
-  end
+if logged_in?
+  json.loggedin logged_in?
+  json.extract! current_user, :id
+else
+  json.loggedin logged_in?
 end
