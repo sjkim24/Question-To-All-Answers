@@ -52,7 +52,9 @@ Genius.Routers.Router = Backbone.Router.extend({
       model: lyric,
       collection: this.lyrics
     })
-    this._swapView(formView);
+    if (formView.currentUserChecker()){
+      this._swapView(formView);
+    }
   },
 
   // might not even need this as genius clone doesn't have artists index
