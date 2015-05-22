@@ -66,6 +66,7 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
           var newGeniusIq  = parseInt(user.get("genius_iq")) + 5;
           user.set({ genius_iq: newGeniusIq });
           user.save();
+          alert("Upvoted!")
         }
       })
     }
