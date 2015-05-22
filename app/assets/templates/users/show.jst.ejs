@@ -1,0 +1,15 @@
+<article class="profile">
+  <img>
+  <section class="username">
+    <%= user.escape("username") %>
+  </section>
+  <section class="genius-iq">
+    Genius IQ: <%= user.escape("genius_iq") %>
+  </section>
+  <section class="about-me">
+    About Me: <%= user.escape("about_me") %>
+  </section>
+  <section class="edit-about-me">
+    <button class="edit">Edit About Me</button>
+  </section>
+</article>

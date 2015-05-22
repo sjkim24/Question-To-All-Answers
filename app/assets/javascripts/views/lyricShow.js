@@ -32,10 +32,13 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     }
     var selRange = sel.getRangeAt(0);
     var charRange = selRange.toCharacterRange(lyric);
-    // string indices to add my anchor tags
     var startPos = charRange.start;
     var endPos = charRange.end;
     if (sel.toString() && charRange.start >= 0) {
+      // var selSplit = sel.toString().split("")
+      // var selSpaced = selSplit.each(function(char) {
+      //
+      // })
       this.renderAnnoForm(startPos, endPos, sel.toString());
     }
   },

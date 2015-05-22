@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show]
     resources :artists, only: [:index, :show]
     resources :annotations, except:[:new]
+    resource :currentuser, only: [:show]
   end
 end

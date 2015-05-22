@@ -30,7 +30,10 @@ Genius.Routers.Router = Backbone.Router.extend({
       model: lyric,
       collection: this.lyrics
     })
-    this._swapView(formView);
+
+    if (formView.currentUserChecker()){
+      this._swapView(formView);
+    }
   },
 
   lyricShow: function (id) {

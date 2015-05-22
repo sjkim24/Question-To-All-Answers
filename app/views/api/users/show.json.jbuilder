@@ -1,4 +1,4 @@
-json.extract! @user, :id, :email, :username
+json.extract! @user, :id, :email, :username, :genius_iq, :about_me
 
 json.lyrics @user.lyrics do |lyric|
   json.id lyric.id
@@ -13,4 +13,12 @@ json.annotations @user.annotations do |annotation|
   json.user_id annotation.user_id
   json.start_pos annotation.start_pos
   json.end_pos annotation.end_pos
+end
+
+json.current_user do
+  if current_user.nil?
+    json.null!
+  else
+    json.id current_user.id
+  end
 end

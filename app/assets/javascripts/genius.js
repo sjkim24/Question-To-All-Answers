@@ -4,6 +4,8 @@ window.Genius = {
   Views: {},
   Routers: {},
   initialize: function() {
+    Genius.CurrentUser = new Genius.Models.CurrentUser ();
+    Genius.CurrentUser.fetch();
     new Genius.Routers.Router ({
       $rootEl: $('#main')
     });
