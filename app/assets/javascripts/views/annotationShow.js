@@ -3,7 +3,7 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
   tagName: 'section',
 
   className: 'anno-show',
-  
+
   template: JST['annotations/show'],
 
   events: {
@@ -12,6 +12,15 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
+  },
+
+  currentUserChecker: function () {
+    var currentUser = Genius.CurrentUser.get("loggedin");
+    if (currentUser) {
+      return currentUser;
+    } else {
+      window.location = "/session/new";
+    }
   },
 
   render: function () {
@@ -23,8 +32,11 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
   editAnno: function () {
     var annoEdit = new Genius.Views.AnnotationEdit ({
       model: this.model
-    })
-    this.$el.html(annoEdit.render().$el)
+    });
+
+    if (this.currentUserChecker()){
+      this.$el.html(annoEdit.render().$el);
+    }
   }
 
 })
