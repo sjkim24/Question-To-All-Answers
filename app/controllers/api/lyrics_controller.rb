@@ -13,7 +13,7 @@ class Api::LyricsController < Api::ApiController
     if artist_name.blank?
       @lyric.artist_id = nil
     else
-      @lyric.artist_id = Artist.where(name: artist_name).id
+      @lyric.artist_id = Artist.where(name: artist_name)[0].id
     end
 
     if @lyric.save
@@ -47,7 +47,7 @@ class Api::LyricsController < Api::ApiController
     if artist_name.blank?
       @lyric.artist_id = nil
     else
-      @lyric.artist_id = Artist.where(name: artist_name).id
+      @lyric.artist_id = Artist.where(name: artist_name)[0].id
     end
     if @lyric.update(lyrics_params)
       render json: @lyric
