@@ -12,4 +12,10 @@
     <br>
     <button>Log In</button>
   </form>
+  <form action="<%= session_url %>" method="post">
+    <%= render "shared/auth_token" %>
+    <input type="hidden" name="user[username]" value="guest">
+    <input type="hidden" name="user[password]" value="password">
+    <button>Log In As Guest</button>
+  </form>
 </section>

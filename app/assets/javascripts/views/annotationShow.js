@@ -21,6 +21,7 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
       return currentUser;
     } else {
       window.location = "/session/new";
+      return false;
     }
   },
 
@@ -55,6 +56,8 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
 
   addGeniusIq: function (event) {
     event.preventDefault();
+    debugger
+    //add currentuser check here.
     var userId = this.model.get("user_id");
     var currentUserId = Genius.CurrentUser.get("id");
     if (userId === currentUserId) {
