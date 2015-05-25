@@ -8,16 +8,16 @@ Genius.Collections.Lyrics = Backbone.Collection.extend ({
     var lyric = this.get(id);
     var lyrics = this;
     if (lyric) {
-      lyric.fetch()
+      lyric.fetch();
     } else {
       lyric = new Genius.Models.Lyric ({ id: id });
       lyric.fetch({
         success: function () {
-          lyrics.add(lyric)
+          lyrics.add(lyric);
         }
       })
     }
 
-    return lyric
+    return lyric;
   }
 })

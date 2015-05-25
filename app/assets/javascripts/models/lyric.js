@@ -52,21 +52,13 @@ Genius.Models.Lyric = Backbone.Model.extend ({
           + (lyric.slice(startPos, endPos)) + "</a>";
         annoLyric = annoLyric.replace(
           lyric.slice(startPos, endPos), annotated);
-        // clone the lyric before adding anchor tags
-
-
       })
       var re = /\n/g;
       return annoLyric.replace(re, '<br>');
     }
 
-
-
   },
 
-  // when you set attrs on a model, it calls toJSON
-  // in order to build the lyric params, i need to override toJSON
-  // and nest my attributes in lyric hash
   toJSON: function () {
     return { lyric: _.clone(this.attributes) }
   }

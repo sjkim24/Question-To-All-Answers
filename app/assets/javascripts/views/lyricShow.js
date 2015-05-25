@@ -13,6 +13,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     this.$rootEl = options.$rootEl;
     this.annotations = options.annotations;
     this.listenTo(this.model, 'sync', this.render);
+    this.upvotes = options.upvotes;
   },
 
   render: function () {
@@ -58,7 +59,6 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     var i = 0;
     var selLength = selSplit.length;
     while (i < selLength - 1) {
-      console.log(i)
       var first = selSplit[i].charCodeAt();
       var second = selSplit[i + 1].charCodeAt();
       if ((first >= 97 && first <= 122) && (second >= 65 && second <= 90)) {
@@ -95,7 +95,8 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     var id = $(event.currentTarget).attr("data-id");
     var annotation = this.annotations.getOrFetch(id);
     var annoShow = new Genius.Views.AnnotationShow ({
-      model: annotation
+      model: annotation,
+      upvotes: this.upvotes
     });
     this.$rootEl.append(annoShow.render().$el);
   }

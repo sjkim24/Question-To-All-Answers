@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :artists, only: [:index, :show]
     resources :annotations, except:[:new]
     resource :currentuser, only: [:show]
+    resources :upvotes, only: [:index, :create, :show, :update]
   end
 end

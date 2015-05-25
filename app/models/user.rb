@@ -16,6 +16,12 @@ class User < ActiveRecord::Base
     foreign_key: :user_id,
     primary_key: :id
 
+  has_many :upvotes,
+    class_name: "Upvote",
+    foreign_key: :user_id,
+    primary_key: :id
+
+
   def self.generate_random_token
     SecureRandom.urlsafe_base64(16)
   end

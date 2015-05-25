@@ -12,4 +12,9 @@ class Annotation < ActiveRecord::Base
     foreign_key: :user_id,
     primary_key: :id
 
+  has_many :upvotes,
+    class_name: "Upvote",
+    foreign_key: :anno_id,
+    primary_key: :id
+
 end

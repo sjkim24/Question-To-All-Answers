@@ -17,7 +17,7 @@ class Api::UsersController < Api::ApiController
 
     if @user.update(users_params)
 
-      render json: @user
+      render :show
     else
       render json: @user.errors.full_messages, status: :unprocessable_entity
     end

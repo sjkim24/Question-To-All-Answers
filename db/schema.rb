@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525153254) do
+ActiveRecord::Schema.define(version: 20150525183300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,8 +50,9 @@ ActiveRecord::Schema.define(version: 20150525153254) do
   add_index "lyrics", ["artist_id"], name: "index_lyrics_on_artist_id", using: :btree
 
   create_table "upvotes", force: :cascade do |t|
-    t.integer "anno_id", null: false
-    t.integer "user_id", null: false
+    t.integer "anno_id",                     null: false
+    t.integer "user_id",                     null: false
+    t.string  "upvoted", default: "neutral", null: false
   end
 
   add_index "upvotes", ["anno_id"], name: "index_upvotes_on_anno_id", using: :btree

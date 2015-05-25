@@ -6,6 +6,7 @@ Genius.Routers.Router = Backbone.Router.extend({
     this.artists = new Genius.Collections.Artists ();
     this.annotations = new Genius.Collections.Annotations ();
     this.users = new Genius.Collections.Users ();
+    this.upvotes = new Genius.Collections.Upvotes ();
   },
 
   routes: {
@@ -37,10 +38,12 @@ Genius.Routers.Router = Backbone.Router.extend({
 
   lyricShow: function (id) {
     var lyric = this.lyrics.getOrFetch(id);
+    // this.upvotes.fetch();
     var showView = new Genius.Views.LyricShow ({
       model: lyric,
       annotations: this.annotations,
-      $rootEl: this.$rootEl
+      $rootEl: this.$rootEl,
+      upvotes: this.upvotes
      });
     this._swapView(showView);
   },

@@ -10,7 +10,8 @@ class Lyric < ActiveRecord::Base
   has_many :annotations,
     class_name: "Annotation",
     foreign_key: :lyric_id,
-    primary_key: :id
+    primary_key: :id,
+    dependent: :destroy
 
   belongs_to :user,
     class_name: "User",

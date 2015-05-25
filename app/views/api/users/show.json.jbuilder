@@ -1,5 +1,5 @@
 json.extract! @user, :id, :email, :username, :genius_iq, :about_me
-json.image_url asset_path(@user.image.url(:original))
+# json.image_url asset_path(@user.image.url(:original))
 
 json.lyrics @user.lyrics do |lyric|
   json.id lyric.id
