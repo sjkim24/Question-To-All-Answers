@@ -1,6 +1,6 @@
 class Lyric < ActiveRecord::Base
 
-  validates :lyric, :track_title, presence: true
+  validates :lyric, :track_title, :artist_id, presence: true
 
   belongs_to :artist,
     class_name: "Artist",

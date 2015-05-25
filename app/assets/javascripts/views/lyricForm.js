@@ -38,6 +38,15 @@ Genius.Views.LyricForm = Backbone.View.extend ({
       success: function () {
         that.collection.add(that.model, { merge: true });
         Backbone.history.navigate('lyrics/' + that.model.id, { trigger: true });
+      },
+
+      error: function (model, response) {
+        $('.errors').empty();
+        response.responseJSON.forEach(function(el) {
+          var li = $('<li></li>');
+          li.html(el);
+          $('.errors').append(li);
+        }.bind(this));
       }
     })
   }

@@ -9,8 +9,12 @@ class Api::LyricsController < Api::ApiController
   def create
     @lyric = Lyric.new(lyrics_params)
     @lyric.user_id = current_user.id
-    artist_name = params[:lyric][:artist_name]
-    @lyric.artist_id = Artist.find_or_create_by(name: artist_name).id
+    artist_name = params[:lyric][:artist_id]
+    if artist_name.blank?
+      @lyric.artist_id = nil
+    else
+      @lyric.artist_id = Artist.where(name: artist_name).id
+    end
 
     if @lyric.save
       render json: @lyric
@@ -39,8 +43,12 @@ class Api::LyricsController < Api::ApiController
 
   def update
     @lyric = Lyric.find(params[:id])
-    artist_name = params[:lyric][:artist_name]
-    @lyric.artist_id = Artist.find_or_create_by(name: artist_name).id
+    artist_name = params[:lyric][:artist_id]
+    if artist_name.blank?
+      @lyric.artist_id = nil
+    else
+      @lyric.artist_id = Artist.where(name: artist_name).id
+    end
     if @lyric.update(lyrics_params)
       render json: @lyric
     else

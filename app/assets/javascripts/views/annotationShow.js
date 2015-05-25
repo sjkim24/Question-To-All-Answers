@@ -77,9 +77,8 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
       }
 
     })
-    // }
-    return this;
 
+    return this;
   },
 
   editAnno: function (event) {

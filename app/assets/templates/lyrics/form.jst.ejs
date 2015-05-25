@@ -1,11 +1,12 @@
 <h2>Create Lyric</h2>
+<ul class="errors"></ul>
 <label class="title-label">Title
   <input class="title" type="text" name="lyric[track_title]"
          value="<%= lyric.escape("track_title") %>">
 </label>
 <br>
 <label>Artist
-  <input class="artist" type="text" name="lyric[artist_name]"
+  <input class="artist" type="text" name="lyric[artist_id]"
          value="<%= lyric.artist().escape("name") %>">
 </label>
 <br>
