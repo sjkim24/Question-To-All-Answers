@@ -4,7 +4,7 @@
 }
 
 .index {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: bold;
   padding: 20px 0 0 0;
 }
@@ -12,17 +12,24 @@
 .index h1 {
   font-size: 28px;
   font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: red;
+  width: 800px;
+  margin: auto;
 }
 
 .lyrics {
   float: left;
   padding: 20px 0 0 0;
+  width: 500px;
+  border-right: 1px solid #ccc;
 }
 
 .lyrics > li {
+  font-size: 18px;
   padding: 3px 0 0 0;
 }
 
 .genius a:hover {
-  background: #eee;
+  background: #C0C0C0;
 }

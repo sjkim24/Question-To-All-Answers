@@ -21,16 +21,17 @@
 }
 
 .genius #lyric {
-  width: 500px;
+  width: 550px;
   margin: 0 0 40px 0;
+  border-right: 1px solid #ccc;
 }
 
 #lyric a {
-  background: #eee;
+  background: #C0C0C0;
 }
 
 #lyric a:hover {
-  background: #FFFF99;
+  background: #C0C0C0;
 }
 
 .genius .anno-form {
