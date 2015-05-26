@@ -3,7 +3,8 @@ json.extract! @user, :id, :email, :username, :genius_iq, :about_me
 
 json.lyrics @user.lyrics do |lyric|
   json.id lyric.id
-  json.artist_id lyric.artist_id
+  json.artist_name lyric.artist.name
+  json.artist_id lyric.artist.id
   json.track_title lyric.track_title
   json.user_id lyric.user_id
 end
