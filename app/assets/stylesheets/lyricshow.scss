@@ -6,17 +6,17 @@
 .genius article {
   float: left;
   font-family: 'Roboto', sans-serif;
-  padding: 20px 0 0 0;
+  padding: 30px 0 0 0;
 }
 
 .genius .lyric-title {
-  padding: 0 0 10px 0;
+  padding: 0 0 20px 0;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 28px;
 }
 
 .genius .artist-edit {
-  font-size: 18px;
+  font-size: 22px;
   padding: 0 0 10px 0;
 }
 
@@ -31,7 +31,7 @@
 }
 
 #lyric a:hover {
-  background: #C0C0C0;
+  background: #FFCC33;
 }
 
 .genius .anno-form {
@@ -40,7 +40,7 @@
   margin: 20px 0 0 0;
   width: 200px;
   border: 1px solid #000;
-  background: #FFFF99;
+  background: #FFCC33;
 }
 
 .genius .anno-textarea {
@@ -74,5 +74,5 @@
 .contributor {
   display: block;
   padding: 10px 0 0 0;
-  font-size: 16px;
+  font-size: 18px;
 }
