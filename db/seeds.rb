@@ -1,5 +1,6 @@
 user1 = User.create(email: 'sj1@email.com', username: 'sj1', password: 'password')
 user2 = User.create(email: 'sj2@email.com', username: 'sj2', password: 'password')
+guest = User.create(email: 'guest@email.com', username: 'guest', password: 'password')
 
 artist1 = Artist.create(name: 'Kendrick Lamar')
 artist2 = Artist.create(name: 'J.Cole')
