@@ -14,7 +14,7 @@ Genius.Views.LyricsIndex = Backbone.CompositeView.extend ({
   },
 
   render: function () {
-    var content = this.template({ lyrics: this.collection });
+    var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
     return this

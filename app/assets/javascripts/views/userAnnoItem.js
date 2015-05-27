@@ -1,18 +1,16 @@
-Genius.Views.UserLyricItem = Backbone.View.extend ({
+Genius.Views.UserAnnoItem = Backbone.View.extend ({
 
   tagName: 'li',
 
-  template: JST['users/lyric'],
+  template: JST['users/anno'],
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
   },
 
   render: function () {
-    debugger
-    var content = this.template( {lyric: this.model });
+    var content = this.template({ anno: this.model });
     this.$el.html(content);
     return this;
   }
-
 })

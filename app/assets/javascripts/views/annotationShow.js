@@ -27,23 +27,6 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
   },
 
   render: function () {
-    // var that = this;
-    // var userId = this.model.get("user_id");
-    // var user = new Genius.Models.User({ id: userId });
-    // user.fetch({
-    //   success: function () {
-    //     var username = user.get("username");
-    //     var content = that.template({
-    //       annotation: that.model,
-    //       username: username
-    //     });
-    //     that.$el.html(content);
-    //   }
-    //
-    // })
-    //
-    // return this;
-
     var upvote = this.model.upvotes().findWhere({
       anno_id: this.model.get("id"),
       user_id: Genius.CurrentUser.get("id")

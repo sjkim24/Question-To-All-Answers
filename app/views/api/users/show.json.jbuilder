@@ -11,6 +11,7 @@ end
 
 json.annotations @user.annotations do |annotation|
   json.id annotation.id
+  json.track_title annotation.lyric.track_title
   json.lyric_text annotation.lyric_text
   json.lyric_id annotation.lyric_id
   json.user_id annotation.user_id

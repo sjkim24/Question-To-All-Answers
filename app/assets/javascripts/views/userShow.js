@@ -10,14 +10,10 @@ Genius.Views.UserShow = Backbone.CompositeView.extend ({
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
-    this.listenTo(this.model.lyrics(), 'add', this.addLyricView);
-    // this.listenTo(this.model.annotations(), 'add', this.addAnnoView);
-    this.model.lyrics().each(this.addLyricView.bind(this));
-    // this.model.annotations().each(this.addAnnoView.bind(this));
   },
 
   currentUser: function () {
-    var loggedin = Genius.CurrentUser.get("loggedin")
+    var loggedin = Genius.CurrentUser.get("loggedin");
     return loggedin;
   },
 
@@ -25,11 +21,6 @@ Genius.Views.UserShow = Backbone.CompositeView.extend ({
     var subview = new Genius.Views.UserLyricItem({ model: lyric });
     this.addSubview('.user-lyrics', subview);
   },
-  //
-  // addAnnoView: function (anno) {
-  //   var subview = new Genius.Views.AnnoShowItem({ model: anno });
-  //   this.addSubview('.profile-link', subview);
-  // },
 
   render: function () {
     var content = this.template({
@@ -40,21 +31,20 @@ Genius.Views.UserShow = Backbone.CompositeView.extend ({
     return this;
   },
 
-  renderUserLyrics: function () {
-    var content = this.template({
-      user: this.model,
-      currentUserId: Genius.CurrentUser.get("id")
-    });
-    this.$el.html(content);
-    this.attachSubviews();
-    return this
+  renderUserLyrics: function (event) {
+    event.preventDefault();
+    var lyrics = new Genius.Views.UserLyrics ({ collection: this.model.lyrics() });
+    this.$('.user-lyrics').html(lyrics.render().$el);
   },
 
-  renderUserAnnotations: function () {
-
+  renderUserAnnotations: function (event) {
+    event.preventDefault();
+    var annos = new Genius.Views.UserAnnotations ({ collection: this.model.annotations() });
+    this.$('.user-annos').html(annos.render().$el);
   },
 
-  renderUserAboutMe: function () {
+  renderUserAboutMe: function (event) {
+    event.preventDefault();
 
   }
 

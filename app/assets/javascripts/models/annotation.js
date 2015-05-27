@@ -9,7 +9,20 @@ Genius.Models.Annotation = Backbone.Model.extend ({
       delete response.upvotes;
     }
 
+    if (response.lyric) {
+      annotation.lyric().set(response.lyric);
+      delete response.lyric;
+    }
+
     return response;
+  },
+
+  lyric: function () {
+    if (!this._lyric) {
+      this._lyric = new Genius.Models.Lyric( {}, { annotation: this })
+    }
+
+    return this._lyric;
   },
 
   upvotes: function () {
