@@ -1,6 +1,6 @@
 Genius.Views.UserAnnotations = Backbone.CompositeView.extend ({
 
-  template: JST['users/links'],
+  template: JST['users/annos'],
 
   initialize: function () {
     this.listenTo(this.collection, 'add', this.addAnnoView);
@@ -9,7 +9,7 @@ Genius.Views.UserAnnotations = Backbone.CompositeView.extend ({
 
   addAnnoView: function (anno) {
     var subview = new Genius.Views.UserAnnoItem({ model: anno });
-    this.addSubview('.user-links', subview);
+    this.addSubview('.user-annos', subview);
   },
 
   render: function () {

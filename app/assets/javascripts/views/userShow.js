@@ -26,20 +26,30 @@ Genius.Views.UserShow = Backbone.CompositeView.extend ({
     return this;
   },
 
+  clearUserLinks: function (){
+    $('.user-lyrics').remove();
+    $('.user-annos').remove();
+    $('.user-about-me').remove();
+    $('.user-link-header').remove();
+  },
+
   renderUserLyrics: function (event) {
     event.preventDefault();
+    this.clearUserLinks();
     var lyrics = new Genius.Views.UserLyrics ({ collection: this.model.lyrics() });
-    this.$('.user-links').html(lyrics.render().$el);
+    this.$el.append(lyrics.render().$el);
   },
 
   renderUserAnnotations: function (event) {
     event.preventDefault();
+    this.clearUserLinks();
     var annos = new Genius.Views.UserAnnotations ({ collection: this.model.annotations() });
-    this.$('.user-links').html(annos.render().$el);
+    this.$el.append(annos.render().$el);
   },
 
   renderUserAboutMe: function (event) {
     event.preventDefault();
+    this.clearUserLinks();
 
   }
 
