@@ -1,6 +1,6 @@
 Genius.Views.UserLyrics = Backbone.CompositeView.extend ({
 
-  template: JST["users/lyrics"],
+  template: JST["users/links"],
 
   initialize: function () {
     this.listenTo(this.collection, 'add', this.addLyricView);
@@ -9,7 +9,7 @@ Genius.Views.UserLyrics = Backbone.CompositeView.extend ({
 
   addLyricView: function (lyric) {
     var subview = new Genius.Views.UserLyricItem({ model: lyric });
-    this.addSubview('.user-lyrics', subview)
+    this.addSubview('.user-links', subview)
   },
 
   render: function () {

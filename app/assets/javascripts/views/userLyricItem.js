@@ -9,7 +9,6 @@ Genius.Views.UserLyricItem = Backbone.View.extend ({
   },
 
   render: function () {
-    debugger
     var content = this.template( {lyric: this.model });
     this.$el.html(content);
     return this;
