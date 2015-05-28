@@ -35,7 +35,11 @@
 }
 
 .about-me {
+  display: block;
   cursor: pointer;
+  max-width: 240px;
+  overflow: hidden;
+  white-space: nowrap;
   border-bottom: 1px solid #FFCC33;
 }
 
