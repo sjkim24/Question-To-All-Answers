@@ -48,6 +48,13 @@
   float: left;
 }
 
+.user-id a {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 120px;
+}
+
 .header-list .logout {
   display: block;
   padding: 10px 20px;
