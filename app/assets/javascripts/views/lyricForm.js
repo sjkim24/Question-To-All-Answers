@@ -19,6 +19,7 @@ Genius.Views.LyricForm = Backbone.View.extend ({
     if (currentUser) {
       return currentUser;
     } else {
+      alert("You must login first!")
       window.location = "/session/new"
     }
   },

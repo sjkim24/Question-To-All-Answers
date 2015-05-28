@@ -21,6 +21,7 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
     if (currentUser) {
       return currentUser;
     } else {
+      alert("You must login first!")
       window.location = "/session/new";
       return false;
     }
