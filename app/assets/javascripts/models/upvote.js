@@ -18,7 +18,12 @@ Genius.Models.Upvote = Backbone.Model.extend ({
     }
 
     return upvote
+  },
+
+  toJSON: function () {
+    return { upvote: _.clone(this.attributes) };
   }
+
 
 
 })

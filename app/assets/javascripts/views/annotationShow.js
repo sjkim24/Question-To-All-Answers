@@ -86,7 +86,6 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
           anno_id: that.model.get("id"),
           user_id: currentUserId,
         })
-
         if (upvote === undefined) {
           upvote = new Genius.Models.Upvote ({
             anno_id: that.model.get("id"),
