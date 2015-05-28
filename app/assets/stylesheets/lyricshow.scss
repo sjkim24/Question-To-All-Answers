@@ -3,6 +3,13 @@
   margin: auto;
 }
 
+.anno-tip {
+  font-size: 22px;
+  font-weight: bold;
+  color: #FFCC33;
+  padding: 0 0 20px 0;
+}
+
 .genius article {
   float: left;
   font-family: 'Roboto', sans-serif;
@@ -77,6 +84,10 @@
   text-align: center;
   font-weight: bold;
   font-size: 28px;
+}
+
+h3.lyric {
+  font-weight: bold;
 }
 
 .anno-form h3 {
