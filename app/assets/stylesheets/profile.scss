@@ -5,13 +5,16 @@
   margin: 20px auto;
 }
 
-.profile img {
-  content: "profile pic";
+.profile .prof-pic {
   width: 200px;
   height: 200px;
   border: 1px solid #000;
   margin: 20px 0 20px 0;
+}
 
+.profile img {
+  width: 100%;
+  max-height: 200px;
 }
 
 .profile section {
@@ -59,4 +62,8 @@
   width: 800px;
   margin: 20px 0 0 0;
 
+}
+
+.edit-prof-pic:hover {
+  cursor: pointer;
 }

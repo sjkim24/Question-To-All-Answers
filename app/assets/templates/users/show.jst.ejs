@@ -1,7 +1,9 @@
 <article class="profile">
-  <img>
-  <section class="username">
-    <%= user.escape("username") %>
+  <section class="prof-pic">
+    <img src="<%= user.escape("image_url") %>">
+  </section>
+  <section class="edit-prof-pic">
+    Edit Profile Picture
   </section>
   <section class="genius-iq">
     Genius IQ: <%= user.escape("genius_iq") %>
@@ -13,6 +15,6 @@
     Annotations
   </section>
   <section class="about-me">
-    About Me
+    About <%= user.escape("username") %>
   </section>
 </article>

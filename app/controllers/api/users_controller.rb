@@ -26,7 +26,7 @@ class Api::UsersController < Api::ApiController
 
   private
     def users_params
-      params.require(:user).permit(:email, :username, :about_me, :genius_iq)
+      params.require(:user).permit(:email, :username, :about_me, :genius_iq, :image)
     end
 
 end

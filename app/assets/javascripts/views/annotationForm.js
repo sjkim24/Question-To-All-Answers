@@ -30,7 +30,7 @@ Genius.Views.AnnotationForm = Backbone.View.extend ({
   render: function () {this
     var content = this.template({
       annotation: this.model,
-      sel: this.sel 
+      sel: this.sel
     });
     this.$el.html(content);
     return this;
@@ -54,8 +54,5 @@ Genius.Views.AnnotationForm = Backbone.View.extend ({
       }
     })
   }
-
-  //createclassapplier
-  //applytoselection
 
 })
