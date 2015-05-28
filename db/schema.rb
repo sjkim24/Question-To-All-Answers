@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525183300) do
+ActiveRecord::Schema.define(version: 20150528200541) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,12 +59,16 @@ ActiveRecord::Schema.define(version: 20150525183300) do
   add_index "upvotes", ["user_id"], name: "index_upvotes_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string  "email",                                               null: false
-    t.string  "username",                                            null: false
-    t.string  "password_digest",                                     null: false
-    t.text    "about_me",        default: "Tell us about yourself!"
-    t.string  "session_token",                                       null: false
-    t.integer "genius_iq",       default: 0
+    t.string   "email",                                                  null: false
+    t.string   "username",                                               null: false
+    t.string   "password_digest",                                        null: false
+    t.text     "about_me",           default: "Tell us about yourself!"
+    t.string   "session_token",                                          null: false
+    t.integer  "genius_iq",          default: 0
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

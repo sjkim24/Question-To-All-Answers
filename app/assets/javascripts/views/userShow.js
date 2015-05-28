@@ -5,7 +5,11 @@ Genius.Views.UserShow = Backbone.CompositeView.extend ({
   events: {
     'click .lyrics': 'renderUserLyrics',
     'click .annotations': 'renderUserAnnotations',
-    'click .about-me': 'renderUserAboutMe'
+    'click .about-me': 'renderUserAboutMe',
+    'click .edit-prof-pic': 'renderProfPicForm',
+    'click .edit-about-me': 'renderEditAboutMe',
+    'click .submit-pic': 'submitProfPic',
+    'change #input-user-image': 'fileInputChange'
   },
 
   initialize: function () {
@@ -31,6 +35,7 @@ Genius.Views.UserShow = Backbone.CompositeView.extend ({
     $('.user-annos').remove();
     $('.user-about-me').remove();
     $('.user-link-header').remove();
+    $('.user-about-me').remove();
   },
 
   renderUserLyrics: function (event) {
@@ -50,6 +55,55 @@ Genius.Views.UserShow = Backbone.CompositeView.extend ({
   renderUserAboutMe: function (event) {
     event.preventDefault();
     this.clearUserLinks();
+    var aboutMe = new Genius.Views.UserAboutMe ({ model: this.model });
+    this.$el.append(aboutMe.render().$el);
+
+  },
+
+  renderEditAboutMe: function (event) {
+    event.preventDefault();
+    this.clearUserLinks();
+
+  },
+
+  renderProfPicForm: function (event) {
+    event.preventDefault();
+    this.clearUserLinks();
+    var profPicForm = new Genius.Views.UserProfPicForm ({ model: this.model });
+    this.$el.append(profPicForm.render().$el);
+  },
+
+  fileInputChange: function(event){
+    var that = this;
+    var file = event.currentTarget.files[0];
+    var reader = new FileReader();
+    reader.onloadend = function(){
+      that._updatePreview(reader.result);
+      that.model._image = reader.result;
+    }
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      that._updatePreview("");
+      delete that.model._image;
+    }
+  },
+
+  _updatePreview: function(src){
+    this.$el.find("#preview-post-image").attr("src", src);
+  },
+
+  submitProfPic: function (event) {
+    event.preventDefault();
+    var that = this;
+    var profPic = $(event.currentTarget).serializeJSON().user;
+    var userId = this.model.get('id')
+    this.model.save(profPic, {
+      success: function () {
+        Backbone.history.navigate('#/users/' + userId, { trigger: true });
+      }
+    })
 
   }
 

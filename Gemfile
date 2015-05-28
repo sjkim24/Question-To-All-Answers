@@ -24,7 +24,7 @@ gem 'bcrypt', require: 'bcrypt'
 
 gem "figaro"
 gem "paperclip"
-gem "aws-sdk"
+gem "aws-sdk", '< 2.0'
 
 
 

@@ -36,6 +36,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
   },
 
   getRange: function (event) {
+    // alert user if selection already has annotation
     event.preventDefault();
     var lyric = document.getElementById("lyric");
     var sel = rangy.getSelection();

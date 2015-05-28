@@ -5,13 +5,16 @@
   margin: 20px auto;
 }
 
-.profile img {
-  content: "profile pic";
+.profile .prof-pic {
   width: 200px;
   height: 200px;
   border: 1px solid #000;
   margin: 20px 0 20px 0;
+}
 
+.profile img {
+  width: 100%;
+  max-height: 200px;
 }
 
 .profile section {
@@ -32,7 +35,11 @@
 }
 
 .about-me {
+  display: block;
   cursor: pointer;
+  max-width: 240px;
+  overflow: hidden;
+  white-space: nowrap;
   border-bottom: 1px solid #FFCC33;
 }
 
@@ -41,7 +48,15 @@
   width: 800px;
   margin: 69px 0 0 0;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 28px;
+}
+
+.user-lyrics li {
+  font-size: 22px;
+}
+
+.user-annos li {
+  font-size: 22px;
 }
 
 .user-annos {
@@ -59,4 +74,8 @@
   width: 800px;
   margin: 20px 0 0 0;
 
+}
+
+.edit-prof-pic:hover {
+  cursor: pointer;
 }

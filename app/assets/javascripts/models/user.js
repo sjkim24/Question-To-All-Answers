@@ -31,6 +31,16 @@ Genius.Models.User = Backbone.Model.extend ({
     }
 
     return this._annotations;
+  },
+
+  toJSON: function () {
+    var json = { user: _.clone(this.attributes) };
+
+    if (this._image) {
+      json.user.image = this._image;
+    }
+
+    return json;
   }
 
 })

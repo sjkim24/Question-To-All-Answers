@@ -7,12 +7,12 @@
       It's the question to all answers" -Tablo </h2>
 
     <ul class="header-list group">
-      <li><a class="create-lyric" href="#/lyrics/new">Create Lyric</a><li>
+      <li><a class="create-lyric" href="#/lyrics/new">Create Lyric</a></li>
       <% if current_user.nil? %>
         <li><a href="<%= new_user_url %>">Sign Up</a></li>
         <li><a href="<%= new_session_url %>">Log In</a></li>
       <% else %>
-        <li><a href="#/users/<%= current_user.id %>"><%= current_user.username %></a></li>
+        <li class="user-id"><a href="#/users/<%= current_user.id %>"><%= current_user.username %></a></li>
         <li><form action="<%= session_url %>" method="post">
           <input type="hidden" name="_method" value="delete">
           <%= render "shared/auth_token" %>
