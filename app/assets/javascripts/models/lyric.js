@@ -60,7 +60,7 @@ Genius.Models.Lyric = Backbone.Model.extend ({
   },
 
   toJSON: function () {
-    return { lyric: _.clone(this.attributes) }
+    return { lyric: _.clone(this.attributes) };
   }
 
 })
