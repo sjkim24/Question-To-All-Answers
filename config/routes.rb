@@ -13,6 +13,5 @@ Rails.application.routes.draw do
     resources :annotations, except:[:new]
     resource :currentuser, only: [:show]
     resources :upvotes, only: [:index, :create, :show, :update]
-    resources :search, only: [:index, :show]
   end
 end

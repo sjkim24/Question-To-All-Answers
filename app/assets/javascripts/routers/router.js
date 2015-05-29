@@ -16,8 +16,7 @@ Genius.Routers.Router = Backbone.Router.extend({
     'lyrics/:id/edit': 'lyricEdit',
     'artists': 'artistsIndex',
     'artists/:id': 'artistShow',
-    'users/:id': 'userShow',
-    'search': 'search'
+    'users/:id': 'userShow'
   },
 
   lyricsIndex: function () {
@@ -83,13 +82,6 @@ Genius.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(showView);
-  },
-
-  search: function () {
-  var view = new Genius.Views.Search();
-
-  this._swapView(view);
-
   },
 
   _swapView: function (view) {
