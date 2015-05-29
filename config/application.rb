@@ -28,13 +28,9 @@ module Genius
     config.paperclip_defaults = {
       :storage => :s3,
       :s3_credentials => {
-<<<<<<< HEAD
-        :bucket => "geniusclonedev",
-=======
-        :bucket => "s3_bucket",
->>>>>>> image
-        :access_key_id => ENV["s3_access_key_id"],
-        :secret_access_key => ENV["s3_secret_access_key"]
+      :bucket => "s3_bucket",
+      :access_key_id => ENV["s3_access_key_id"],
+      :secret_access_key => ENV["s3_secret_access_key"]
       }
     }
 

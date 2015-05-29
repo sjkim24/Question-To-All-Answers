@@ -32,15 +32,8 @@
 
 .login input {
   text-align: left;
-  width: 400px
-}
-
-.login .username {
-  border: solid 1px #ccc;
-}
-
-.login .password {
-  border: solid 1px #ccc;
+  width: 400px;
+  border: 1px solid #ccc;
 }
 
 .login button {
@@ -48,7 +41,7 @@
   text-transform: uppercase;
   padding: 0 10px 0 10px;
   margin: 0 0 10px 0;
-  border: solid 1px #ccc;
+  border: 1px solid #ccc;
   text-align: center
 }
 

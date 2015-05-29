@@ -21,9 +21,7 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
     if (currentUser) {
       return currentUser;
     } else {
-      alert("You must login first!")
-      window.location = "/session/new";
-      return false;
+      window.location = "/session/redirect";
     }
   },
 
@@ -78,6 +76,7 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
 
   upvoteChecker: function (event) {
     event.preventDefault();
+    this.currentUserChecker();
     var that = this;
     var userId = this.model.get("user_id");
     var currentUserId = Genius.CurrentUser.get("id");
