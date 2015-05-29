@@ -123,10 +123,50 @@ form textarea {
 .user-about-me button:hover {
   background: #ccc;
   cursor: pointer;
-
 }
 
 .edit-prof-pic:hover {
   cursor: pointer;
+}
 
+.prof-pic-form {
+  float: right;
+  width: 800px;
+  margin: 69px 0 0 0;
+}
+
+.prof-pic-form h1 {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.prof-pic-form .prof-pic-button{
+  border-radius: 25px;
+  text-transform: uppercase;
+  padding: 0 10px 0 10px;
+  border: 1px solid #ccc;
+  text-align: center
+}
+
+.prof-pic-form .prof-pic-button:hover {
+  background: #ccc;
+  cursor: pointer;
+}
+
+.prof-pic-form .cancel{
+  border-radius: 25px;
+  text-transform: uppercase;
+  padding: 0 10px 0 10px;
+  border: 1px solid #ccc;
+  text-align: center
+}
+
+.prof-pic-form .cancel:hover {
+  background: #ccc;
+  cursor: pointer;
+}
+
+img#preview-user-image {
+  width: 100px;
+  height: auto;
 }

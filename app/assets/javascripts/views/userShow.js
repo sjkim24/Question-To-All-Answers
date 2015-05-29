@@ -36,6 +36,7 @@ Genius.Views.UserShow = Backbone.CompositeView.extend ({
     $('.user-about-me').remove();
     $('.user-link-header').remove();
     $('.user-about-me').remove();
+    $('.prof-pic-form').remove();
   },
 
   renderUserLyrics: function (event) {
@@ -94,7 +95,7 @@ Genius.Views.UserShow = Backbone.CompositeView.extend ({
   },
 
   _updatePreview: function(src){
-    this.$el.find("#preview-post-image").attr("src", src);
+    this.$el.find("#preview-user-image").attr("src", src);
   },
 
   submitProfPic: function (event) {
