@@ -20,5 +20,4 @@ Genius.Views.UserProfPicForm = Backbone.View.extend ({
   removeForm: function () {
     this.$el.remove();
   }
-
 })
