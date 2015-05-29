@@ -16,7 +16,6 @@ class Api::UsersController < Api::ApiController
     @user = User.find(params[:id])
 
     if @user.update(users_params)
-
       render :show
     else
       render json: @user.errors.full_messages, status: :unprocessable_entity

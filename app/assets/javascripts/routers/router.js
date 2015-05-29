@@ -82,11 +82,6 @@ Genius.Routers.Router = Backbone.Router.extend({
     });
 
     this._swapView(showView);
-    // showView.currentUser();
-    // if (currentUser || !currentUser) {
-    //   this._swapView(showView);
-    // }
-
   },
 
   _swapView: function (view) {
