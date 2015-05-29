@@ -63,7 +63,8 @@ Genius.Views.UserShow = Backbone.CompositeView.extend ({
   renderEditAboutMe: function (event) {
     event.preventDefault();
     this.clearUserLinks();
-
+    var aboutMeForm = new Genius.Views.UserAboutMeForm ({ model: this.model });
+    this.$el.append(aboutMeForm.render().$el);
   },
 
   renderProfPicForm: function (event) {

@@ -77,6 +77,20 @@
   cursor: pointer;
 }
 
+form.user-about-me {
+  float: right;
+  width: 800px;
+  margin: 70px 0 0 0;
+}
+
+form textarea {
+  display: block;
+  margin: 20px 0 20px 0;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #FFCC33;
+}
+
 .user-about-me {
   float:right;
   width: 800px;

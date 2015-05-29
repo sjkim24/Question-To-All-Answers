@@ -4,7 +4,6 @@
   margin: 20px auto;
   padding: 20px 0 20px 0;
   border: 1px solid #ccc;
-  vertical-align: top;
   text-align: center;
 
 }
@@ -24,23 +23,28 @@
   display: block;
   font-size: 18px;
   padding: 20px 0 0 10px;
+  vertical-align: text-top;
 }
 
 .lyric-form .title {
   border: solid 1px #ccc;
-  padding: 0 275px 0 0;
+  width: 500px;
   text-align: left;
 }
 
 .lyric-form .artist {
   border: solid 1px #ccc;
-  padding: 0 275px 0 0;
+  width: 500px;
   text-align: left;
+
 }
 
 .lyric-form textarea {
   border: solid 1px #ccc;
+  width: 500px;
+  height: 500px;
   text-align: left;
+  margin: auto;
 }
 
 .lyric-form .submit-lyric {

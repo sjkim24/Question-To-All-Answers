@@ -1,5 +1,9 @@
 class Lyric < ActiveRecord::Base
 
+  include PgSearch
+
+  multisearchable against: :track_title
+
   validates :lyric, :track_title, :artist_id, presence: true
 
   belongs_to :artist,

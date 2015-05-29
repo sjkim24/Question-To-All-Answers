@@ -19,7 +19,7 @@ Genius.Views.LyricForm = Backbone.View.extend ({
     if (currentUser) {
       return currentUser;
     } else {
-      window.location = "/session/new"
+      window.location = "/session/redirect"
     }
   },
 

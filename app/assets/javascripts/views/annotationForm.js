@@ -23,7 +23,7 @@ Genius.Views.AnnotationForm = Backbone.View.extend ({
     if (currentUser) {
       return currentUser;
     } else {
-      window.location = "/session/new"
+      window.location = "/session/redirect"
     }
   },
 
