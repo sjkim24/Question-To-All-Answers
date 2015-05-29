@@ -64,8 +64,6 @@
   font-size: 18px;
   width: 800px;
   margin: 20px 0 0 0;
-
-
 }
 
 .user-lyrics {
@@ -73,7 +71,43 @@
   font-size: 18px;
   width: 800px;
   margin: 20px 0 0 0;
+}
 
+.edit-prof-pic:hover {
+  cursor: pointer;
+}
+
+.user-about-me {
+  float:right;
+  width: 800px;
+  margin: 40px 0 0 60px;
+}
+
+.user-about-me h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.user-about-me section {
+  display: block;
+  margin: 20px 0 20px 0;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #FFCC33;
+}
+
+.user-about-me button {
+  border-radius: 25px;
+  text-transform: uppercase;
+  padding: 0 10px 0 10px;
+  margin: 0 0 10px 0;
+  border: solid 1px #ccc;
+  text-align: center
+}
+
+.user-about-me button:hover {
+  background: #ccc;
+  cursor: pointer;
 }
 
 .edit-prof-pic:hover {
