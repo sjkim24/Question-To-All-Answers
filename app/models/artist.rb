@@ -1,6 +1,6 @@
 class Artist < ActiveRecord::Base
 
-  validates :name, uniqueness: true
+  validates :name, presence: true, uniqueness: true
 
   has_many :lyrics,
     class_name: "Lyric",

@@ -16,7 +16,7 @@
 #     end
 #
 #     if @lyric.save
-#       render :new
+#       render :show
 #     else
 #       flash.now[:errors] = @lyric.errors.full_messages
 #     end

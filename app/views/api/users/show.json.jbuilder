@@ -5,7 +5,7 @@ json.image_url asset_path(@user.image.url(:original))
 json.lyrics @user.lyrics do |lyric|
   json.id lyric.id
   json.artist_name lyric.artist.name
-  json.artist_id lyric.artist.id
+  json.artist_id lyric.artist_id
   json.track_title lyric.track_title
   json.user_id lyric.user_id
 end

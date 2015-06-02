@@ -10,8 +10,16 @@ class Api::LyricsController < Api::ApiController
     @lyric = Lyric.new(lyrics_params)
     @lyric.user_id = current_user.id
     artist_name = params[:lyric][:artist_id]
-    if artist_name.blank?
+
+    if artist_name == ""
       @lyric.artist_id = nil
+    elsif @lyric.lyric == ""
+      @lyric.lyric = nil
+    elsif @lyric.track_title == ""
+      @lyric.track_title = nil
+    elsif @lyric.lyric == "" && @lyric.track_title == ""
+      @lyric.lyric = nil
+      @lyric.track_title = nil
     else
       @lyric.artist_id = Artist.find_or_create_by(name: artist_name).id
     end
@@ -44,11 +52,20 @@ class Api::LyricsController < Api::ApiController
   def update
     @lyric = Lyric.find(params[:id])
     artist_name = params[:lyric][:artist_id]
-    if artist_name.blank?
+
+    if artist_name == ""
       @lyric.artist_id = nil
+    elsif @lyric.lyric == ""
+      @lyric.lyric = nil
+    elsif @lyric.track_title == ""
+      @lyric.track_title = nil
+    elsif @lyric.lyric == "" && @lyric.track_title == ""
+      @lyric.lyric = nil
+      @lyric.track_title = nil
     else
-      @lyric.artist_id = Artist.find_or_create_by(name: artist_name).id
+      params[:lyric][:artist_id] = Artist.find_or_create_by(name: artist_name).id
     end
+
     if @lyric.update(lyrics_params)
       render json: @lyric
     else
@@ -56,7 +73,6 @@ class Api::LyricsController < Api::ApiController
     end
   end
 
-  #genius doesn't have delete function
   def destroy
     @lyric = Lyric.find(params[:id])
     @lyric.destroy
@@ -65,7 +81,7 @@ class Api::LyricsController < Api::ApiController
 
   private
     def lyrics_params
-      params.require(:lyric).permit(:lyric, :track_title)
+      params.require(:lyric).permit(:lyric, :track_title, :artist_id, :id, :user_id)
     end
 
 end
