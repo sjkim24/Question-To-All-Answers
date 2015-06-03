@@ -6,5 +6,5 @@ class Artist < ActiveRecord::Base
     class_name: "Lyric",
     foreign_key: :artist_id,
     primary_key: :id
-
+    
 end

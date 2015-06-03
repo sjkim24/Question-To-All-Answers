@@ -22,9 +22,17 @@
   font-size: 28px;
 }
 
-.genius .artist-edit {
+.artist-edit {
   font-size: 22px;
+}
+
+.artist-edit a {
   padding: 0 0 10px 0;
+  color: #04529C;
+}
+
+.artist-edit a:hover {
+  text-decoration: underline;
 }
 
 .genius #lyric {
@@ -97,6 +105,14 @@ h3.lyric {
 
 .contributor {
   display: block;
-  padding: 10px 0 0 0;
+  padding: 10px 0 10px 0;
   font-size: 18px;
+}
+
+.contributor a {
+  color: #04529C;
+}
+
+.contributor a:hover {
+  text-decoration: underline;
 }

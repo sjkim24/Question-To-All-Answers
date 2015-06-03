@@ -25,11 +25,13 @@ ul.lyrics {
   border-right: 1px solid #ccc;
 }
 
-.lyrics > li {
-  font-size: 18px;
-  padding: 3px 0 0 0;
-}
 
-.genius a:hover {
-  background: #C0C0C0;
+.lyric-track-title {
+  display: block;
+  font-size: 20px;
+  color: #04529C;
+  padding: 0 0 10px 0;
+}
+.lyric-track-title a:hover {
+  text-decoration: underline;
 }

@@ -12,4 +12,9 @@
 .artist-lyrics > li {
   font-size: 20px;
   padding: 3px 0 0 0;
+  color: #04529C;
+}
+
+.artist-lyrics a:hover {
+  text-decoration: underline;
 }
