@@ -25,7 +25,8 @@ gem 'bcrypt', require: 'bcrypt'
 gem "figaro"
 gem "paperclip"
 gem "aws-sdk", '< 2.0'
-
+gem 'pg_search'
+gem 'kaminari', '0.16.3'
 
 
 

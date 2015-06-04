@@ -11,7 +11,6 @@ Genius.Views.UserProfPicForm = Backbone.View.extend ({
   },
 
   render: function () {
-    debugger
     var content = this.template({ user: this.model });
     this.$el.html(content);
     return this;

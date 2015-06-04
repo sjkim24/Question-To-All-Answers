@@ -88,7 +88,7 @@ Genius.Routers.Router = Backbone.Router.extend({
   search: function () {
     var search = new Genius.Views.Search ();
     this._swapView(search)
-  }
+  },
 
   _swapView: function (view) {
     this._currentView && this._currentView.remove();

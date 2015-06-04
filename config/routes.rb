@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resources :annotations, except:[:new]
     resource :currentuser, only: [:show]
     resources :upvotes, only: [:index, :create, :show, :update]
+    get "search", to: "static_pages#search"
   end
 end
