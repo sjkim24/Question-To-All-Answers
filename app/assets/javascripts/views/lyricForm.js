@@ -2,7 +2,7 @@ Genius.Views.LyricForm = Backbone.View.extend ({
 
   tagName: 'form',
 
-  className: 'lyric-form',
+  className: 'lyric-form group',
 
   template: JST['lyrics/form'],
 

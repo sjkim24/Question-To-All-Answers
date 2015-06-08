@@ -3,7 +3,7 @@
   width: 700px;
   margin: 20px auto;
   padding: 20px 0 20px 0;
-  border: 1px solid #ccc;
+  border: 1px solid #FFCC33;
   text-align: center;
 
 }
@@ -11,6 +11,7 @@
 .lyric-form h2 {
   font-size: 24px;
   padding: 10px 0 0 0;
+  font-weight: bold;
 }
 
 .lyric-form .title-label {
@@ -23,7 +24,6 @@
   display: block;
   font-size: 18px;
   padding: 20px 0 0 10px;
-  vertical-align: text-top;
 }
 
 .lyric-form .title {

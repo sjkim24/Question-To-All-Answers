@@ -26,11 +26,11 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
   },
 
   render: function () {
+
     var upvote = this.model.upvotes().findWhere({
       anno_id: this.model.get("id"),
       user_id: Genius.CurrentUser.get("id")
     })
-
     if (upvote) {
       var upvoted = upvote.get("upvoted")
       if (upvoted === "upvoted") {
@@ -47,8 +47,6 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
     var user = new Genius.Models.User({ id: userId });
     user.fetch({
       success: function () {
-
-
         var username = user.get("username");
         var content = that.template({
           annotation: that.model,
@@ -57,7 +55,6 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
         });
         that.$el.html(content);
       }
-
     })
 
     return this;
@@ -106,6 +103,7 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
   },
 
   addGeniusIq: function (userId, currentUserId, upvote) {
+    var that = this;
     if (userId === currentUserId) {
       alert("You can't upvote your own annotation!")
     } else {
@@ -117,12 +115,10 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
           user.set({ genius_iq: newGeniusIq });
           user.save();
           upvote.save();
-          alert("Upvoted!")
+          $('.upvote').html('Downvote')
         }
       })
     }
-    this.render();
-
   },
 
   subtractGeniusIq: function (userId, currentUserId, upvote) {
@@ -134,10 +130,9 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
         user.set({ genius_iq: newGeniusIq });
         user.save();
         upvote.save();
-        alert("Downvoted!")
+        $('.upvote').html('Upvote')
       }
     })
-    this.render();
   }
 
 })

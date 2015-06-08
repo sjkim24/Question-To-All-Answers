@@ -1,7 +1,7 @@
 class Api::LyricsController < Api::ApiController
 
   def index
-    @lyrics = Lyric.all
+    @lyrics = Lyric.all.order(:created_at).reverse[0..9]
 
     render :index
   end

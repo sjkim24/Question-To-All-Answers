@@ -30,30 +30,21 @@ Genius.Views.Search = Backbone.View.extend ({
 		this.collection.fetch({
 			data: this.collection.searchInfo,
 			success: function () {
-				// console.log(that.collection.length);
 			}
 		});
 	},
 
   renderResults: function () {
 		this.renderSearchInfo();
-		var $container = this.$("#search-results");
-		$container.empty();
-    var that = this;
-    var $rootEl = this.$rootEl
+    var view = new Genius.Views.SearchLyricsIndex ({
+      collection: this.collection
+    })
+
+    this.$rootEl.html(view.render().$el);
+
     if (this.collection.length === 0) {
-      $rootEl.html("No Lyrics Were Found")
+      $('.searched-lyrics').html("No Lyrics Were Found")
     }
-		this.collection.each(function (result) {
-			if (result instanceof Genius.Models.Lyric) {
-				var view = new Genius.Views.SearchLyricItem({
-          model: result,
-          $rootEl: this.$rootEl,
-          searchView: this
-        });
-			}
-			$rootEl.html(view.render().$el);
-		});
 	},
 
   nextPage: function () {

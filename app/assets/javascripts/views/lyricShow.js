@@ -84,9 +84,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
       sel: sel
     });
 
-    if (annoForm.currentUserChecker()){
-      this.$rootEl.append(annoForm.render().$el);
-    }
+    this.$rootEl.append(annoForm.render().$el)
   },
 
   renderAnno: function (event) {

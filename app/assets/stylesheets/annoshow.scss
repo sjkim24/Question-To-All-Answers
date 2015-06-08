@@ -1,7 +1,7 @@
 .anno-show {
   float: right;
   padding: 20px;
-  margin: 100px 0 0 0;
+  margin: 185px 0 0 0;
   width: 400px;
   border: 1px solid #000;
   background: #FFCC33;
@@ -81,4 +81,12 @@
 .anno-show .submit-edit-anno:hover {
   background: #ccc;
   cursor: pointer;
+}
+
+.anno-show a {
+  color: #04529C;
+}
+
+.anno-show a:hover {
+  text-decoration: underline;
 }

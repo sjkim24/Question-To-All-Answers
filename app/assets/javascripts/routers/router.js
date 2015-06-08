@@ -95,7 +95,7 @@ Genius.Routers.Router = Backbone.Router.extend({
     var searchView = new Genius.Views.Search ({
       $rootEl: this.$rootEl
     });
-    this.$rootEl.prepend(searchView.render().$el)
+    $('#search-bar-header').html(searchView.render().$el)
   }
 
 })
