@@ -7,7 +7,8 @@ Genius.Views.Search = Backbone.View.extend ({
     'click .next-page': 'nextPage'
   },
 
-  initialize: function () {
+  initialize: function (options) {
+    this.$rootEl = options.$rootEl
     this.collection = new Genius.Collections.SearchResults();
     this.listenTo(this.collection, 'sync', this.renderResults);
   },
@@ -28,12 +29,8 @@ Genius.Views.Search = Backbone.View.extend ({
 		var that = this;
 		this.collection.fetch({
 			data: this.collection.searchInfo,
-			// {
-	// 			query: this.collection.searchInfo.query,
-	// 			page: this.collection.searchInfo.pageNum
-	// 		},
 			success: function () {
-				console.log(that.collection.length);
+				// console.log(that.collection.length);
 			}
 		});
 	},
@@ -42,12 +39,20 @@ Genius.Views.Search = Backbone.View.extend ({
 		this.renderSearchInfo();
 		var $container = this.$("#search-results");
 		$container.empty();
+    var that = this;
+    var $rootEl = this.$rootEl
+    if (this.collection.length === 0) {
+      $rootEl.html("No Lyrics Were Found")
+    }
 		this.collection.each(function (result) {
 			if (result instanceof Genius.Models.Lyric) {
-				var view = new Genius.Views.SearchLyricItem({ model: result });
+				var view = new Genius.Views.SearchLyricItem({
+          model: result,
+          $rootEl: this.$rootEl,
+          searchView: this
+        });
 			}
-
-			$container.append(view.render().$el);
+			$rootEl.html(view.render().$el);
 		});
 	},
 

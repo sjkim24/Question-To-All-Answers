@@ -1,5 +1,7 @@
 <a href="/#/lyrics/<%= lyric.id %>">
   <%= lyric.escape("track_title") %>
-</a> - <a href="/#/artists/<%= lyric.artist.id %>">
-         <%= lyric.artist.name %>
+</a> - <a href="/#/artists/<%= lyric.escape("artist_id") %>">
+         <%= lyric.escape("artist_name") %>
        </a>
+<pre id="pages"></pre>
+<a href="javascript:void(0)" class="next-page">Next Page</a>

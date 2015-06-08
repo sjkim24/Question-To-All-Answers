@@ -2,13 +2,11 @@
   <h2>Log In</h3>
   <form action="<%= session_url %>" method="post">
     <%= render "shared/auth_token" %>
-    <label>Username
-      <input class="username" type="text" name="user[username]">
-    </label>
+    <input class="username" placeholder="USERNAME" type="text" name="user[username]">
+
     <br>
-    <label>Password
-      <input class="password" type="password" name="user[password]">
-    </label>
+    <input class="password" placeholder="PASSWORD" type="password" name="user[password]">
+
     <br>
     <button>Log In</button>
   </form>

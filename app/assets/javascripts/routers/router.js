@@ -60,8 +60,6 @@ Genius.Routers.Router = Backbone.Router.extend({
     }
   },
 
-  // might not even need this as genius clone doesn't have artists index
-  // but i can implement an artist index page
   artistsIndex: function () {
     this.artists.fetch();
     var indexView = new Genius.Views.ArtistsIndex ({ collection: this.artists })
@@ -86,14 +84,18 @@ Genius.Routers.Router = Backbone.Router.extend({
   },
 
   search: function () {
-    var search = new Genius.Views.Search ();
-    this._swapView(search)
+    var searchView = new Genius.Views.Search ();
+    // this._swapView(searchView)
   },
 
   _swapView: function (view) {
     this._currentView && this._currentView.remove();
     this._currentView = view;
     this.$rootEl.html(view.render().$el);
+    var searchView = new Genius.Views.Search ({
+      $rootEl: this.$rootEl
+    });
+    this.$rootEl.prepend(searchView.render().$el)
   }
 
 })

@@ -1,0 +1,30 @@
+div.search-bar {
+  width: 1099px;
+  padding: 10px 0 10px 0;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background: #04529C;
+}
+
+input.search-bar {
+  width: 400px;
+  margin: 0 0 0 250px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  background: #fff;
+}
+
+button.search {
+  border-radius: 25px;
+  text-transform: uppercase;
+  padding: 0 10px 0 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  background: #fff;
+}
+
+button.search:hover {
+  background: #ccc;
+  cursor: pointer;
+}

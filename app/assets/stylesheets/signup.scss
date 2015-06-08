@@ -2,7 +2,7 @@
   display:block;
   margin: 20px auto;
   padding: 20px 0 20px 0;
-  width: 700px;
+  width: 1100px;
   border: 1px solid #FFCC33;
   text-align: center;
   font-family: 'Roboto', sans-serif;
@@ -29,14 +29,33 @@
 
 .signup input {
   text-align: left;
-  width: 400px;
+  width: 600px;
+  height: 50px;
+
+}
+
+.signup .email {
   border: 1px solid #ccc;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+.signup .username {
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+
+.signup .password {
+  border: 1px solid #ccc;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 .signup button {
   border-radius: 25px;
   text-transform: uppercase;
   padding: 0 10px 0 10px;
+  margin: 20px;
   border: 1px solid #ccc;
   text-align: center;
 }
@@ -44,4 +63,10 @@
 .signup button:hover {
   background: #ccc;
   cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
 }

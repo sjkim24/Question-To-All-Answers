@@ -66,11 +66,24 @@
   margin: 20px 0 0 0;
 }
 
+.user-annos a {
+  color: #04529C;
+}
+
+.user-annos a:hover {
+  text-decoration: underline;
+}
+
 .user-lyrics {
   float: right;
   font-size: 18px;
   width: 800px;
   margin: 20px 0 0 0;
+  color: #04529C;
+}
+
+.user-lyrics a:hover {
+  text-decoration: underline;
 }
 
 .edit-prof-pic:hover {

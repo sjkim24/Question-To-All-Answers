@@ -6,7 +6,9 @@ Genius.Views.SearchLyricItem = Backbone.View.extend ({
 
   template: JST['lyrics/searchItem'],
 
-  initialize: function () {
+  initialize: function (options) {
+    this.$rootEl = options.$rootEl;
+    this.searchView = options.searchView;
     this.listenTo(this.model, 'sync', this.render);
   },
 
