@@ -37,18 +37,14 @@ Genius.Models.Lyric = Backbone.Model.extend ({
 
   formatLyric: function () {
     var annotations = this.annotations();
-    var that = this
+    var that = this;
     if (this.get("lyric")) {
       var annoLyric = _.clone(this.get("lyric"));
       annotations.each(function(annotation) {
-
         var lyric = that.get("lyric");
         var annoId = annotation.get("id");
         var startPos = annotation.get("start_pos");
         var endPos = annotation.get("end_pos");
-        // console.log("hello")
-
-
         var annotated = '<a class="annotation" data-id="'
           + annoId + '" href="#/annotations/' + annoId + '">'
           + (lyric.slice(startPos, endPos)) + "</a>";

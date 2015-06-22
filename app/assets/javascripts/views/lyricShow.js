@@ -35,6 +35,11 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     return this;
   },
 
+  clearPage: function () {
+    $('.anno-form').remove();
+    $('.anno-show').remove();
+  },
+
   getRange: function (event) {
     event.preventDefault();
     var lyric = document.getElementById("lyric");
@@ -45,12 +50,25 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     var charRange = selRange.toCharacterRange(lyric);
     var startPos = charRange.start;
     var endPos = charRange.end;
-    var selString = sel.toString().trim()
+    var that = this;
+    var exists = false;
+    this.model.annotations().each(function(annotation) {
 
-    if (annotated && charRange.start >= 0) {
+      var existingStart = annotation.get("start_pos")
+      var existingEnd = annotation.get("end_pos")
+      if ((startPos >= existingStart && startPos <= existingEnd) || (endPos >= existingStart && endPos <= existingEnd)) {
+        exists = true;
+        that.renderAnnoExists();
+        return false;
+      }
+    })
+
+    if (!exists && (annotated && charRange.start >= 0)) {
+      var selString = sel.toString().trim()
       var selSpaced = this.insertSpace(selString);
       this.renderAnnoForm(startPos, endPos, selSpaced);
     }
+
   },
 
   insertSpace: function (sel) {
@@ -71,8 +89,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
   },
 
   renderAnnoForm: function (startPos, endPos, sel) {
-    $('.anno-form').remove();
-    $('.anno-show').remove();
+    this.clearPage();
     var lyricId = this.model.id;
     var anno = new Genius.Models.Annotation ();
     var annoForm = new Genius.Views.AnnotationForm ({
@@ -86,9 +103,15 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     this.$rootEl.append(annoForm.render().$el)
   },
 
+  renderAnnoExists: function () {
+    this.clearPage();
+    var annoExists = new Genius.Views.AnnotationExists ();
+
+    this.$rootEl.append(annoExists.render().$el);
+  },
+
   renderAnno: function (event) {
-    $('.anno-show').remove();
-    $('.anno-form').remove();
+    this.clearPage();
     event.preventDefault();
     var id = $(event.currentTarget).attr("data-id");
     var annotation = this.annotations.getOrFetch(id);

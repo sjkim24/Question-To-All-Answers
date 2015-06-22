@@ -15,7 +15,8 @@ Genius.Views.AnnotationEdit = Backbone.View.extend ({
   render: function () {
     var content = this.template({ annotation: this.model })
     this.$el.html(content);
-    return this
+
+    return this;
   },
 
   updateAnno: function (event) {
@@ -28,9 +29,9 @@ Genius.Views.AnnotationEdit = Backbone.View.extend ({
         var newView = new Genius.Views.AnnotationShow ({
           model: that.model
         })
-        newView.render()
+        newView.render();
       }
     })
   }
 
-})
+});

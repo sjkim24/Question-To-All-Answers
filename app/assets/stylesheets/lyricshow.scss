@@ -116,3 +116,24 @@ h3.lyric {
 .contributor a:hover {
   text-decoration: underline;
 }
+
+.genius .anno-exists {
+  float: right;
+  padding: 20px;
+  margin: 140px 0 0 0;
+  width: 400px;
+  border: 1px solid #000;
+  background: #FFCC33;
+}
+
+.anno-exists h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.anno-exists h3 {
+  margin: 20px 0 0 0;
+  text-align: left;
+  font-size: 22px;
+}
