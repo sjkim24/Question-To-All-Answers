@@ -46,6 +46,8 @@ Genius.Models.Lyric = Backbone.Model.extend ({
         var annoId = annotation.get("id");
         var startPos = annotation.get("start_pos");
         var endPos = annotation.get("end_pos");
+        // console.log("hello")
+
 
         var annotated = '<a class="annotation" data-id="'
           + annoId + '" href="#/annotations/' + annoId + '">'
@@ -63,4 +65,4 @@ Genius.Models.Lyric = Backbone.Model.extend ({
     return { lyric: _.clone(this.attributes) };
   }
 
-})
+});

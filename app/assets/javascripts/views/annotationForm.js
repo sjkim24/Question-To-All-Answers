@@ -42,6 +42,7 @@ Genius.Views.AnnotationForm = Backbone.View.extend ({
       var attrs = this.$el.serializeJSON().annotation;
       var that = this;
       this.model.set(attrs);
+      debugger
       this.model.set({
         lyric_id: this.lyricId,
         start_pos: this.startPos,
@@ -55,7 +56,6 @@ Genius.Views.AnnotationForm = Backbone.View.extend ({
         }
       })
     }
-
   }
 
-})
+});

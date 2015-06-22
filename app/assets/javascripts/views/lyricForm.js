@@ -34,6 +34,8 @@ Genius.Views.LyricForm = Backbone.View.extend ({
     var attrs = this.$el.serializeJSON().lyric;
     var that = this;
     this.model.set(attrs);
+    var lyric = this.model.get("lyric").replace(/\n\s*\n/g, '\n\n');
+    this.model.set({ lyric: lyric })
     this.model.save({}, {
       success: function () {
         that.collection.add(that.model, { merge: true });
@@ -51,4 +53,4 @@ Genius.Views.LyricForm = Backbone.View.extend ({
     })
   }
 
-})
+});

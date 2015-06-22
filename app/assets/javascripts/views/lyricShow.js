@@ -36,20 +36,18 @@ Genius.Views.LyricShow = Backbone.View.extend ({
   },
 
   getRange: function (event) {
-    // alert user if selection already has annotation
     event.preventDefault();
     var lyric = document.getElementById("lyric");
     var sel = rangy.getSelection();
+    var annotated = sel.toString().trim()
     var selLength = sel.toString().length;
-    if (sel.toString()[0] === " " || sel.toString()[selLength - 1] === " ") {
-      sel.trim();
-    }
     var selRange = sel.getRangeAt(0);
     var charRange = selRange.toCharacterRange(lyric);
     var startPos = charRange.start;
     var endPos = charRange.end;
-    var selString = sel.toString();
-    if (sel.toString() && charRange.start >= 0) {
+    var selString = sel.toString().trim()
+
+    if (annotated && charRange.start >= 0) {
       var selSpaced = this.insertSpace(selString);
       this.renderAnnoForm(startPos, endPos, selSpaced);
     }
@@ -69,6 +67,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
       i += 1;
     }
     return selSplit.join("");
+
   },
 
   renderAnnoForm: function (startPos, endPos, sel) {
@@ -100,4 +99,4 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     this.$rootEl.append(annoShow.render().$el);
   }
 
-})
+});
