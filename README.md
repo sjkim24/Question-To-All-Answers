@@ -1,5 +1,5 @@
 #Question To All Answers
-[Live Version](www.questiontoallanswers.com)
+[Live Version](http://www.questiontoallanswers.com)
 
 ## Description
 This is a lyrics & annotations sharing app inspired by Genius. Question
