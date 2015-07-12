@@ -1,9 +1,11 @@
 .signup {
   display:block;
-  margin: 20px auto;
+  margin: 150px auto;
   padding: 20px 0 20px 0;
-  width: 1100px;
+  width: 400px;
+  height: 240px;
   border: 1px solid #FFCC33;
+  border-radius: 5px;
   text-align: center;
   font-family: 'Roboto', sans-serif;
 }
@@ -18,45 +20,34 @@
 .signup .email-label {
   display: block;
   font-size: 18px;
-  padding: 2px 20px 0 0px;
 }
 
 .signup label {
   display: block;
   font-size: 18px;
-  padding: 2px 0 0 10px;
 }
 
 .signup input {
+  width: 300px;
+  height: 25px;
+  padding: 0 0 0 10px;
+  margin: 0 0 20px 0;
+  border: 1px solid #DEDEDE;
+  border-radius: 5px;
   text-align: left;
-  width: 600px;
-  height: 50px;
-
 }
 
-.signup .email {
-  border: 1px solid #ccc;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-}
-
-.signup .username {
-  border-right: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-}
-
-.signup .password {
-  border: 1px solid #ccc;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+.signup input:focus {
+  border: 1px solid #787878;
 }
 
 .signup button {
-  border-radius: 25px;
-  text-transform: uppercase;
-  padding: 0 10px 0 10px;
-  margin: 20px;
+  color: #fff;
+  background: #26282A;
+  padding: 5px 15px;
+  margin: 15px 0 0 0;
   border: 1px solid #ccc;
+  border-radius: 5px;
   text-align: center;
 }
 

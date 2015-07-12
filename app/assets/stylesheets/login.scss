@@ -11,13 +11,17 @@
 }
 
 .req-login {
+  display: block;
   font-family: 'Roboto', sans-serif;
-  width: 200px;
+  width: 300px;
   margin: auto;
+  padding: 10px;
   background: #FFCC33;
   text-align: center;
   font-weight: bold;
-  padding: 10px 0 10px 0;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
 }
 
 .login h2 {
@@ -33,11 +37,11 @@
 }
 
 .login input {
+  width: 300px;
+  height: 25px;
   padding: 0 0 0 5px;
   border-radius: 5px;
   text-align: left;
-  width: 300px;
-  height: 25px;
 }
 
 .login .username {
@@ -67,15 +71,15 @@ input[placeholder] {
 .login button {
   float: left;
   color: #fff;
+  background: #26282A;
   padding: 5px 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
   text-align: center;
-  background: #26282A;
 }
 
 button.user {
-  margin: 0 0 0 48px;
+  margin: 0 0 0 47px;
 }
 
 button.guest {
