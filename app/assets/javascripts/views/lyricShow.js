@@ -38,6 +38,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
   clearPage: function () {
     $('.anno-form').remove();
     $('.anno-show').remove();
+    $('.anno-exists').remove();
   },
 
   getRange: function (event) {
