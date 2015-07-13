@@ -12,18 +12,20 @@ div.search-bar {
 input.search-bar {
   width: 400px;
   margin: 0 0 0 250px;
+  padding: 4px 0 0 5px;
   border: 1px solid #ccc;
-  border-radius: 50px;
+  border-radius: 5px;
   background: #fff;
 }
 
 button.search {
-  border-radius: 25px;
-  text-transform: uppercase;
-  padding: 0 10px 0 10px;
+  color: #fff;
+  background: #26282A;
+  padding: 2px 15px;
+  margin: -10px 0 0 0;
   border: 1px solid #ccc;
+  border-radius: 5px;
   text-align: center;
-  background: #fff;
 }
 
 button.search:hover {

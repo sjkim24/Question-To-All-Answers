@@ -4,10 +4,11 @@
   padding: 20px 0 20px 0;
   width: 400px;
   height: 240px;
-  border: 1px solid #FFCC33;
+  border: 1px solid #000;
   border-radius: 5px;
   text-align: center;
   font-family: 'Roboto', sans-serif;
+  background: #FFCC33;
 }
 
 .signup h2 {
@@ -35,6 +36,7 @@
   border: 1px solid #DEDEDE;
   border-radius: 5px;
   text-align: left;
+  background: #fff;
 }
 
 .signup input:focus {
@@ -46,7 +48,6 @@
   background: #26282A;
   padding: 5px 15px;
   margin: 15px 0 0 0;
-  border: 1px solid #ccc;
   border-radius: 5px;
   text-align: center;
 }

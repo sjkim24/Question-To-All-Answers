@@ -4,10 +4,11 @@
   padding: 20px 0 20px 0;
   width: 400px;
   height: 175px;
-  border: 1px solid #FFCC33;
+  border: 1px solid #000;
   border-radius: 5px;
   text-align: center;
   font-family: 'Roboto', sans-serif;
+  background: #FFCC33;
 }
 
 .req-login {
@@ -41,6 +42,7 @@
   height: 25px;
   padding: 0 0 0 5px;
   border-radius: 5px;
+  background: #fff;
   text-align: left;
 }
 
@@ -73,7 +75,6 @@ input[placeholder] {
   color: #fff;
   background: #26282A;
   padding: 5px 15px;
-  border: 1px solid #ccc;
   border-radius: 5px;
   text-align: center;
 }
@@ -83,7 +84,7 @@ button.user {
 }
 
 button.guest {
-  margin: 0 0 0 93px;
+  margin: 0 0 0 97px;
 }
 
 .login button:hover {
