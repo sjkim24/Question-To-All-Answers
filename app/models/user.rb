@@ -23,6 +23,12 @@ class User < ActiveRecord::Base
     foreign_key: :user_id,
     primary_key: :id
 
+  has_many :comments,
+    class_name: "Comment",
+    foriegn_key: :user_id,
+    primary_key: :id,
+    dependent: :destroy
+
 
   def self.generate_random_token
     SecureRandom.urlsafe_base64(16)

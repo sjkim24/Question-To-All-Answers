@@ -21,4 +21,10 @@ class Lyric < ActiveRecord::Base
     foreign_key: :user_id,
     primary_key: :id
 
+  has_many :comments,
+    class_name: "Comment",
+    foreign_key: :lyric_id,
+    primary_key: :id,
+    dependent: :destroy
+
 end
