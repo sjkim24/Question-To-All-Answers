@@ -9,7 +9,6 @@ class Api::AnnotationsController < Api::ApiController
   def create
     @annotation = Annotation.new(anno_params)
     @annotation.user_id = current_user.id
-    puts params[:annotations]
     if @annotation.save
       render json: @annotation
     else

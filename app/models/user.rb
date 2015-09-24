@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
 
   has_many :comments,
     class_name: "Comment",
-    foriegn_key: :user_id,
+    foreign_key: :user_id,
     primary_key: :id,
     dependent: :destroy
 
