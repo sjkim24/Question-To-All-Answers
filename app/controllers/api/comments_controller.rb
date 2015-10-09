@@ -3,8 +3,6 @@ class Api::CommentsController < Api::ApiController
   def create
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
-    
-
   end
 
   def show
