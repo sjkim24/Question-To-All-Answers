@@ -6,12 +6,13 @@ Rails.application.routes.draw do
   get "session/redirect", to: "sessions#redirect"
 
   namespace :api, defaults: { format: :json } do
-    resources :lyrics
+    resources :lyrics, except:[:destroy]
     resources :users, only: [:index, :show, :update]
     resources :artists, only: [:index, :show]
-    resources :annotations, except:[:new]
-    resource :currentuser, only: [:show]
+    resources :annotations, except: [:new]
+    resource :currentuser, only: [:create, :new, :show, :update]
     resources :upvotes, only: [:index, :create, :show, :update]
+    resources :comments, only: [:create,]
     get "search", to: "static_pages#search"
   end
 end

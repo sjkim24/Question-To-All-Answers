@@ -11,6 +11,12 @@ class Api::CommentsController < Api::ApiController
     end
   end
 
+  def new
+    @comment = Comment.new
+
+    render :new
+  end
+
   def show
     @comment = Comment.find(params[:id])
 
