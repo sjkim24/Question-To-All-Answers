@@ -6,7 +6,7 @@ Genius.Collections.Artists = Backbone.Collection.extend ({
 
   getOrFetch: function (id) {
     var artist = this.get(id);
-    var artists = this
+    var artists = this;
     if (artist) {
       artist.fetch();
     } else {

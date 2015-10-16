@@ -14,6 +14,11 @@ Genius.Models.Lyric = Backbone.Model.extend ({
       delete response.annotations;
     }
 
+    if (response.comments) {
+      lyric.comments().set(response.comments);
+      delete response.comments;
+    }
+
     return response;
   },
 
@@ -33,6 +38,16 @@ Genius.Models.Lyric = Backbone.Model.extend ({
     }
 
     return this._annotations;
+  },
+
+  comments: function () {
+    if (!this._comments) {
+      this._comments = new Genius.Collections.Comments ( [], {
+        lyric: this
+      })
+    }
+
+    return this._comments;
   },
 
   formatLyric: function () {

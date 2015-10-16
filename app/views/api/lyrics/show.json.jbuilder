@@ -17,3 +17,9 @@ json.annotations @lyric.annotations do |annotation|
   json.start_pos annotation.start_pos
   json.end_pos annotation.end_pos
 end
+
+json.comments @lyric.comments do |comment|
+  json.id comment.id
+  json.body comment.body
+  json.user_id comment.user_id
+end
