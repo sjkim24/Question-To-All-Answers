@@ -17,6 +17,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
   },
 
   render: function () {
+    // debugger
     var that = this;
     var userId = this.model.get("user_id");
     var user = new Genius.Models.User({ id: userId });
@@ -31,7 +32,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
         that.$el.html(content);
       }
     })
-
+    this.renderComments();
     return this;
   },
 
@@ -121,6 +122,15 @@ Genius.Views.LyricShow = Backbone.View.extend ({
       upvotes: this.upvotes
     });
     this.$rootEl.append(annoShow.render().$el);
+  },
+
+  renderComments: function () {
+    debugger
+    var comments = this.model.comments();
+    var commentShow = new Genius.Views.CommentShow ({
+      collection: comments
+    })
+    this.$rootEl.append(commentShow.render().$el)
   }
 
 });
