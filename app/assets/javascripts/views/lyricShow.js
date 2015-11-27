@@ -2,6 +2,8 @@ Genius.Views.LyricShow = Backbone.View.extend ({
 
   tagName: 'article',
 
+  className: 'group',
+
   template: JST['lyrics/show'],
 
   events: {
@@ -100,8 +102,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
       endPos: endPos,
       sel: sel
     });
-
-    this.$rootEl.append(annoForm.render().$el)
+    $('article').append(annoForm.render().$el)
   },
 
   renderAnnoExists: function () {

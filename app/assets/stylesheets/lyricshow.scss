@@ -10,8 +10,11 @@
   padding: 0 0 20px 0;
 }
 
-.genius article {
-  float: left;
+article.group {
+  // display: block;
+  position: relative;
+  width: 1100px;
+  height: auto;
   font-family: 'Roboto', sans-serif;
   padding: 30px 0 0 0;
 }
@@ -36,6 +39,7 @@
 }
 
 .genius #lyric {
+  float: left;
   width: 550px;
   margin: 0 0 40px 0;
   border-right: 1px solid #ccc;
@@ -50,9 +54,9 @@
 }
 
 .genius .anno-form {
-  float: right;
+  position: absolute;
+  right: 0px;
   padding: 20px;
-  margin: 100px 0 0 0;
   width: 400px;
   border: 1px solid #000;
   background: #FFCC33;
