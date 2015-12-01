@@ -13,7 +13,7 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
 
   initialize: function (options) {
     this.listenTo(this.model, 'sync', this.render);
-    this.upvotes = options.upvotes
+    this.upvotes = options.upvotes;
   },
 
   currentUserChecker: function () {
@@ -30,7 +30,7 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
     var upvote = this.model.upvotes().findWhere({
       anno_id: this.model.get("id"),
       user_id: Genius.CurrentUser.get("id")
-    })
+    });
     if (upvote) {
       var upvoted = upvote.get("upvoted")
       if (upvoted === "upvoted") {

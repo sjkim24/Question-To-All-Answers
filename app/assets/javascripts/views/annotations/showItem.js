@@ -14,4 +14,4 @@ Genius.Views.AnnoShowItem = Backbone.CompositeView.extend ({
     return this;
   }
 
-})
+});

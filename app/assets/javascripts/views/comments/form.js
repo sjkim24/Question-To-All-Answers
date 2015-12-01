@@ -11,8 +11,8 @@ Genius.Views.CommentForm = Backbone.View.extend ({
   },
 
   initialize: function (options) {
-    
+
   }
 
 
-})
+});

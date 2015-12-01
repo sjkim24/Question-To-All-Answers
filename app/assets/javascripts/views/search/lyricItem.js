@@ -17,4 +17,4 @@ Genius.Views.SearchLyricItem = Backbone.View.extend ({
     return this;
   }
 
-})
+});

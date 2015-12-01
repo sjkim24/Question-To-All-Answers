@@ -8,7 +8,7 @@ Genius.Views.Search = Backbone.View.extend ({
   },
 
   initialize: function (options) {
-    this.$rootEl = options.$rootEl
+    this.$rootEl = options.$rootEl;
     this.collection = new Genius.Collections.SearchResults();
     this.listenTo(this.collection, 'sync', this.renderResults);
   },
@@ -48,7 +48,7 @@ Genius.Views.Search = Backbone.View.extend ({
 	},
 
   nextPage: function () {
-		this.collection.searchInfo.page++
+		this.collection.searchInfo.page++;
 		this.collection.fetch({
 			data: this.collection.searchInfo
 		});
@@ -58,4 +58,4 @@ Genius.Views.Search = Backbone.View.extend ({
 		this.$("#pages").html(this.collection.searchInfo.totalPages);
 	}
 
-})
+});

@@ -17,6 +17,7 @@ Genius.Views.ArtistShow = Backbone.CompositeView.extend ({
     var content = this.template({ artist: this.model });
     this.$el.html(content);
     this.attachSubviews();
+
     return this;
   }
 

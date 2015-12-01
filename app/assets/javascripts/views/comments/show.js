@@ -16,4 +16,4 @@ Genius.Views.CommentShow = Backbone.View.extend ({
     return this;
   }
 
-})
+});
