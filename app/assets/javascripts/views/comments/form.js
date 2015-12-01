@@ -10,6 +10,9 @@ Genius.Views.CommentForm = Backbone.View.extend ({
     'click .submit-comment': 'submitComment'
   },
 
-  
+  initialize: function (options) {
+    
+  }
+
 
 })

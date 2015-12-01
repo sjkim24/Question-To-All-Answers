@@ -33,6 +33,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
         that.$el.html(content);
       }
     })
+    this.renderCommentForm();
     this.renderComments();
     return this;
   },
@@ -122,6 +123,15 @@ Genius.Views.LyricShow = Backbone.View.extend ({
       upvotes: this.upvotes
     });
     this.$rootEl.append(annoShow.render().$el);
+  },
+
+  renderCommentForm: function () {
+    debugger;
+    var commentForm = new Genius.Views.CommentForm ({
+
+    });
+
+    this.$rootEl.append(commentForm.render().$el);
   },
 
   renderComments: function () {
