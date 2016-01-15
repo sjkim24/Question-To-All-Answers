@@ -7,7 +7,7 @@ $colorRed: #CE1141;
   padding: 10px 10px 0 10px;
 
   .header-list {
-    margin: 0 0 12px 0;
+    margin-bottom: 12px;
 
     li { float: left; }
 
@@ -22,24 +22,23 @@ $colorRed: #CE1141;
 
       .user, .create-lyric, .login-link { padding: 6px 3px 3px 3px; }
 
-      li { margin: 0 10px 0 0; }
+      li { margin-right: 10px; }
 
       .search-bar input {
         border: 3px solid $colorBlack;
         height: 25px;
-        padding: 0 0 0 3px;
+        padding-left: 3px;
         width: 250px;
       }
 
       li.logout-link {
-        padding: 3px 0 0 0;
+        padding-top: 3px;
         margin: 0;
       }
 
       .logout-link button {
         border: none;
       }
-
     }
 
     a:hover {

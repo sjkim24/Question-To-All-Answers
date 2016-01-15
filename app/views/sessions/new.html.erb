@@ -1,19 +1,31 @@
+<h1 class="header-img">
+  <img>
+  <section>
+    "And I know I'm going to make it even without a degree<br>
+    Cause the test scores don't mean shit to me<br>
+    And when you said that I would fail it didn't get to me" - Logic
+  <section>
+</h1>
 <div class="auth">
-  <h2>Login</h3>
+  <h1>Login</h1>
   <form action="<%= session_url %>" method="post">
     <%= render "shared/auth_token" %>
-    <input class="username" placeholder=" Username" type="text" name="user[username]">
+    <input placeholder="Username" type="text" name="user[username]">
 
     <br>
-    <input class="password" placeholder=" Password" type="password" name="user[password]">
+    <input class="password" placeholder="Password" type="password" name="user[password]">
 
     <br>
-    <button class="user">Login</button>
+    <button class="user-login">Login</button>
   </form>
   <form action="<%= session_url %>" method="post">
     <%= render "shared/auth_token" %>
     <input type="hidden" name="user[username]" value="guest">
     <input type="hidden" name="user[password]" value="password">
-    <button class="guest">Login As Guest</button>
+    <button class="guest-login">Login As Guest</button>
   </form>
+  <div class="signup-link">
+    Don't Have An Account? <a href="<%= new_user_url %>">Sign Up</a>
+  </div>
+
 </div>
