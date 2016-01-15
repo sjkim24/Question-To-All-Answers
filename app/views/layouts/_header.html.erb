@@ -1,24 +1,27 @@
-<header class="header">
-  <nav class="header-nav group">
-    <h1 class="header-logo">
-      <a href="<%= root_url %>">HOME</a>
-    </h1>
-    <h1 class="slogan">"Genius is not the answer to all questions.
-      It's the question to all answers" -Tablo </h2>
+<header class="header group">
 
-    <ul class="header-list group">
-      <li><a class="create-lyric" href="#/lyrics/new">Create Lyric</a></li>
-      <% if current_user.nil? %>
-        <li><a href="<%= new_user_url %>">Sign Up</a></li>
-        <li><a href="<%= new_session_url %>">Log In</a></li>
-      <% else %>
-        <li class="user-id"><a href="#/users/<%= current_user.id %>"><%= current_user.username %></a></li>
-        <li><form action="<%= session_url %>" method="post">
-          <input type="hidden" name="_method" value="delete">
-          <%= render "shared/auth_token" %>
-          <button class="logout">Log Out</button>
-        </form></li>
-      <% end %>
-    </ul>
-  </nav>
+  <ul class="header-list group">
+    <li class="header-logo">
+      <a href="<%= root_url %>">Question To All Answers</a>
+    </li>
+    <li>
+      <div id="search-bar-header"></div>
+    </li>
+    <li class="create-lyric">
+      <a href="#/lyrics/new">Create Lyric</a>
+    </li>
+    <% if current_user.nil? %>
+      <li><a href="<%= new_user_url %>">Sign Up</a></li>
+      <li><a href="<%= new_session_url %>">Log In</a></li>
+    <% else %>
+      <li class="user"><a href="#/users/<%= current_user.id %>"><%= current_user.username %></a></li>
+      <li>
+        <form action="<%= session_url %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <%= render "shared/auth_token" %>
+        <button class="logout">Log Out</button>
+        </form>
+      </li>
+    <% end %>
+  </ul>
 </header>

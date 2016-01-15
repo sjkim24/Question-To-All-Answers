@@ -1,67 +1,105 @@
 .header {
-  font-family: 'Roboto', sans-serif;
-  color: white;
-  background: #04529C;
-  margin: auto;
-  width: 1099px;
-  border-top: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-}
-
-.header a {
-  display: block;
-  padding: 10px 20px;
-  border-left: 1px solid #ccc;
-}
-
-.header a:hover {
-  color: #FFCC33;
-}
-
-.header .slogan {
-  float: left;
-  padding: 10px 20px;
-}
-
-.header .slogan:hover {
-  cursor: default;
-  color: #FFCC33;
-}
-
-.header-nav {
-  border-bottom: 1px solid #ccc;
-}
-
-.header-logo {
-  float: left;
-  border-right: 1px solid #ccc;
-  font-weight: bold;
+  border-bottom: 1px solid black;
+  font-family: 'Roboto';
+  padding: 10px 0 0 10px;
 }
 
 .header-list {
-  float: right;
+  margin: 0 0 10px 0;
 }
 
-.header-list > li {
+.header-list li {
   float: left;
 }
 
-.user-id a {
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  max-width: 120px;
-  margin: 0 11px 0 0;
+.header-logo {
+  font-family: 'Dancing Script', cursive;
+  font-size: 22px;
 }
 
-.header-list .logout {
-  display: block;
-  padding: 10px 20px;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
+.search-bar input {
+  border: 3px solid black;
+  height: 25px;
+  padding: 0 0 0 3px;
 }
 
-.header-list .logout:hover {
-  color: #FFCC33;
-  cursor: pointer;
+.user, .create-lyric, .logout {
+  padding: 6px 3px 3px 3px;
 }
+.logout {
+  border: none;
+}
+
+a:hover {
+  color: red;
+}
+
+// .header {
+//   font-family: 'Roboto', sans-serif;
+//   color: white;
+//   background: #04529C;
+//   margin: auto;
+//   // width: 1099px;
+//   border-top: 1px solid #ccc;
+//   border-right: 1px solid #ccc;
+// }
+//
+// .header a {
+//   display: block;
+//   padding: 10px 20px;
+//   border-left: 1px solid #ccc;
+// }
+//
+// .header a:hover {
+//   color: #FFCC33;
+// }
+//
+// // .header .slogan {
+// //   float: left;
+// //   padding: 10px 20px;
+// // }
+// //
+// // .header .slogan:hover {
+// //   cursor: default;
+// //   color: #FFCC33;
+// // }
+//
+// .header-nav {
+//   border-bottom: 1px solid #ccc;
+// }
+//
+// .header-logo {
+//   float: left;
+//   border-right: 1px solid #ccc;
+//   font-family: 'Dancing Script', cursive;
+//   font-size: 20px;
+//   font-weight: bold;
+// }
+//
+// .header-list {
+//   float: right;
+// }
+//
+// .header-list > li {
+//   float: left;
+// }
+//
+// .user-id a {
+//   display: block;
+//   overflow: hidden;
+//   white-space: nowrap;
+//   max-width: 120px;
+//   margin: 0 11px 0 0;
+// }
+//
+// .header-list .logout {
+//   display: block;
+//   padding: 10px 20px;
+//   border-left: 1px solid #ccc;
+//   border-right: 1px solid #ccc;
+// }
+//
+// .header-list .logout:hover {
+//   color: #FFCC33;
+//   cursor: pointer;
+// }

@@ -1,5 +1,4 @@
 .genius #main {
-  width: 1100px;
   margin: auto;
 }
 
@@ -11,8 +10,8 @@
 }
 
 article.group {
-  // display: block;
-  position: relative;
+  float: left;
+  // position: relative;
   width: 1100px;
   height: auto;
   font-family: 'Roboto', sans-serif;
