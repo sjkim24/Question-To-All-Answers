@@ -1,93 +1,102 @@
-.login {
-  display:block;
-  margin: 150px auto;
-  padding: 20px 0 20px 0;
-  width: 400px;
-  height: 175px;
-  border: 1px solid #000;
-  border-radius: 5px;
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
-  background: #FFCC33;
-}
+$colorBlack: #000000;
 
-.req-login {
-  display: block;
-  font-family: 'Roboto', sans-serif;
+.auth {
+  border: 3px solid $colorBlack;
+  font-family: 'Roboto';
+  margin: 40px auto 0 auto;
   width: 300px;
-  margin: auto;
-  padding: 10px;
-  background: #FFCC33;
-  text-align: center;
-  font-weight: bold;
-  border-bottom: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
 }
 
-.login h2 {
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  padding: 0 0 20px 0;
-}
-
-.login label {
-  display: block;
-  font-size: 18px;
-}
-
-.login input {
-  width: 300px;
-  height: 25px;
-  padding: 0 0 0 5px;
-  border-radius: 5px;
-  background: #fff;
-  text-align: left;
-}
-
-.login .username {
-  display: block;
-  border: 1px solid #DEDEDE;
-  margin: auto;
-}
-
-.login .username:focus {
-  border: 1px solid #787878;
-}
-
-.login .password {
-  display: block;
-  border: 1px solid #DEDEDE;
-  margin: auto;
-}
-
-.login .password:focus {
-  border: 1px solid #787878;
-}
-
-input[placeholder] {
-  text-align: left;
-}
-
-.login button {
-  float: left;
-  color: #fff;
-  background: #26282A;
-  padding: 5px 15px;
-  border-radius: 5px;
-  text-align: center;
-}
-
-button.user {
-  margin: 0 0 0 47px;
-}
-
-button.guest {
-  margin: 0 0 0 97px;
-}
-
-.login button:hover {
-  background: #ccc;
-  cursor: pointer;
-}
+// .auth {
+//   display:block;
+//   margin: 150px auto;
+//   padding: 20px 0 20px 0;
+//   width: 400px;
+//   height: 175px;
+//   border: 1px solid #000;
+//   border-radius: 5px;
+//   text-align: center;
+//   font-family: 'Roboto', sans-serif;
+//   background: #FFCC33;
+// }
+//
+// .req-login {
+//   display: block;
+//   font-family: 'Roboto', sans-serif;
+//   width: 300px;
+//   margin: auto;
+//   padding: 10px;
+//   background: #FFCC33;
+//   text-align: center;
+//   font-weight: bold;
+//   border-bottom: 1px solid #ccc;
+//   border-left: 1px solid #ccc;
+//   border-right: 1px solid #ccc;
+// }
+//
+// .auth h2 {
+//   font-size: 24px;
+//   font-weight: bold;
+//   text-align: center;
+//   padding: 0 0 20px 0;
+// }
+//
+// .auth label {
+//   display: block;
+//   font-size: 18px;
+// }
+//
+// .auth input {
+//   width: 300px;
+//   height: 25px;
+//   padding: 0 0 0 5px;
+//   border-radius: 5px;
+//   background: #fff;
+//   text-align: left;
+// }
+//
+// .auth .username {
+//   display: block;
+//   border: 1px solid #DEDEDE;
+//   margin: auto;
+// }
+//
+// .auth .username:focus {
+//   border: 1px solid #787878;
+// }
+//
+// .auth .password {
+//   display: block;
+//   border: 1px solid #DEDEDE;
+//   margin: auto;
+// }
+//
+// .auth .password:focus {
+//   border: 1px solid #787878;
+// }
+//
+// input[placeholder] {
+//   text-align: left;
+// }
+//
+// .auth button {
+//   float: left;
+//   color: #fff;
+//   background: #26282A;
+//   padding: 5px 15px;
+//   border-radius: 5px;
+//   text-align: center;
+// }
+//
+// button.user {
+//   margin: 0 0 0 47px;
+// }
+//
+// button.guest {
+//   margin: 0 0 0 97px;
+// }
+//
+// .auth button:hover {
+//   background: #ccc;
+//   cursor: pointer;
+// }

@@ -1,51 +1,49 @@
+$colorBlack: #000000;
+$colorRed: #CE1141;
+
 .header {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $colorBlack;
   font-family: 'Roboto';
   padding: 10px 10px 0 10px;
-}
 
-.header-list {
-  margin: 0 0 12px 0;
-}
+  .header-list {
+    margin: 0 0 12px 0;
 
-.header-list li {
-  float: left;
-}
+    li { float: left; }
 
-.header-logo {
-  float: left;
-  font-family: 'Dancing Script', cursive;
-  font-size: 26px;
-}
+    .header-logo {
+      float: left;
+      font-family: 'Dancing Script', cursive;
+      font-size: 26px;
+    }
 
-.search-bar input {
-  border: 3px solid black;
-  height: 25px;
-  padding: 0 0 0 3px;
-  width: 250px;
-}
+    .not-logo {
+      float: right;
 
-.not-logo {
-  float: right;
-}
+      .user, .create-lyric, .login-link { padding: 6px 3px 3px 3px; }
 
-.not-logo li {
-  margin: 0 10px 0 0;
-}
+      li { margin: 0 10px 0 0; }
 
-li.logout-link {
-  padding: 3px 0 0 0;
-  margin: 0;
-}
+      .search-bar input {
+        border: 3px solid $colorBlack;
+        height: 25px;
+        padding: 0 0 0 3px;
+        width: 250px;
+      }
 
-.user, .create-lyric, .login-link {
-  padding: 6px 3px 3px 3px;
-}
+      li.logout-link {
+        padding: 3px 0 0 0;
+        margin: 0;
+      }
 
-.logout-link button {
-  border: none;
-}
+      .logout-link button {
+        border: none;
+      }
 
-a:hover {
-  color: red;
+    }
+
+    a:hover {
+      color: $colorRed;
+    }
+  }
 }

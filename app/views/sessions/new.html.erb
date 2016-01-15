@@ -1,4 +1,4 @@
-<section class="login">
+<div class="auth">
   <h2>Login</h3>
   <form action="<%= session_url %>" method="post">
     <%= render "shared/auth_token" %>
@@ -16,4 +16,4 @@
     <input type="hidden" name="user[password]" value="password">
     <button class="guest">Login As Guest</button>
   </form>
-</section>
+</div>
