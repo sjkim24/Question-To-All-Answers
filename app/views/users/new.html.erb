@@ -1,13 +1,10 @@
-<div class="auth">
-  <h2>Sign Up</h2>
+<div class="auth signup">
+  <h1>Sign Up</h1>
   <form action="<%= users_url %>" method="post">
     <%= render "shared/auth_token" %>
       <input class="email" placeholder="Email" type="text" name="user[email]">
-    <br>
       <input class="username" placeholder="Username" type="text" name="user[username]">
-    <br>
       <input class="password" placeholder="Password" type="password" name="user[password]">
-    <br>
-    <button>Sign Up</button>
+    <button class="signup-button">Sign Up</button>
   </form>
 </div>

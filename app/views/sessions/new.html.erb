@@ -1,13 +1,9 @@
-<div class="auth">
+<div class="auth login">
   <h1>Login</h1>
   <form action="<%= session_url %>" method="post">
     <%= render "shared/auth_token" %>
     <input placeholder="Username" type="text" name="user[username]">
-
-    <br>
     <input class="password" placeholder="Password" type="password" name="user[password]">
-
-    <br>
     <button class="user-login">Login</button>
   </form>
   <form action="<%= session_url %>" method="post">

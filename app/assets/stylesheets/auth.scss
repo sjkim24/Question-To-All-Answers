@@ -2,10 +2,11 @@ $colorBlack: #000000;
 $colorRed: #CE1141;
 $colorWhite: #FFFFFF;
 
+.auth.login { height: 197px; }
+
 .auth {
   border: 3px solid $colorBlack;
   font-family: 'Roboto', sans-serif;
-  height: 197px;
   margin: 40px auto 0 auto;
   width: 340px;
 
@@ -43,5 +44,9 @@ $colorWhite: #FFFFFF;
     a {
       color: $colorRed;
     }
+  }
+
+  .signup-button {
+    margin: 10px 0 10px 136.75px;
   }
 }

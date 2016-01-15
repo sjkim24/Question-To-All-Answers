@@ -12,7 +12,8 @@
  *
  *= require_self
  */
-
+ @import "auth.scss";
+ @import "annoedit.scss";
  @import "reset.scss";
  @import "header.scss";
  @import "lyricshow.scss";
@@ -21,9 +22,6 @@
  @import "artistshow.scss";
  @import "profile.scss";
  @import "annoshow.scss";
- @import "signup.scss";
- @import "login.scss";
- @import "annoedit.scss";
  @import "errors.scss";
  @import "searchbar.scss";
  @import "search.scss";
