@@ -1,18 +1,19 @@
-<section class="req-login">You Must Login First!</section>
-<section class="auth">
-  <h2>Login</h3>
+<div class="req-login">Please Login First</div>
+<div class="auth login">
+  <h1>Login</h1>
   <form action="<%= session_url %>" method="post">
     <%= render "shared/auth_token" %>
       <input class="username" placeholder="Username" type="text" name="user[username]">
-    <br>
       <input class="password" placeholder="Password" type="password" name="user[password]">
-    <br>
-    <button class="user">Login</button>
+    <button class="user-login">Login</button>
   </form>
   <form action="<%= session_url %>" method="post">
     <%= render "shared/auth_token" %>
     <input type="hidden" name="user[username]" value="guest">
     <input type="hidden" name="user[password]" value="password">
-    <button class="guest">Login As Guest</button>
+    <button class="guest-login">Login As Guest</button>
   </form>
-</section>
+  <div class="signup-link">
+    Don't Have An Account? <a href="<%= new_user_url %>">Sign Up</a>
+  </div>
+</div>

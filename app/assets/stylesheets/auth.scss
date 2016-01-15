@@ -2,6 +2,14 @@ $colorBlack: #000000;
 $colorRed: #CE1141;
 $colorWhite: #FFFFFF;
 
+div.req-login {
+  color: $colorRed;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  margin: 20px auto 0 auto;
+  width: max-content;
+}
+
 .auth.login { height: 197px; }
 
 .auth {
