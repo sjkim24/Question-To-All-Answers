@@ -1,4 +1,4 @@
-.genius #main {
+#main {
   margin: auto;
 }
 
@@ -18,7 +18,7 @@ article.group {
   padding: 30px 0 0 0;
 }
 
-.genius .lyric-title {
+#main .lyric-title {
   padding: 0 0 20px 0;
   font-weight: bold;
   font-size: 28px;
@@ -37,7 +37,7 @@ article.group {
   text-decoration: underline;
 }
 
-.genius #lyric {
+#main #lyric {
   float: left;
   width: 550px;
   margin: 0 0 40px 0;
@@ -52,7 +52,7 @@ article.group {
   background: #FFCC33;
 }
 
-.genius .anno-form {
+#main .anno-form {
   position: absolute;
   right: 0px;
   padding: 20px;
@@ -61,12 +61,12 @@ article.group {
   background: #FFCC33;
 }
 
-.genius .sel {
+#main .sel {
   font-style: italic;
 
 }
 
-.genius .anno-textarea {
+#main .anno-textarea {
   display: block;
   width: 350px;
   margin: 20px auto;
@@ -74,7 +74,7 @@ article.group {
   background: #fff;
 }
 
-.genius .submit-anno {
+#main .submit-anno {
   display: block;
   border-radius: 25px;
   text-transform: uppercase;
@@ -86,7 +86,7 @@ article.group {
 
 }
 
-.genius .submit-anno:hover {
+#main .submit-anno:hover {
   cursor: pointer;
   background: #ccc;
 }
@@ -120,7 +120,7 @@ h3.lyric {
   text-decoration: underline;
 }
 
-.genius .anno-exists {
+#main .anno-exists {
   float: right;
   padding: 20px;
   margin: 100px 0 0 0;
