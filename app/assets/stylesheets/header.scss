@@ -33,16 +33,16 @@
   margin: 0 10px 0 0;
 }
 
-li.logout {
+li.logout-link {
   padding: 3px 0 0 0;
   margin: 0;
 }
 
-.user, .create-lyric {
+.user, .create-lyric, .login-link {
   padding: 6px 3px 3px 3px;
 }
 
-.logout button {
+.logout-link button {
   border: none;
 }
 
