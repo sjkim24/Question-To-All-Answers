@@ -1,17 +1,13 @@
-<h2>Create Lyric</h2>
-<ul class="errors"></ul>
-<label class="title-label">Title
-  <input class="title" type="text" name="lyric[track_title]"
-         value="<%= lyric.escape("track_title") %>">
-</label>
-<br>
-<label>Artist
-  <input class="artist" type="text" name="lyric[artist_id]"
-         value="<%= lyric.artist().escape("name") %>">
-</label>
-<br>
-<label>Lyric
-  <textarea class="lyric" name="lyric[lyric]"><%= lyric.escape("lyric") %></textarea>
-</label>
-<br>
+<h1>Create Lyric</h1>
+<div class="info group">
+  <h2>Information</h2>
+  <h2>*required</h2>
+</div>
+<div class="input-desc">*Title</div>
+<input class="title" type="text" name="lyric[track_title]" value="<%= lyric.escape("track_title") %>">
+<div class="input-desc">*Artist</div>
+<input class="artist" type="text" name="lyric[artist_id]" value="<%= lyric.artist().escape("name") %>">
+<div class="input-desc">*Lyric</div>
+<textarea class="lyric" name="lyric[lyric]"><%= lyric.escape("lyric") %></textarea>
+<div class="bot-border"></div>
 <button class="submit-lyric">Submit</button>

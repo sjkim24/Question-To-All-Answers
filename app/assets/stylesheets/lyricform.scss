@@ -1,67 +1,46 @@
+$colorBlack: #000000;
+$colorRed: #CE1141;
 
+.lyric-form {
+  margin: 40px;
 
-// .lyric-form {
-//   display: block;
-//   width: 700px;
-//   margin: 20px auto;
-//   padding: 20px 0 20px 0;
-//   border: 1px solid #FFCC33;
-//   text-align: center;
-//
-// }
-//
-// .lyric-form h2 {
-//   font-size: 24px;
-//   padding: 10px 0 0 0;
-//   font-weight: bold;
-// }
-//
-// .lyric-form .title-label {
-//   display: block;
-//   font-size: 18px;
-//   padding: 20px 0 0 15px;
-// }
-//
-// .lyric-form label {
-//   display: block;
-//   font-size: 18px;
-//   padding: 20px 0 0 10px;
-// }
-//
-// .lyric-form .title {
-//   border: 1px solid #ccc;
-//   width: 500px;
-//   text-align: left;
-// }
-//
-// .lyric-form .artist {
-//   border: 1px solid #ccc;
-//   width: 500px;
-//   text-align: left;
-//
-// }
-//
-// .lyric-form textarea {
-//   border: 1px solid #ccc;
-//   width: 500px;
-//   height: 500px;
-//   text-align: left;
-//   margin: auto;
-// }
-//
-// .lyric-form .submit-lyric {
-//   border-radius: 25px;
-//   text-transform: uppercase;
-//   padding: 0 10px 0 10px;
-//   border: 1px solid #ccc;
-//   text-align: center
-// }
-//
-// .lyric-form .submit-lyric:hover {
-//   background: #ccc;
-//   cursor: pointer;
-// }
-//
-// textarea {
-//   resize: none;
-// }
+  h1 {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .info {
+    margin-top: 10px;
+    border-bottom: 1px solid $colorRed;
+
+    h2:first-child {
+      float: left;
+      font-size: 24px;
+    }
+
+    h2:last-child {
+      float: right;
+      margin-top: 10px;
+    }
+  }
+
+  .input-desc {
+    font-size: 14px;
+    margin: 15px 0 2px 0;
+  }
+
+  input, textarea {
+    border: 2px solid $colorBlack;
+    width: 470px;
+  }
+
+  textarea {
+    margin: 0 0 15px 0;
+    resize: none;
+  }
+
+  .bot-border {
+    border-top: 1px solid $colorRed;
+    margin-bottom: 10px;
+  }
+}
