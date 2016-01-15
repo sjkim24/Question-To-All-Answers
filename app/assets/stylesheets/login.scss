@@ -4,8 +4,8 @@ $colorWhite: #FFFFFF;
 
 .auth {
   border: 3px solid $colorBlack;
-  font-family: 'Roboto';
-  height: 208px;
+  font-family: 'Roboto', sans-serif;
+  height: 197px;
   margin: 40px auto 0 auto;
   width: 340px;
 
@@ -43,19 +43,5 @@ $colorWhite: #FFFFFF;
     a {
       color: $colorRed;
     }
-  }
-}
-
-.header-img {
-  background-image: image-url("logic.png");
-  background-size: cover;
-  border-bottom: 1px solid $colorBlack;
-  height: 200px;
-
-  section {
-    color: $colorWhite;
-    font-family: 'Roboto';
-    font-size: 20px;
-    margin: 60px 0 0 50px;
   }
 }
