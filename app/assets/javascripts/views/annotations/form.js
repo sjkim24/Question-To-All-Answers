@@ -1,17 +1,18 @@
 Genius.Views.AnnotationForm = Backbone.View.extend ({
 
-  tagName: 'form',
+  tagName: "form",
 
-  className: 'anno-form',
+  className: "anno-form",
 
-  template: JST['annotations/form'],
+  template: JST["annotations/form"],
 
   events: {
-    'click .submit-anno': 'submitAnnotation'
+    "click #anno-save": "saveAnnotation",
+    "click #anno-cancel": "cancelAnnotation"
   },
 
   initialize: function (options) {
-    this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, "sync", this.render);
     this.lyricId = options.lyricId;
     this.startPos = options.startPos;
     this.endPos = options.endPos;
@@ -36,7 +37,7 @@ Genius.Views.AnnotationForm = Backbone.View.extend ({
     return this;
   },
 
-  submitAnnotation: function (event) {
+  saveAnnotation: function (event) {
     event.preventDefault();
     if (this.currentUserChecker()){
       var attrs = this.$el.serializeJSON().annotation;
@@ -50,11 +51,16 @@ Genius.Views.AnnotationForm = Backbone.View.extend ({
       })
       this.model.save({}, {
         success: function () {
-          $('.anno-form').remove();
+          $(".anno-form").remove();
           Backbone.history.navigate("#/lyrics/" + that.lyricId, { trigger: true });
         }
       })
     }
+  },
+
+  cancelAnnotation: function (event) {
+    event.preventDefault();
+    $(".anno-form").remove();
   }
 
 });

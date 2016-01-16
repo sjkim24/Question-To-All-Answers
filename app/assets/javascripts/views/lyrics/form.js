@@ -7,7 +7,7 @@ Genius.Views.LyricForm = Backbone.View.extend ({
   template: JST["lyrics/form"],
 
   events: {
-    "click #lyric-submit": "submitLyric"
+    "click #lyric-save": "saveLyric"
   },
 
   initialize: function () {
@@ -36,7 +36,7 @@ Genius.Views.LyricForm = Backbone.View.extend ({
     $(".title-error").empty();
   },
 
-  submitLyric: function (event) {
+  saveLyric: function (event) {
     event.preventDefault();
     var attrs = this.$el.serializeJSON().lyric;
     var that = this;
