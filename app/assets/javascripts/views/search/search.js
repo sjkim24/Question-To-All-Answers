@@ -3,14 +3,21 @@ Genius.Views.Search = Backbone.View.extend ({
   template: JST['search'],
 
   events: {
-    'click .search': 'search',
-    'click .next-page': 'nextPage'
+    'keyup .search-bar': 'processKey'
+    // 'click .next-page': 'nextPage'
   },
 
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
     this.collection = new Genius.Collections.SearchResults();
     this.listenTo(this.collection, 'sync', this.renderResults);
+  },
+
+  processKey: function (event) {
+    event.preventDefault();
+    if (event.which === 13) {
+      this.search();
+    }
   },
 
   render: function () {
@@ -20,8 +27,7 @@ Genius.Views.Search = Backbone.View.extend ({
     return this;
   },
 
-  search: function (event) {
-		event.preventDefault();
+  search: function () {
 		var $input = this.$("#query");
 		this.collection.searchInfo.query = $input.val();
 		this.collection.searchInfo.page = 1;
@@ -47,12 +53,12 @@ Genius.Views.Search = Backbone.View.extend ({
     }
 	},
 
-  nextPage: function () {
-		this.collection.searchInfo.page++;
-		this.collection.fetch({
-			data: this.collection.searchInfo
-		});
-	},
+  // nextPage: function () {
+	// 	this.collection.searchInfo.page++;
+	// 	this.collection.fetch({
+	// 		data: this.collection.searchInfo
+	// 	});
+	// },
 
 	renderSearchInfo: function () {
 		this.$("#pages").html(this.collection.searchInfo.totalPages);
