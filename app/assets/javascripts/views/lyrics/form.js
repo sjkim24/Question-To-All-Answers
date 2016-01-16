@@ -1,17 +1,17 @@
 Genius.Views.LyricForm = Backbone.View.extend ({
 
-  tagName: 'form',
+  tagName: "form",
 
-  className: 'lyric-form group',
+  className: "lyric-form group",
 
-  template: JST['lyrics/form'],
+  template: JST["lyrics/form"],
 
   events: {
-    'click .submit-lyric': 'submitLyric'
+    "click #lyric-submit": "submitLyric"
   },
 
   initialize: function () {
-    this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, "sync", this.render);
   },
 
   currentUserChecker: function () {

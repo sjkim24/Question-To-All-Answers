@@ -1,142 +1,170 @@
-#main {
-  margin: auto;
+$colorBlack: #000000;
+$colorRed: #CE1141;
+$colorWhite: #FFFFFF;
+
+.lyric-show {
+  width: 50%;
+  a {
+    color: $colorRed;
+
+    &:hover { text-decoration: underline; }
+  }
+
+  #artist {
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+
+  #user, #edit {
+    font-size: 20px;
+  }
+
+  #lyric {
+    font-size: 18px;
+    margin-top: 10px;
+  }
 }
 
-.anno-tip {
-  font-size: 22px;
-  font-weight: bold;
-  color: #FFCC33;
-  padding: 0 0 20px 0;
-}
-
-article.group {
-  float: left;
-  // position: relative;
-  width: 1100px;
-  height: auto;
-  font-family: 'Roboto', sans-serif;
-  padding: 30px 0 0 0;
-}
-
-#main .lyric-title {
-  padding: 0 0 20px 0;
-  font-weight: bold;
-  font-size: 28px;
-}
-
-.artist-edit {
-  font-size: 22px;
-}
-
-.artist-edit a {
-  padding: 0 0 10px 0;
-  color: #04529C;
-}
-
-.artist-edit a:hover {
-  text-decoration: underline;
-}
-
-#main #lyric {
-  float: left;
-  width: 550px;
-  margin: 0 0 40px 0;
-  border-right: 1px solid #ccc;
-}
-
-#lyric a {
-  background: #C0C0C0;
-}
-
-#lyric a:hover {
-  background: #FFCC33;
-}
-
-#main .anno-form {
-  position: absolute;
-  right: 0px;
-  padding: 20px;
-  width: 400px;
-  border: 1px solid #000;
-  background: #FFCC33;
-}
-
-#main .sel {
-  font-style: italic;
-
-}
-
-#main .anno-textarea {
-  display: block;
-  width: 350px;
-  margin: 20px auto;
-  border: 1px solid #000;
-  background: #fff;
-}
-
-#main .submit-anno {
-  display: block;
-  border-radius: 25px;
-  text-transform: uppercase;
-  padding: 0 10px 0 10px;
-  border: 1px solid #000;
-  text-align: center;
-  background: #fff;
-  margin: auto;
-
-}
-
-#main .submit-anno:hover {
-  cursor: pointer;
-  background: #ccc;
-}
-
-.anno-form h2 {
-  text-align: center;
-  font-weight: bold;
-  font-size: 28px;
-}
-
-h3.lyric {
-  font-weight: bold;
-}
-
-.anno-form h3 {
-  padding: 10px 0 0 21px;
-  font-size: 18px;
-}
-
-.contributor {
-  display: block;
-  padding: 10px 0 10px 0;
-  font-size: 18px;
-}
-
-.contributor a {
-  color: #04529C;
-}
-
-.contributor a:hover {
-  text-decoration: underline;
-}
-
-#main .anno-exists {
-  float: right;
-  padding: 20px;
-  margin: 100px 0 0 0;
-  width: 400px;
-  border: 1px solid #000;
-  background: #FFCC33;
-}
-
-.anno-exists h2 {
-  text-align: center;
-  font-weight: bold;
-  font-size: 26px;
-}
-
-.anno-exists h3 {
-  margin: 20px 0 0 0;
-  text-align: left;
-  font-size: 22px;
-}
+// #main {
+//   margin: auto;
+// }
+//
+// .anno-tip {
+//   font-size: 22px;
+//   font-weight: bold;
+//   color: #FFCC33;
+//   padding: 0 0 20px 0;
+// }
+//
+// article.group {
+//   float: left;
+//   // position: relative;
+//   width: 1100px;
+//   height: auto;
+//   font-family: 'Roboto', sans-serif;
+//   padding: 30px 0 0 0;
+// }
+//
+// #main .lyric-title {
+//   padding: 0 0 20px 0;
+//   font-weight: bold;
+//   font-size: 28px;
+// }
+//
+// .artist-edit {
+//   font-size: 22px;
+// }
+//
+// .artist-edit a {
+//   padding: 0 0 10px 0;
+//   color: #04529C;
+// }
+//
+// .artist-edit a:hover {
+//   text-decoration: underline;
+// }
+//
+// #main #lyric {
+//   float: left;
+//   width: 550px;
+//   margin: 0 0 40px 0;
+//   border-right: 1px solid #ccc;
+// }
+//
+// #lyric a {
+//   background: #C0C0C0;
+// }
+//
+// #lyric a:hover {
+//   background: #FFCC33;
+// }
+//
+// #main .anno-form {
+//   position: absolute;
+//   right: 0px;
+//   padding: 20px;
+//   width: 400px;
+//   border: 1px solid #000;
+//   background: #FFCC33;
+// }
+//
+// #main .sel {
+//   font-style: italic;
+//
+// }
+//
+// #main .anno-textarea {
+//   display: block;
+//   width: 350px;
+//   margin: 20px auto;
+//   border: 1px solid #000;
+//   background: #fff;
+// }
+//
+// #main .submit-anno {
+//   display: block;
+//   border-radius: 25px;
+//   text-transform: uppercase;
+//   padding: 0 10px 0 10px;
+//   border: 1px solid #000;
+//   text-align: center;
+//   background: #fff;
+//   margin: auto;
+//
+// }
+//
+// #main .submit-anno:hover {
+//   cursor: pointer;
+//   background: #ccc;
+// }
+//
+// .anno-form h2 {
+//   text-align: center;
+//   font-weight: bold;
+//   font-size: 28px;
+// }
+//
+// h3.lyric {
+//   font-weight: bold;
+// }
+//
+// .anno-form h3 {
+//   padding: 10px 0 0 21px;
+//   font-size: 18px;
+// }
+//
+// .contributor {
+//   display: block;
+//   padding: 10px 0 10px 0;
+//   font-size: 18px;
+// }
+//
+// .contributor a {
+//   color: #04529C;
+// }
+//
+// .contributor a:hover {
+//   text-decoration: underline;
+// }
+//
+// #main .anno-exists {
+//   float: right;
+//   padding: 20px;
+//   margin: 100px 0 0 0;
+//   width: 400px;
+//   border: 1px solid #000;
+//   background: #FFCC33;
+// }
+//
+// .anno-exists h2 {
+//   text-align: center;
+//   font-weight: bold;
+//   font-size: 26px;
+// }
+//
+// .anno-exists h3 {
+//   margin: 20px 0 0 0;
+//   text-align: left;
+//   font-size: 22px;
+// }

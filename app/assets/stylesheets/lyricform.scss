@@ -2,7 +2,6 @@ $colorBlack: #000000;
 $colorRed: #CE1141;
 
 .lyric-form {
-  margin: 40px;
 
   .info {
     margin-top: 10px;
@@ -37,7 +36,7 @@ $colorRed: #CE1141;
     resize: none;
   }
 
-  .bot-border {
+  #bot-border {
     border-top: 1px solid $colorRed;
     margin-bottom: 10px;
   }

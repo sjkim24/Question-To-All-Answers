@@ -1,20 +1,18 @@
 Genius.Views.LyricShow = Backbone.View.extend ({
 
-  tagName: 'article',
+  className: "lyric-show",
 
-  className: 'group',
-
-  template: JST['lyrics/show'],
+  template: JST["lyrics/show"],
 
   events: {
-    'mouseup #lyric': 'getRange',
-    'click .annotation': 'renderAnno'
+    "mouseup #lyric": "getRange",
+    "click .annotation": "renderAnno"
   },
 
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
     this.annotations = options.annotations;
-    this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, "sync", this.render);
     this.upvotes = options.upvotes;
   },
 
@@ -39,9 +37,9 @@ Genius.Views.LyricShow = Backbone.View.extend ({
   },
 
   clearPage: function () {
-    $('.anno-form').remove();
-    $('.anno-show').remove();
-    $('.anno-exists').remove();
+    $(".anno-form").remove();
+    $(".anno-show").remove();
+    $(".anno-exists").remove();
   },
 
   getRange: function (event) {
@@ -103,7 +101,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
       endPos: endPos,
       sel: sel
     });
-    $('article').append(annoForm.render().$el)
+    $("article").append(annoForm.render().$el)
   },
 
   renderAnnoExists: function () {

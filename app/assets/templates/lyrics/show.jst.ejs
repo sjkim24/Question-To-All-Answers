@@ -1,10 +1,9 @@
-<h2 class="anno-tip">Highlight a portion of the lyric to add annotations!</h2>
-<h2 class="lyric-title"><%= lyric.escape("track_title") %></h2>
-<section class="artist-edit">
+<h1 class="lyric" id="title"><%= lyric.escape("track_title") %></h1>
+<div class="lyric" id="artist">
   <a href="#/artists/<%= lyric.artist().id %>" class="artist">
-           <%= lyric.artist().escape("name") %>
-         </a> |
-  <a href="#/lyrics/<%= lyric.id %>/edit" class="edit">Edit Lyric</a>
-</section>
-<h3 class="contributor">Submitted by <a href="#/users/<%= userId %>"><%= username %></a></h3>
-<section id="lyric"><%= lyric.formatLyric() %></section>
+    <%= lyric.artist().escape("name") %>
+  </a>
+</div>
+<div class="lyric" id="user">Submitted by <a href="#/users/<%= userId %>"><%= username %></a></div>
+<div><a class="lyric" id="edit" href="#/lyrics/<%= lyric.id %>/edit">Edit Lyric</a></div>
+<div class="lyric" id="lyric"><%= lyric.formatLyric() %></section>
