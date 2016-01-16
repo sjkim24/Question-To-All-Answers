@@ -44,7 +44,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
 
   getRange: function (event) {
     event.preventDefault();
-    var lyric = $("#lyric");
+    var lyric = $("#lyric")[0];
     var sel = rangy.getSelection();
     var annotated = sel.toString().trim()
     var selLength = sel.toString().length;
