@@ -1,9 +1,10 @@
-<div class="auth login">
+<div class="auth login group">
   <h1>Login</h1>
   <form action="<%= session_url %>" method="post">
     <%= render "shared/auth_token" %>
     <input placeholder="Username" type="text" name="user[username]">
     <input class="password" placeholder="Password" type="password" name="user[password]">
+    <%= render "shared/errors" %>
     <button class="user-login">Login</button>
   </form>
   <form action="<%= session_url %>" method="post">

@@ -6,7 +6,7 @@ div.req-login {
   width: max-content;
 }
 
-.auth.login { height: 197px; }
+.auth.login { height: 226px; }
 
 .auth {
   border: 3px solid $colorBlack;
@@ -30,6 +30,19 @@ div.req-login {
     .password {
       position: relative;
     }
+
+    &:focus {
+      border: 2px solid $colorRed;
+    }
+  }
+
+  .errors {
+    color: $colorRed;
+    display: block;
+    margin: 10px auto 0 auto;
+    text-transform: uppercase;
+    // width: 246.75px;
+    width: 300.25px;
   }
 
   .user-login, .guest-login, .signup-link { position: absolute; }
@@ -53,4 +66,5 @@ div.req-login {
   .signup-button {
     margin: 10px 0 10px 136.75px;
   }
+
 }
