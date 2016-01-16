@@ -1,5 +1,5 @@
 .index {
-  border-right: 1px solid $colorRed;
+  border-right: 1px solid #CE1141;
   margin: 40px;
   width: calc(50% - 40px);
 
@@ -14,7 +14,7 @@
       padding: 5px;
       width: calc(100% - 40px);
 
-      &:hover { color: $colorRed; }
+      &:hover { color: #CE1141; }
 
       section { float: left; }
 
