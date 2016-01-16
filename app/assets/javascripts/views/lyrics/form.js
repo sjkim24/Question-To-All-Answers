@@ -19,14 +19,21 @@ Genius.Views.LyricForm = Backbone.View.extend ({
     if (currentUser) {
       return currentUser;
     } else {
-      window.location = "/session/redirect"
+      window.location = "/session/redirect";
     }
   },
 
   render: function () {
     var content = this.template({ lyric: this.model });
     this.$el.html(content);
+
     return this;
+  },
+
+  clearFormErrors: function () {
+    $(".lyric-error").empty();
+    $(".artist-error").empty();
+    $(".title-error").empty();
   },
 
   submitLyric: function (event) {
@@ -41,14 +48,17 @@ Genius.Views.LyricForm = Backbone.View.extend ({
         that.collection.add(that.model, { merge: true });
         Backbone.history.navigate('lyrics/' + that.model.id, { trigger: true });
       },
-
       error: function (model, response) {
-        $('.errors').empty();
-        response.responseJSON.forEach(function(el) {
-          var li = $('<li></li>');
-          li.html(el);
-          $('.errors').append(li);
-        }.bind(this));
+        that.clearFormErrors();
+        response.responseJSON.forEach(function (el) {
+          if (el === "Lyric can't be blank") {
+            $(".lyric-error").html("*" + el);
+          } else if (el === "Artist can't be blank") {
+            $(".artist-error").html("*" + el);
+          } else if (el === "Track title can't be blank") {
+            $(".title-error").html("*" + el);
+          }
+        });
       }
     })
   }

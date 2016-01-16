@@ -25,13 +25,15 @@ $colorRed: #CE1141;
   }
 
   input, textarea {
+    float: left;
     border: 2px solid $colorBlack;
+    margin-right: 5px;
     padding: 3px 0 3px 3px;
     width: 470px;
   }
 
   textarea {
-    margin: 0 0 15px 0;
+    margin: 0 5px 15px 0;
     resize: none;
   }
 
@@ -39,4 +41,13 @@ $colorRed: #CE1141;
     border-top: 1px solid $colorRed;
     margin-bottom: 10px;
   }
+
+  .title-error, .artist-error, .lyric-error {
+    color: $colorRed;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  .title-error, .artist-error { padding-top: 2px; }
+
 }

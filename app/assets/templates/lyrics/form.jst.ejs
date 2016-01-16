@@ -4,10 +4,19 @@
   <h2>*required</h2>
 </div>
 <div class="input-desc">*Title</div>
-<input class="title" type="text" name="lyric[track_title]" value="<%= lyric.escape("track_title") %>">
+<div class="title-input group">
+  <input class="title" type="text" name="lyric[track_title]" value="<%= lyric.escape("track_title") %>">
+  <div class="title-error"></div>
+</div>
 <div class="input-desc">*Artist</div>
-<input class="artist" type="text" name="lyric[artist_id]" value="<%= lyric.artist().escape("name") %>">
+<div class="artist-input group">
+  <input class="artist" type="text" name="lyric[artist_id]" value="<%= lyric.artist().escape("name") %>">
+  <div class="artist-error"></div>
+</div>
 <div class="input-desc">*Lyric</div>
-<textarea class="lyric" name="lyric[lyric]"><%= lyric.escape("lyric") %></textarea>
+<div class="lyric-input group">
+  <textarea class="lyric" name="lyric[lyric]"><%= lyric.escape("lyric") %></textarea>
+  <div class="lyric-error"></div>
+</div>
 <div class="bot-border"></div>
 <button class="submit-lyric">Submit</button>
