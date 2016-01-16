@@ -26,9 +26,12 @@ $colorWhite: #FFFFFF;
       li { margin-right: 10px; }
 
       .search-bar input {
-        border: 2px solid $colorBlack;
+        background-image: image-url("search_icon.png");
+        background-position: 0px 3px, left;
+        background-repeat: no-repeat;
+        border-bottom: 2px solid $colorBlack;
         height: 25px;
-        padding-left: 3px;
+        padding-left: 23px;
         width: 250px;
       }
 
