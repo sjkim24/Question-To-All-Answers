@@ -1,5 +1,9 @@
 Genius.Views.LyricsIndex = Backbone.CompositeView.extend ({
 
+  tagName: 'div',
+
+  className: 'index',
+
   template: JST['lyrics/index'],
 
   initialize: function () {

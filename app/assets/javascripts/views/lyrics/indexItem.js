@@ -1,8 +1,8 @@
 Genius.Views.LyricIndexItem = Backbone.View.extend ({
 
-  tagName: 'li',
-
-  className: 'lyric-track-title',
+  // tagName: 'li',
+  // 
+  // className: 'lyric-track-title',
 
   template: JST['lyrics/indexItem'],
 
