@@ -12,19 +12,18 @@
  *
  *= require_self
  */
- @import "auth.scss";
  @import "annoedit.scss";
- @import "reset.scss";
+ @import "annoshow.scss";
+ @import "artistshow.scss";
+ @import "auth.scss";
+ @import "button.scss";
+ @import "commentshow.scss";
+ @import "errors.scss";
  @import "header.scss";
- @import "lyricshow.scss";
  @import "index.scss";
  @import "lyricform.scss";
- @import "artistshow.scss";
+ @import "lyricshow.scss";
  @import "profile.scss";
- @import "annoshow.scss";
- @import "errors.scss";
- @import "searchbar.scss";
- @import "search.scss";
- @import "commentshow.scss";
- @import "button.scss";
  @import "qtta.scss";
+ @import "reset.scss";
+ @import "search.scss";
