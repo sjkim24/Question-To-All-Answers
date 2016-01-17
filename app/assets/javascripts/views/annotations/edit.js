@@ -1,15 +1,18 @@
 Genius.Views.AnnotationEdit = Backbone.View.extend ({
 
-  tagName: 'form',
+  className: "anno-edit",
 
-  template: JST['annotations/edit'],
+  tagName: "form",
+
+  template: JST["annotations/edit"],
 
   events: {
-    'click .submit-edit-anno': 'updateAnno'
+    "click #edit-save": "saveEdit",
+    "click #edit-cancel": "cancelEdit"
   },
 
   initialize: function () {
-    this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, "sync", this.render);
   },
 
   render: function () {
@@ -19,19 +22,25 @@ Genius.Views.AnnotationEdit = Backbone.View.extend ({
     return this;
   },
 
-  updateAnno: function (event) {
+  saveEdit: function (event) {
     event.preventDefault();
     var attrs = this.$el.serializeJSON().annotation;
     var that = this;
     this.model.set(attrs);
-    this.model.save({}, {
+    this.model.save( {}, {
       success: function () {
         var newView = new Genius.Views.AnnotationShow ({
           model: that.model
         })
-        newView.render();
+        $(".anno-edit").remove();
+        $("#main").append(newView.render().$el);
       }
     })
+  },
+
+  cancelEdit: function (event) {
+    event.preventDefault();
+    $(".anno-edit").remove();
   }
 
 });

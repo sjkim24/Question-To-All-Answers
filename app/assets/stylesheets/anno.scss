@@ -1,0 +1,62 @@
+$colorBlack: #000000;
+$colorRed: #CE1141;
+
+.anno-form, .anno-show, .anno-edit {
+  float: left;
+  width: 40%;
+
+  .anno-heading {
+    font-size: 30px;
+    font-weight: bold;
+
+  }
+
+  .anno-info {
+    margin-top: 5px;
+    width: 100%;
+
+    #anno-h, .anno-l { font-size: 24px; }
+
+    .anno-hl {
+      color: $colorRed;
+      font-size: 20px;
+      font-style: italic;
+      margin-top: 3px;
+    }
+  }
+
+  .anno-textarea {
+    background-color: rgba(204,204,204,.2);
+    height: 48px;
+    margin: 5px 0 5px 0;
+    overflow: auto;
+    padding: 5px;
+    resize: none;
+    width: 100%;
+    word-wrap: break-word;
+  }
+
+  a {
+    color: $colorRed;
+
+    &:hover { text-decoration: underline; }
+  }
+
+  .anno-textarea, .anno-anno {
+    background-color: rgba(204,204,204,.2);
+    margin: 5px 0 5px 0;
+    padding: 5px;
+    resize: none;
+    width: 100%;
+    word-wrap: break-word;
+
+    #anno-al {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    #anno-user {
+      float: right;
+    }
+  }
+}

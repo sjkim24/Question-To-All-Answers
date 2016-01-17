@@ -40,6 +40,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     $(".anno-form").remove();
     $(".anno-show").remove();
     $(".anno-exists").remove();
+    $(".anno-edit").remove();
   },
 
   getRange: function (event) {
@@ -71,7 +72,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
       // var coords = this.getSelectionCoords();
       // debugger
       this.renderAnnoForm(startPos, endPos, selSpaced);
-      $("#anno-anno").elastic();
+      $(".anno-textarea").elastic();
       this.getHighLightCoords(startPos, endPos);
       // $(".anno-form").css("margin-top", coords.y);
     }
@@ -178,6 +179,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
       model: annotation,
       upvotes: this.upvotes
     });
+
     this.$rootEl.append(annoShow.render().$el);
   }
 

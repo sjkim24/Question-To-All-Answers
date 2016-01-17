@@ -1,7 +1,5 @@
 Genius.Views.AnnotationShow = Backbone.View.extend ({
 
-  tagName: 'section',
-
   className: 'anno-show',
 
   template: JST['annotations/show'],
@@ -26,7 +24,6 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
   },
 
   render: function () {
-
     var upvote = this.model.upvotes().findWhere({
       anno_id: this.model.get("id"),
       user_id: Genius.CurrentUser.get("id")
@@ -62,12 +59,14 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
 
   editAnno: function (event) {
     event.preventDefault();
+    $(".anno-show").remove();
     var annoEdit = new Genius.Views.AnnotationEdit ({
       model: this.model
     });
 
     if (this.currentUserChecker()){
-      this.$el.html(annoEdit.render().$el);
+      $("#main").append(annoEdit.render().$el);
+      $(".anno-textarea").elastic();
     }
   },
 

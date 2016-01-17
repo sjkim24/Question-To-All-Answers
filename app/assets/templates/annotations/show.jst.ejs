@@ -1,11 +1,16 @@
-<h2>Lyric</h2>
-<h3 class="lyric-text"><%= annotation.escape("lyric_text") %></h3>
-<h2>
-  Annotation by
-  <a href="#/users/<%= annotation.escape("user_id") %>">
-    <%= username %>
-  </a>
-</h2>
-<h3 class="lyric-anno"><%= annotation.escape("annotation") %></h3>
+<div class="anno-heading">Annotation</div>
+<div class="anno-info">
+  <div class="anno-l">Lyric</div>
+  <div class=anno-hl>"<%= annotation.escape("lyric_text") %>"</div>
+</div>
+<div class="anno-anno group">
+  <div id="anno-al"><%= annotation.escape("annotation") %></div>
+  <div id="anno-user">
+    Annotated by
+    <a href="#/users/<%= annotation.escape("user_id") %>">
+      <%= username %>
+    </a>
+  </div>
+</div>
 <button class="upvote"><%= upvoted %></button>
 <button class="edit-anno">Edit</button>
