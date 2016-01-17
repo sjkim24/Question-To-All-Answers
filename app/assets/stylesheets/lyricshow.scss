@@ -6,10 +6,20 @@ $colorWhite: #FFFFFF;
   float: left;
   width: 60%;
 
+  a {
+    color: $colorRed;
+
+    &:hover { text-decoration: underline; }
+  }
+
   .annotation {
+    color: $colorBlack;
     background: #d0d8e1;
 
-    &:hover { background: $colorRed; }
+    &:hover {
+      background: $colorRed;
+      text-decoration: none;
+    }
   }
 
   #artist {
