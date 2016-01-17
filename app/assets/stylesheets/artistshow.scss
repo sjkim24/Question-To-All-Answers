@@ -1,20 +1,35 @@
-// #main .artist-name {
-//   font-size: 32px;
-//   font-weight: bold;
-//   padding: 50px 0 20px 0;
-// }
-//
-// .artist-h3 {
-//   font-size: 28px;
-//   font-weight: bold;
-//   padding: 10px 0 20px 0;
-// }
-// .artist-lyrics > li {
-//   font-size: 20px;
-//   padding: 10px 0 0 0;
-//   color: #04529C;
-// }
-//
-// .artist-lyrics a:hover {
-//   text-decoration: underline;
-// }
+$colorBlack: #000000;
+$colorRed: #CE1141;
+$colorWhite: #FFFFFF;
+
+.artist-show {
+  width: 50%;
+
+  .artist-heading {
+    font-size: 30px;
+    margin: 5px 0 5px 0;
+  }
+
+  .artist-lyrics {
+    font-size: 26px;
+
+    li {
+      border-top: 2px solid #d0d8e1;
+      color: $colorRed;
+      height: 28px;
+      padding: 5px 0 5px 0px;
+      transition-duration: 0.125s;
+      transition-property: padding;
+
+      &:hover {
+        border-left: 3px solid $colorRed;
+        padding: 5px 0 5px 5px;
+        transition-duration: 0.125s;
+        transition-property: padding;
+      }
+    }
+
+    &:last-child { border-bottom: 2px solid #d0d8e1; }
+  }
+
+}
