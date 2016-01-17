@@ -19,9 +19,8 @@ $colorRed: #CE1141;
     }
 
     li {
-      // border-top: 2px solid #d0d8e1;
       color: $colorRed;
-      height: 28px;
+      height: 26px;
       padding: 5px 0 5px 0px;
       transition-duration: 0.125s;
       transition-property: padding;
@@ -33,14 +32,6 @@ $colorRed: #CE1141;
         transition-duration: 0.125s;
         transition-property: padding;
       }
-      // border: 2px solid $colorBlack;
-      // border-radius: 3px;
-      // font-size: 20px;
-      // margin-top: 5px;
-      // padding: 5px;
-      // width: calc(100% - 40px);
-      //
-      // &:hover { color: $colorRed; }
 
       section { float: left; }
 
