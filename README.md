@@ -19,6 +19,7 @@ sections of an artist's lyrics.
 - [SerializeJSON](https://github.com/marioizquierdo/jquery.serializeJSON)
 - [jQuery](https://api.jquery.com/)
 - [rangy](https://github.com/timdown/rangy)
+- [jQuery-elastic](https://github.com/janjarfalk/jquery-elastic)
 
 ## Annotation
 Annotation is the main feature of this app and was definitely the hardest to build. The app listens for a mouse click to be lifted; this usually happens when you are highlighting a text. If the portion of the lyric is highlighted, the app renders an annotation form. It also attains where the highlight starts and ends by storing them under "start position" and "end position". When a user submits the form, an annotation object is saved along with its starting and end position. The app adds annotations when backbone renders the lyric. I created a "lyric has many annotations" association by overriding the parse function for lyric model. Before it renders the lyric, it checks for all annotations for that lyric and adds anchor tags with a data-id of the annotation id and href pointing to a show view for that annotation.

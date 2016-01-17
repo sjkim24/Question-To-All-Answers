@@ -67,6 +67,7 @@ Genius.Models.Lyric = Backbone.Model.extend ({
           lyric.slice(startPos, endPos), annotated);
       })
       var re = /\n/g;
+
       return annoLyric.replace(re, '<br>');
     }
 

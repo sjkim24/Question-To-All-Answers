@@ -1,186 +1,186 @@
-.profile {
-  display: block;
-  font-family: 'Roboto', sans-serif;
-  width: 240px;
-}
-
-.profile .prof-pic {
-  width: 200px;
-  height: 200px;
-  border: 1px solid #000;
-  margin: 20px 0 20px 0;
-}
-
-.profile img {
-  width: 100%;
-  max-height: 200px;
-}
-
-.profile section {
-  padding: 10px 0 10px 0;
-  font-size: 20px;
-  width: 200px;
-  border-top: 1px solid #FFCC33;
-}
-
-.profile .lyrics:hover {
-  cursor: pointer;
-
-}
-
-.profile .annotations:hover {
-  cursor: pointer;
-
-}
-
-.about-me {
-  display: block;
-  cursor: pointer;
-  max-width: 240px;
-  overflow: hidden;
-  white-space: nowrap;
-  border-bottom: 1px solid #FFCC33;
-}
-
-.user-link-header {
-  float:right;
-  width: 800px;
-  margin: 69px 0 0 0;
-  font-weight: bold;
-  font-size: 28px;
-}
-
-.user-lyrics li {
-  font-size: 22px;
-  margin: 5px 0 0 0;
-}
-
-.user-annos li {
-  font-size: 22px;
-  margin: 5px 0 0 0;
-}
-
-.user-annos {
-  float: right;
-  font-size: 18px;
-  width: 800px;
-  margin: 20px 0 0 0;
-}
-
-.user-annos a {
-  color: #04529C;
-}
-
-.user-annos a:hover {
-  text-decoration: underline;
-}
-
-.user-lyrics {
-  float: right;
-  font-size: 18px;
-  width: 800px;
-  margin: 20px 0 0 0;
-  color: #04529C;
-}
-
-.user-lyrics a:hover {
-  text-decoration: underline;
-}
-
-.edit-prof-pic:hover {
-  cursor: pointer;
-}
-
-
-form.user-about-me {
-  float: right;
-  width: 800px;
-  margin: 70px 0 0 0;
-}
-
-form textarea {
-  display: block;
-  margin: 20px 0 20px 0;
-  width: 300px;
-  height: 300px;
-  border: 1px solid #FFCC33;
-}
-
-.user-about-me {
-  float:right;
-  width: 800px;
-  margin: 40px 0 0 60px;
-}
-
-.user-about-me h2 {
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.user-about-me section {
-  display: block;
-  margin: 20px 0 20px 0;
-  width: 300px;
-  height: 300px;
-  border: 1px solid #FFCC33;
-}
-
-.user-about-me button {
-  border-radius: 25px;
-  text-transform: uppercase;
-  padding: 0 10px 0 10px;
-  margin: 0 0 10px 0;
-  border: 1px solid #ccc;
-  text-align: center
-}
-
-.user-about-me button:hover {
-  background: #ccc;
-  cursor: pointer;
-}
-
-.edit-prof-pic:hover {
-  cursor: pointer;
-}
-
-.prof-pic-form {
-  float: right;
-  width: 800px;
-  margin: 69px 0 0 0;
-}
-
-.prof-pic-form h1 {
-  font-weight: bold;
-  font-size: 28px;
-}
-
-.prof-pic-form .submit-pic{
-  border-radius: 25px;
-  text-transform: uppercase;
-  padding: 0 10px 0 10px;
-  border: 1px solid #ccc;
-  text-align: center
-}
-
-.prof-pic-form .submit-pic:hover {
-  background: #ccc;
-  cursor: pointer;
-}
-
-.prof-pic-form .cancel{
-  border-radius: 25px;
-  text-transform: uppercase;
-  padding: 0 10px 0 10px;
-  border: 1px solid #ccc;
-  text-align: center
-}
-
-.prof-pic-form .cancel:hover {
-  background: #ccc;
-  cursor: pointer;
-}
-
-img#preview-user-image {
-  width: 100px;
-  height: auto;
-}
+// .profile {
+//   display: block;
+//   font-family: 'Roboto', sans-serif;
+//   width: 240px;
+// }
+//
+// .profile .prof-pic {
+//   width: 200px;
+//   height: 200px;
+//   border: 1px solid #000;
+//   margin: 20px 0 20px 0;
+// }
+//
+// .profile img {
+//   width: 100%;
+//   max-height: 200px;
+// }
+//
+// .profile section {
+//   padding: 10px 0 10px 0;
+//   font-size: 20px;
+//   width: 200px;
+//   border-top: 1px solid #FFCC33;
+// }
+//
+// .profile .lyrics:hover {
+//   cursor: pointer;
+//
+// }
+//
+// .profile .annotations:hover {
+//   cursor: pointer;
+//
+// }
+//
+// .about-me {
+//   display: block;
+//   cursor: pointer;
+//   max-width: 240px;
+//   overflow: hidden;
+//   white-space: nowrap;
+//   border-bottom: 1px solid #FFCC33;
+// }
+//
+// .user-link-header {
+//   float:right;
+//   width: 800px;
+//   margin: 69px 0 0 0;
+//   font-weight: bold;
+//   font-size: 28px;
+// }
+//
+// .user-lyrics li {
+//   font-size: 22px;
+//   margin: 5px 0 0 0;
+// }
+//
+// .user-annos li {
+//   font-size: 22px;
+//   margin: 5px 0 0 0;
+// }
+//
+// .user-annos {
+//   float: right;
+//   font-size: 18px;
+//   width: 800px;
+//   margin: 20px 0 0 0;
+// }
+//
+// .user-annos a {
+//   color: #04529C;
+// }
+//
+// .user-annos a:hover {
+//   text-decoration: underline;
+// }
+//
+// .user-lyrics {
+//   float: right;
+//   font-size: 18px;
+//   width: 800px;
+//   margin: 20px 0 0 0;
+//   color: #04529C;
+// }
+//
+// .user-lyrics a:hover {
+//   text-decoration: underline;
+// }
+//
+// .edit-prof-pic:hover {
+//   cursor: pointer;
+// }
+//
+//
+// form.user-about-me {
+//   float: right;
+//   width: 800px;
+//   margin: 70px 0 0 0;
+// }
+//
+// form textarea {
+//   display: block;
+//   margin: 20px 0 20px 0;
+//   width: 300px;
+//   height: 300px;
+//   border: 1px solid #FFCC33;
+// }
+//
+// .user-about-me {
+//   float:right;
+//   width: 800px;
+//   margin: 40px 0 0 60px;
+// }
+//
+// .user-about-me h2 {
+//   font-size: 28px;
+//   font-weight: bold;
+// }
+//
+// .user-about-me section {
+//   display: block;
+//   margin: 20px 0 20px 0;
+//   width: 300px;
+//   height: 300px;
+//   border: 1px solid #FFCC33;
+// }
+//
+// .user-about-me button {
+//   border-radius: 25px;
+//   text-transform: uppercase;
+//   padding: 0 10px 0 10px;
+//   margin: 0 0 10px 0;
+//   border: 1px solid #ccc;
+//   text-align: center
+// }
+//
+// .user-about-me button:hover {
+//   background: #ccc;
+//   cursor: pointer;
+// }
+//
+// .edit-prof-pic:hover {
+//   cursor: pointer;
+// }
+//
+// .prof-pic-form {
+//   float: right;
+//   width: 800px;
+//   margin: 69px 0 0 0;
+// }
+//
+// .prof-pic-form h1 {
+//   font-weight: bold;
+//   font-size: 28px;
+// }
+//
+// .prof-pic-form .submit-pic{
+//   border-radius: 25px;
+//   text-transform: uppercase;
+//   padding: 0 10px 0 10px;
+//   border: 1px solid #ccc;
+//   text-align: center
+// }
+//
+// .prof-pic-form .submit-pic:hover {
+//   background: #ccc;
+//   cursor: pointer;
+// }
+//
+// .prof-pic-form .cancel{
+//   border-radius: 25px;
+//   text-transform: uppercase;
+//   padding: 0 10px 0 10px;
+//   border: 1px solid #ccc;
+//   text-align: center
+// }
+//
+// .prof-pic-form .cancel:hover {
+//   background: #ccc;
+//   cursor: pointer;
+// }
+//
+// img#preview-user-image {
+//   width: 100px;
+//   height: auto;
+// }
