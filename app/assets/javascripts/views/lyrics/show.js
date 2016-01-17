@@ -176,6 +176,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     var id = $(event.currentTarget).attr("data-id");
     var annotation = this.annotations.getOrFetch(id);
     var annoShow = new Genius.Views.AnnotationShow ({
+      $rootEl: this.$rootEl,
       model: annotation,
       upvotes: this.upvotes
     });

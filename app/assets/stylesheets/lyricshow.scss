@@ -5,10 +5,11 @@ $colorWhite: #FFFFFF;
 .lyric-show {
   float: left;
   width: 60%;
-  a {
-    color: $colorRed;
 
-    &:hover { text-decoration: underline; }
+  .annotation {
+    background: #d0d8e1;
+
+    &:hover { background: $colorRed; }
   }
 
   #artist {

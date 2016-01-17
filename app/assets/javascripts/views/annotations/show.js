@@ -10,6 +10,7 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
   },
 
   initialize: function (options) {
+    this.$rootEl = options.$rootEl;
     this.listenTo(this.model, 'sync', this.render);
     this.upvotes = options.upvotes;
   },
@@ -61,6 +62,7 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
     event.preventDefault();
     $(".anno-show").remove();
     var annoEdit = new Genius.Views.AnnotationEdit ({
+      $rootEl: this.$rootEl,
       model: this.model
     });
 

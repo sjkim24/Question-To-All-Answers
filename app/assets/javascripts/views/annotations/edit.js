@@ -11,7 +11,8 @@ Genius.Views.AnnotationEdit = Backbone.View.extend ({
     "click #edit-cancel": "cancelEdit"
   },
 
-  initialize: function () {
+  initialize: function (options) {
+    this.$rootEl = options.$rootEl;
     this.listenTo(this.model, "sync", this.render);
   },
 
@@ -33,7 +34,7 @@ Genius.Views.AnnotationEdit = Backbone.View.extend ({
           model: that.model
         })
         $(".anno-edit").remove();
-        $("#main").append(newView.render().$el);
+        that.$rootEl.append(newView.render().$el);
       }
     })
   },
