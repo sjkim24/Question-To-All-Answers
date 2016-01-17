@@ -1,6 +1,7 @@
 $colorBlack: #000000;
 $colorRed: #CE1141;
 $colorWhite: #FFFFFF;
+$colorlightPink: #eddab6;
 
 .lyric-show {
   float: left;
@@ -15,9 +16,10 @@ $colorWhite: #FFFFFF;
   .annotation {
     color: $colorBlack;
     background: #d0d8e1;
+    border-radius: 2px;
 
     &:hover {
-      background: $colorRed;
+      background: #f9f1b5;
       text-decoration: none;
     }
   }
