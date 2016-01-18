@@ -7,15 +7,34 @@ $colorWhite: #FFFFFF;
   width: 600px;
   margin-bottom: 40px;
 
-  a {
+  #lyric-user, #lyric-edit { margin-top: 1.5px; }
+
+  #artist, #user, #edit {
+    border-bottom: 1px solid transparent;
     color: $colorRed;
     text-decoration: none;
-    border-bottom: 1px solid transparent;
     transition: all ease-in-out .3s;
 
     &:hover {
       border-color: $colorRed;
     }
+  }
+
+  #artist {
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+
+  #user, #edit {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+
+  #lyric {
+    font-size: 18px;
+    margin-top: 10px;
   }
 
   .annotation {
@@ -31,21 +50,5 @@ $colorWhite: #FFFFFF;
       transition-duration: 0.15s;
       transition-property: background;
     }
-  }
-
-  #artist {
-    font-size: 26px;
-    font-weight: bold;
-    margin-top: 5px;
-  }
-
-  #user, #edit {
-    margin-top: 3px;
-    font-size: 20px;
-  }
-
-  #lyric {
-    font-size: 18px;
-    margin-top: 10px;
   }
 }

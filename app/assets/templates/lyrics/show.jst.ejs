@@ -1,9 +1,9 @@
 <h1 class="lyric" id="title"><%= lyric.escape("track_title") %></h1>
-<div class="lyric" id="artist">
-  <a href="#/artists/<%= lyric.artist().id %>" class="artist">
+<div class="lyric">
+  <a id="artist" href="#/artists/<%= lyric.artist().id %>" class="artist">
     <%= lyric.artist().escape("name") %>
   </a>
 </div>
-<div class="lyric" id="user">Submitted by <a href="#/users/<%= userId %>"><%= username %></a></div>
-<div><a class="lyric" id="edit" href="#/lyrics/<%= lyric.id %>/edit">Edit Lyric</a></div>
+<div id="lyric-user">Submitted by <a id="user" href="#/users/<%= userId %>"><%= username %></a></div>
+<div id="lyric-edit"><a class="lyric" id="edit" href="#/lyrics/<%= lyric.id %>/edit">Edit Lyric</a></div>
 <div class="lyric" id="lyric"><%= lyric.formatLyric() %></section>
