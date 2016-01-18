@@ -9,18 +9,27 @@ $colorWhite: #FFFFFF;
 
   a {
     color: $colorRed;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all ease-in-out .3s;
 
-    &:hover { text-decoration: underline; }
+    &:hover {
+      border-color: $colorRed;
+    }
   }
 
   .annotation {
     color: $colorBlack;
     background: #D0D8E1;
     border-radius: 3px;
+    transition-duration: 0.15s;
+    transition-property: background;
 
     &:hover {
       background: #F9F1B5;
       text-decoration: none;
+      transition-duration: 0.15s;
+      transition-property: background;
     }
   }
 

@@ -50,8 +50,13 @@ $colorRed: #CE1141;
 
   a {
     color: $colorRed;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all ease-in-out .3s;
 
-    &:hover { text-decoration: underline; }
+    &:hover {
+      border-color: $colorRed;
+    }
   }
 
   .anno-anno {

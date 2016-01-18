@@ -14,25 +14,36 @@ $colorWhite: #FFFFFF;
     li { float: left; }
 
     .header-logo {
-      float: left;
       font-family: 'Dancing Script', cursive;
       font-size: 26px;
 
-      .header-pic {
-        background-size: cover;
-        background-image: image-url("featherb.png");
-        display: block;
-        float: left;
-        height: 40px;
-        margin-top: -8px;
-        width: 48px;
-      }
-
-      &:hover {
-        color: $colorRed;
+      a {
+        color: $colorBlack;
+        transition-duration: .4s;
+        transition-property: color;
 
         .header-pic {
-          background-image: image-url("featherr.png");
+          background-size: cover;
+          background-image: image-url("featherb.png");
+          display: block;
+          float: left;
+          height: 40px;
+          margin-top: -8px;
+          transition-duration: .4s;
+          transition-property: background-image;
+          width: 48px;
+        }
+
+        &:hover {
+          color: $colorRed;
+          transition-duration: .3s;
+          transition-property: color;
+
+          .header-pic {
+            background-image: image-url("featherr.png");
+            transition-duration: .3s;
+            transition-property: background-image;
+          }
         }
       }
     }
@@ -49,6 +60,8 @@ $colorWhite: #FFFFFF;
         background-position: 0px 5px, left;
         background-repeat: no-repeat;
         border-bottom: 2px solid $colorBlack;
+        transition-duration: .4s;
+        transition-property: background-image, border-bottom;
         height: 25px;
         padding-left: 23px;
         width: 250px;
@@ -56,6 +69,8 @@ $colorWhite: #FFFFFF;
         &:focus {
           border-bottom: 2px solid $colorRed;
           background-image: image-url("searchr.png");
+          transition-duration: .3s;
+          transition-property: background-image, border-bottom;
         }
       }
 
@@ -69,8 +84,16 @@ $colorWhite: #FFFFFF;
       }
     }
 
-    a:hover {
-      color: $colorRed;
+    a {
+      color: $colorBlack;
+      transition-duration: .4s;
+      transition-property: color;
+
+      &:hover {
+        color: $colorRed;
+        transition-duration: .3s;
+        transition-property: color;
+      }
     }
   }
 }
