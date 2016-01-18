@@ -2,6 +2,7 @@ div.req-login {
   color: $colorRed;
   font-family: 'Roboto', sans-serif;
   font-size: 24px;
+  font-weight: bold;
   margin: 20px auto 0 auto;
   width: 190.266px;
 }
@@ -10,18 +11,22 @@ div.req-login {
 
 .auth {
   border: 3px solid $colorBlack;
+  border-radius: 3px;
   font-family: 'Roboto', sans-serif;
   margin: 40px auto 0 auto;
   width: 340px;
 
   h1 {
+    color: $colorRed;
     font-size: 22px;
+    font-weight: bold;
     margin-top: 10px;
     text-align: center;
   }
 
   input {
     border: 2px solid $colorBlack;
+    border-radius: 3px;
     height: 25px;
     padding-left: 3px;
     margin: 10px 43px 0 43px;
@@ -55,10 +60,15 @@ div.req-login {
   }
 
   .signup-link {
+    font-weight: bold;
     margin: 51px 58.422px 0 58.422px;
 
     a {
       color: $colorRed;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
