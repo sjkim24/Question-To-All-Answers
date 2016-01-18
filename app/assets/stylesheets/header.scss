@@ -3,7 +3,6 @@ $colorRed: #CE1141;
 $colorWhite: #FFFFFF;
 
 .header {
-  border-bottom: 1px solid $colorBlack;
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
   padding: 10px 10px 0 10px;
@@ -101,6 +100,6 @@ $colorWhite: #FFFFFF;
 .header-img {
   background-image: image-url("logic.png");
   background-size: cover;
-  border-bottom: 1px solid $colorBlack;
+  border-bottom: 3px solid #D0D8E1;
   height: 200px;
 }
