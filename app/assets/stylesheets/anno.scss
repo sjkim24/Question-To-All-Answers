@@ -11,26 +11,13 @@ $colorRed: #CE1141;
 
   }
 
-  .anno-info {
-    margin-top: 5px;
-    width: 100%;
+  #anno-user { font-size: 24px;}
 
-    #anno-h, .anno-l { font-size: 24px; }
-
-    .anno-hl {
-      color: $colorRed;
-      font-size: 20px;
-      font-style: italic;
-      margin-top: 3px;
-    }
-  }
 
   .anno-textarea {
-    background-color: rgba(204,204,204,.2);
     height: 48px;
     margin: 5px 0 5px 0;
     overflow: auto;
-    padding: 5px;
     resize: none;
     width: 100%;
     word-wrap: break-word;
@@ -43,11 +30,8 @@ $colorRed: #CE1141;
   }
 
   .anno-textarea, .anno-anno {
-    border: 2px solid #d0d8e1;
     border-radius: 2px;
-    background-color: rgba(204,204,204,.2);
-    margin: 5px 0 5px 0;
-    padding: 5px;
+    margin: 15px 0 15px 0;
     resize: none;
     width: 100%;
     word-wrap: break-word;

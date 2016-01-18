@@ -1,6 +1,11 @@
+$colorBlack: #000000;
+$colorRed: #CE1141;
+$colorWhite: #FFFFFF;
+
 .header {
   border-bottom: 1px solid $colorBlack;
   font-family: 'Roboto', sans-serif;
+  font-weight: 900;
   padding: 10px 10px 0 10px;
 
   .header-list {
@@ -12,7 +17,24 @@
       float: left;
       font-family: 'Dancing Script', cursive;
       font-size: 26px;
-      font-weight: 900;
+
+      .header-pic {
+        background-size: cover;
+        background-image: image-url("featherb.png");
+        display: block;
+        float: left;
+        height: 48px;
+        margin-top: -8px;
+        width: 48px;
+      }
+
+      &:hover {
+        color: $colorRed;
+
+        .header-pic {
+          background-image: image-url("featherr.png");
+        }
+      }
     }
 
     .not-logo {
@@ -30,6 +52,8 @@
         height: 25px;
         padding-left: 23px;
         width: 250px;
+
+        &:focus { border-bottom: 2px solid $colorRed; }
       }
 
       li.logout-link {
