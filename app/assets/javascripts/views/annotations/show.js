@@ -13,6 +13,7 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
     this.$rootEl = options.$rootEl;
     this.listenTo(this.model, 'sync', this.render);
     this.upvotes = options.upvotes;
+    this.topMargin = options.topMargin;
   },
 
   currentUserChecker: function () {
@@ -65,9 +66,10 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
       $rootEl: this.$rootEl,
       model: this.model
     });
-
     if (this.currentUserChecker()){
-      $("#main").append(annoEdit.render().$el);
+      var view = annoEdit.render().$el;
+      view.css("margin-top", this.topMargin);
+      $("#main").append(view);
       $(".anno-textarea").elastic();
     }
   },

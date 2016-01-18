@@ -43,6 +43,35 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     $(".anno-edit").remove();
   },
 
+  getSelectedText: function () {
+    t = (document.all) ? document.selection.createRange().text : document.getSelection();
+
+    return t;
+  },
+
+  addSpanTag: function () {
+    var selection = this.getSelectedText();
+    var selection_text = selection.toString();
+
+    // How do I add a span around the selected text?
+
+    var span = $("<span></span>")[0]
+    span.textContent = selection_text;
+
+    var range = selection.getRangeAt(0);
+    range.deleteContents();
+    range.insertNode(span);
+  },
+
+  removeSpanTag: function () {
+    var element = $("#lyric");
+    element.find("span").each(function(index) {
+      var text = $(this).text();
+      $(this).replaceWith(text);
+    });
+    var newString = element.html();
+  },
+
   getRange: function (event) {
     event.preventDefault();
     var lyric = $("#lyric")[0];
@@ -56,20 +85,23 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     var that = this;
     var exists = false;
     this.model.annotations().each(function(annotation) {
-
       var existingStart = annotation.get("start_pos")
       var existingEnd = annotation.get("end_pos")
+
       if ((startPos >= existingStart && startPos <= existingEnd) || (endPos >= existingStart && endPos <= existingEnd)) {
         exists = true;
         that.renderAnnoExists();
         return false;
       }
-    })
+    });
 
     if (!exists && (annotated && charRange.start >= 0)) {
       var selString = sel.toString().trim()
       var selSpaced = this.insertSpace(selString);
-      this.renderAnnoForm(startPos, endPos, selSpaced);
+      this.addSpanTag();
+      var coords = this.getOffsetRect($("span")[0]);
+      this.removeSpanTag();
+      this.renderAnnoForm(startPos, endPos, selSpaced, coords);
       $(".anno-textarea").elastic();
       // this.getHighLightCoords(startPos, endPos);
       // $(".anno-form").css("margin-top", coords.y);
@@ -94,7 +126,24 @@ Genius.Views.LyricShow = Backbone.View.extend ({
 
   },
 
-  renderAnnoForm: function (startPos, endPos, sel) {
+  getOffsetRect: function (el) {
+    var box = el.getBoundingClientRect();
+    var body = document.body;
+    var docElem = document.documentElement;
+
+    var scrollTop = window.pageYOffset || docElem.scrollTop || body.scrollTop;
+    var scrollLeft = window.pageXOffset || docElem.scrollLeft || body.scrollLeft;
+
+    var clientTop = docElem.clientTop || body.clientTop || 0;
+    var clientLeft = docElem.clientLeft || body.clientLeft || 0;
+
+    var top  = box.top +  scrollTop - clientTop;
+    var left = box.left + scrollLeft - clientLeft;
+
+    return { top: Math.round(top), left: Math.round(left) };
+  },
+
+  renderAnnoForm: function (startPos, endPos, sel, coords) {
     this.clearPage();
     var lyricId = this.model.id;
     var anno = new Genius.Models.Annotation ();
@@ -105,7 +154,10 @@ Genius.Views.LyricShow = Backbone.View.extend ({
       endPos: endPos,
       sel: sel
     });
-    $("#main").append(annoForm.render().$el)
+    var view = annoForm.render().$el
+    debugger
+    view.css("margin-top", coords.top - 343);
+    $("#main").append(view);
   },
 
   renderAnnoExists: function () {
@@ -124,12 +176,17 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     var annoShow = new Genius.Views.AnnotationShow ({
       $rootEl: this.$rootEl,
       model: annotation,
-      upvotes: this.upvotes
+      upvotes: this.upvotes,
+      topMargin: top
     });
     var view = annoShow.render().$el;
     view.css("margin-top", top);
 
     this.$rootEl.append(view);
+  },
+
+  checkForAnno: function () {
+
   }
 
   // renderCommentForm: function () {
