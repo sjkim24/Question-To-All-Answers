@@ -45,15 +45,18 @@ $colorWhite: #FFFFFF;
       li { margin-right: 10px; }
 
       .search-bar input {
-        background-image: image-url("search_icon.png");
-        background-position: 0px 3px, left;
+        background-image: image-url("searchb.png");
+        background-position: 0px 5px, left;
         background-repeat: no-repeat;
         border-bottom: 2px solid $colorBlack;
         height: 25px;
         padding-left: 23px;
         width: 250px;
 
-        &:focus { border-bottom: 2px solid $colorRed; }
+        &:focus {
+          border-bottom: 2px solid $colorRed;
+          background-image: image-url("searchr.png");
+        }
       }
 
       li.logout-link {
