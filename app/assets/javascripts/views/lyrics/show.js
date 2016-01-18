@@ -119,7 +119,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     this.clearPage();
     event.preventDefault();
     var id = $(event.currentTarget).attr("data-id");
-    var top = $('[data-id=' + id + ']').offset().top - 342.5;
+    var top = $('[data-id=' + id + ']').offset().top - 343;
     var annotation = this.annotations.getOrFetch(id);
     var annoShow = new Genius.Views.AnnotationShow ({
       $rootEl: this.$rootEl,

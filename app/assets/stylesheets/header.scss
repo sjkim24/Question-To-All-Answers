@@ -23,7 +23,7 @@ $colorWhite: #FFFFFF;
         background-image: image-url("featherb.png");
         display: block;
         float: left;
-        height: 48px;
+        height: 40px;
         margin-top: -8px;
         width: 48px;
       }
@@ -39,7 +39,6 @@ $colorWhite: #FFFFFF;
 
     .not-logo {
       float: right;
-      margin-top: 5px;
 
       .user, .create-lyric, .login-link { padding: 6px 3px 3px 3px; }
 
