@@ -2,7 +2,9 @@ $colorBlack: #000000;
 $colorRed: #CE1141;
 
 .anno-form, .anno-show, .anno-edit {
+  border-left: 8px solid #D0D8E1;
   float: left;
+  padding-left: 10px;
   width: 400px;
 
   .anno-info, {
@@ -26,8 +28,6 @@ $colorRed: #CE1141;
     font-size: 24px;
     font-weight: bold;
   }
-
-
 
   #anno-h {
     color: $colorRed;
