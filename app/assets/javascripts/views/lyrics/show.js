@@ -155,7 +155,6 @@ Genius.Views.LyricShow = Backbone.View.extend ({
       sel: sel
     });
     var view = annoForm.render().$el
-    debugger
     view.css("margin-top", coords.top - 343);
     $("#main").append(view);
   },
