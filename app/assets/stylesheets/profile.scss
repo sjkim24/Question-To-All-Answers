@@ -1,3 +1,56 @@
+$colorBlack: #000000;
+$colorGreyBlue: #D0D8E1;
+$colorRed: #CE1141;
+
+.user-show {
+
+  .left-side {
+    width: 240px;
+
+    #username {
+      color: $colorRed;
+      border-bottom: 5px solid $colorGreyBlue;
+      font-size: 28px;
+      font-weight: bold;
+      padding-bottom: 10px;
+      overflow: hidden;
+    }
+
+    #prof-pic {
+      padding: 10px 0 10px 0;
+    }
+
+    #edit-prof-pic {
+      margin: 10px auto;
+    }
+
+    #lyrics-iq, #about-me {
+      border-top: 5px solid $colorGreyBlue;
+      padding: 10px 0;
+    }
+
+    #lyrics-iq {
+      font-size: 24px;
+      font-weight: bold;
+
+    }
+
+    #about-me {
+
+      #about {
+        font-size: 24px;
+      }
+    }
+  }
+
+
+
+  #prof-pic, #edit-prof-pic, #lyrics, #annotations, {
+    &:hover { cursor: pointer; }
+  }
+}
+
+
 
 
 // .profile {

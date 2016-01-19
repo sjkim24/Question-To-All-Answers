@@ -4,8 +4,8 @@ $colorWhite: #FFFFFF;
 
 .lyric-show {
   float: left;
-  width: 600px;
   margin-bottom: 40px;
+  width: 700px;
 
   #lyric-user, #lyric-edit { margin-top: 1.5px; }
 
@@ -34,19 +34,20 @@ $colorWhite: #FFFFFF;
 
   #lyric {
     font-size: 18px;
+    text-align: justify;
     margin-top: 10px;
   }
 
   .annotation {
     color: $colorBlack;
     background: #D0D8E1;
-    transition-duration: 0.15s;
+    transition-duration: .4s;
     transition-property: background;
 
     &:hover {
       background: #F9F1B5;
       text-decoration: none;
-      transition-duration: 0.15s;
+      transition-duration: .3s;
       transition-property: background;
     }
   }

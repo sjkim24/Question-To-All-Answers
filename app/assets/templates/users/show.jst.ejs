@@ -1,22 +1,31 @@
-<article class="profile">
-  <section class="prof-pic">
+<div class="left-side">
+  <div id="username"><%= user.escape("username") %></div>
+  <div id="prof-pic">
     <img src="<%= user.escape("image_url") %>">
-  </section>
+  </div>
   <% if (currentUserId === user.id) { %>
-    <section class="edit-prof-pic">
-      Edit Profile Picture
-    </section>
+    <button id="edit-prof-pic">Edit Profile Picture</button>
   <% } %>
-  <section class="genius-iq">
-    Genius IQ: <%= user.escape("genius_iq") %>
-  </section>
-  <section class="lyrics">
-    Lyrics
-  </section>
-  <section class="annotations">
-    Annotations
-  </section>
-  <section class="about-me">
-    About <%= user.escape("username") %>
-  </section>
-</article>
+    <div id="lyrics-iq">
+      Lyrics IQ: <%= user.escape("genius_iq") %>
+    </div>
+    <div id="about-me">
+      <div id="about">About <%= user.escape("username") %></idv>
+      <div id="desc"><%= user.escape("about_me") %></div>
+      <% if (currentUserId === user.id) { %>
+        <button id="edit-about-me">Edit About Me</button>
+      <% } %>
+    </div>
+</div>
+<div class="right-side">
+  <div class="tabs">
+    <div id="lyrics">
+      Lyrics
+    </div>
+    <div id="annotations">
+      Annotations
+    </div>
+  </div>
+  <div class="tabs-material">
+  </div>
+</div>

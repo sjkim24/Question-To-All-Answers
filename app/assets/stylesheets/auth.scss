@@ -1,3 +1,7 @@
+$colorBlack: #000000;
+$colorRed: #CE1141;
+$colorWhite: #FFFFFF;
+
 div.req-login {
   color: $colorRed;
   font-family: 'Roboto', sans-serif;
@@ -30,6 +34,8 @@ div.req-login {
     height: 25px;
     padding-left: 3px;
     margin: 10px 43px 0 43px;
+    transition-duration: .4s;
+    transition-property: border;
     width: 250px;
 
     .password {
@@ -38,6 +44,8 @@ div.req-login {
 
     &:focus {
       border: 2px solid $colorRed;
+      transition-duration: .3s;
+      transition-property: border;
     }
   }
 
@@ -64,10 +72,13 @@ div.req-login {
     margin: 51px 58.422px 0 58.422px;
 
     a {
+      border-bottom: 1px solid transparent;
       color: $colorRed;
+      text-decoration: none;
+      transition: all ease-in-out .3s;
 
       &:hover {
-        text-decoration: underline;
+        border-color: $colorRed;
       }
     }
   }

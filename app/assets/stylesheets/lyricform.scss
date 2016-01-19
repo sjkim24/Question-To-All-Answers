@@ -28,7 +28,15 @@ $colorRed: #CE1141;
     border: 2px solid $colorBlack;
     margin-right: 5px;
     padding: 3px 0 3px 3px;
+    transition-duration: .4s;
+    transition-property: border;
     width: 470px;
+
+    &:focus {
+      border: 2px solid $colorRed;
+      transition-duration: .3s;
+      transition-property: border;
+    }
   }
 
   textarea {
@@ -49,5 +57,4 @@ $colorRed: #CE1141;
   }
 
   .title-error, .artist-error { padding-top: 2px; }
-
 }

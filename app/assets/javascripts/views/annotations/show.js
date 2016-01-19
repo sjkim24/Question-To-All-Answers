@@ -98,14 +98,14 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
         if (upvoted === "upvoted") {
           that.subtractGeniusIq(userId, currentUserId, upvote);
         } else {
-          that.addGeniusIq(userId, currentUserId, upvote);
+          that.addLyricsIq(userId, currentUserId, upvote);
         }
       }
     })
     this.render();
   },
 
-  addGeniusIq: function (userId, currentUserId, upvote) {
+  addLyricsIq: function (userId, currentUserId, upvote) {
     var that = this;
     if (userId === currentUserId) {
       alert("You can't upvote your own annotation!")
@@ -113,7 +113,7 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
       var user = new Genius.Models.User ({ id: userId });
       user.fetch({
         success: function () {
-          var newGeniusIq  = parseInt(user.get("genius_iq")) + 5;
+          var newGeniusIq  = parseInt(user.get("genius_iq")) + 1;
           upvote.set({ upvoted: "upvoted" });
           user.set({ genius_iq: newGeniusIq });
           user.save();

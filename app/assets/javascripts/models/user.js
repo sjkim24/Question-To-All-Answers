@@ -42,5 +42,5 @@ Genius.Models.User = Backbone.Model.extend ({
 
     return json;
   }
-
-})
+  
+});

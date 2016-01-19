@@ -1,14 +1,15 @@
 Genius.Views.UserShow = Backbone.CompositeView.extend ({
 
+  className: "user-show",
+
   template: JST["users/show"],
 
   events: {
-    'click .lyrics': 'renderUserLyrics',
-    'click .annotations': 'renderUserAnnotations',
-    'click .about-me': 'renderUserAboutMe',
-    'click .edit-prof-pic': 'renderProfPicForm',
-    'click .edit-about-me': 'renderEditAboutMe',
-    'click .submit-pic': 'submitProfPic',
+    'click #lyrics': 'renderUserLyrics',
+    'click #annotations': 'renderUserAnnotations',
+    'click #edit-prof-pic': 'renderProfPicForm',
+    'click #edit-about-me': 'renderEditAboutMe',
+    'click #submit-pic': 'submitProfPic',
     'change #input-user-image': 'fileInputChange'
   },
 
@@ -51,15 +52,6 @@ Genius.Views.UserShow = Backbone.CompositeView.extend ({
     this.clearUserLinks();
     var annos = new Genius.Views.UserAnnotations ({ collection: this.model.annotations() });
     this.$el.append(annos.render().$el);
-  },
-
-  renderUserAboutMe: function (event) {
-
-    event.preventDefault();
-    this.clearUserLinks();
-    var aboutMe = new Genius.Views.UserAboutMe ({ model: this.model });
-    this.$el.append(aboutMe.render().$el);
-
   },
 
   renderEditAboutMe: function (event) {
