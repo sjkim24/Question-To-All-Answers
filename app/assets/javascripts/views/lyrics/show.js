@@ -114,18 +114,12 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     if (!exists && (annotated && charRange.start >= 0)) {
       var selString = sel.toString().trim()
       var selSpaced = this.insertSpace(selString);
-      debugger
       this.addSpanTag();
-      debugger
       var coords = this.getOffsetRect($("span")[0]);
       this.removeSpanTag();
-      debugger
       this.renderAnnoForm(startPos, endPos, selSpaced, coords);
       $(".anno-textarea").elastic();
-      // this.getHighLightCoords(startPos, endPos);
-      // $(".anno-form").css("margin-top", coords.y);
     }
-
   },
 
   insertSpace: function (sel) {
@@ -141,8 +135,8 @@ Genius.Views.LyricShow = Backbone.View.extend ({
       }
       i += 1;
     }
-    return selSplit.join("");
 
+    return selSplit.join("");
   },
 
   getOffsetRect: function (el) {
