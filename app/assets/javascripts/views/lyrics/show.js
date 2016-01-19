@@ -49,18 +49,34 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     return t;
   },
 
+  getSelectionHtml: function () {
+    var html = "";
+    if (typeof window.getSelection != "undefined") {
+        var sel = window.getSelection();
+        if (sel.rangeCount) {
+            var container = document.createElement("div");
+            for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+                container.appendChild(sel.getRangeAt(i).cloneContents());
+            }
+            html = container.innerHTML;
+        }
+    } else if (typeof document.selection != "undefined") {
+        if (document.selection.type == "Text") {
+            html = document.selection.createRange().htmlText;
+        }
+    }
+    return html;
+  },
+
   addSpanTag: function () {
     var selection = this.getSelectedText();
-    var selection_text = selection.toString();
-
-    // How do I add a span around the selected text?
-
+    var selection_text = this.getSelectionHtml();
     var span = $("<span></span>")[0]
-    span.textContent = selection_text;
-
+    span.textContent = selection_text
     var range = selection.getRangeAt(0);
     range.deleteContents();
     range.insertNode(span);
+    debugger
   },
 
   removeSpanTag: function () {
@@ -98,9 +114,12 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     if (!exists && (annotated && charRange.start >= 0)) {
       var selString = sel.toString().trim()
       var selSpaced = this.insertSpace(selString);
+      debugger
       this.addSpanTag();
+      debugger
       var coords = this.getOffsetRect($("span")[0]);
       this.removeSpanTag();
+      debugger
       this.renderAnnoForm(startPos, endPos, selSpaced, coords);
       $(".anno-textarea").elastic();
       // this.getHighLightCoords(startPos, endPos);
