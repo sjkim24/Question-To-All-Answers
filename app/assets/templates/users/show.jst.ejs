@@ -6,16 +6,18 @@
   <% if (currentUserId === user.id) { %>
     <button id="edit-prof-pic">Edit Profile Picture</button>
   <% } %>
-    <div id="lyrics-iq">
-      Lyrics IQ: <%= user.escape("genius_iq") %>
-    </div>
-    <div id="about-me">
-      <div id="about">About <%= user.escape("username") %></idv>
+  <div id="lyrics-iq">
+    Lyrics IQ: <%= user.escape("genius_iq") %>
+  </div>
+  <div id="about-me">
+    <div id="about">About <%= user.escape("username") %></div>
+    <div class="box">
       <div id="desc"><%= user.escape("about_me") %></div>
       <% if (currentUserId === user.id) { %>
         <button id="edit-about-me">Edit About Me</button>
       <% } %>
     </div>
+  </div>
 </div>
 <div class="right-side">
   <div class="tabs">
