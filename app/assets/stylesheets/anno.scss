@@ -83,4 +83,13 @@ $colorLightGrey: #E9E9E9;
     font-weight: bold;
     margin-top: 5px;
   }
+
+  .anno-buttons {
+
+    button {
+      float: left;
+
+      &:first-child { margin-right: 5px; }
+    }
+  }
 }
