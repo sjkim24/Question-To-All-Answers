@@ -76,7 +76,6 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     var range = selection.getRangeAt(0);
     range.deleteContents();
     range.insertNode(span);
-    debugger
   },
 
   removeSpanTag: function () {
@@ -100,13 +99,17 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     var endPos = charRange.end;
     var that = this;
     var exists = false;
+
     this.model.annotations().each(function(annotation) {
       var existingStart = annotation.get("start_pos")
       var existingEnd = annotation.get("end_pos")
 
       if ((startPos >= existingStart && startPos <= existingEnd) || (endPos >= existingStart && endPos <= existingEnd)) {
         exists = true;
-        that.renderAnnoExists();
+        that.addSpanTag();
+        var coords = that.getOffsetRect($("span")[0]);
+        that.removeSpanTag();
+        that.renderAnnoExists(coords);
         return false;
       }
     });
@@ -172,11 +175,14 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     $("#main").append(view);
   },
 
-  renderAnnoExists: function () {
+  renderAnnoExists: function (coords) {
     this.clearPage();
     var annoExists = new Genius.Views.AnnotationExists ();
+    var view = annoExists.render().$el;
+    debugger
+    view.css("margin-top", coords.top - 338);
 
-    this.$rootEl.append(annoExists.render().$el);
+    this.$rootEl.append(view);
   },
 
   renderAnno: function (event) {

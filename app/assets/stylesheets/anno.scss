@@ -1,14 +1,13 @@
 $colorBlack: #000000;
 $colorRed: #CE1141;
 
-.anno-form, .anno-show, .anno-edit {
+.anno-form, .anno-show, .anno-edit, .anno-exists {
   border-left: 8px solid #D0D8E1;
   float: left;
   padding-left: 10px;
   width: 400px;
 
   .anno-info, {
-    width: 410px;
 
     .anno-hl {
       color: $colorBlack;
@@ -72,5 +71,14 @@ $colorRed: #CE1141;
       margin-bottom: 5px;
       text-align: justify;
     }
+  }
+
+  #h1 { font-size: 28px; }
+
+  #message {
+    color: $colorRed;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
   }
 }
