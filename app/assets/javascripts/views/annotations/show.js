@@ -5,8 +5,8 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
   template: JST['annotations/show'],
 
   events: {
-    'click .edit-anno': 'editAnno',
-    'click .upvote': 'upvoteChecker'
+    'click #edit-anno': 'editAnno',
+    'click #upvote': 'upvoteChecker'
   },
 
   initialize: function (options) {
@@ -54,7 +54,7 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
         });
         that.$el.html(content);
       }
-    })
+    });
 
     return this;
   },
@@ -101,14 +101,15 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
           that.addLyricsIq(userId, currentUserId, upvote);
         }
       }
-    })
+    });
+
     this.render();
   },
 
   addLyricsIq: function (userId, currentUserId, upvote) {
     var that = this;
     if (userId === currentUserId) {
-      alert("You can't upvote your own annotation!")
+      alert("You can't upvote your own annotation!");
     } else {
       var user = new Genius.Models.User ({ id: userId });
       user.fetch({
@@ -118,24 +119,25 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
           user.set({ genius_iq: newGeniusIq });
           user.save();
           upvote.save();
-          $('.upvote').html('Downvote')
+          $('#upvote').html("Downvote");
         }
-      })
+      });
     }
   },
 
   subtractGeniusIq: function (userId, currentUserId, upvote) {
+    var that = this;
     var user = new Genius.Models.User ({ id: userId });
     user.fetch({
       success: function () {
-        var newGeniusIq  = parseInt(user.get("genius_iq")) - 5;
+        var newGeniusIq  = parseInt(user.get("genius_iq")) - 1;
         upvote.set({ upvoted: "downvoted" });
         user.set({ genius_iq: newGeniusIq });
         user.save();
         upvote.save();
-        $('.upvote').html('Upvote')
+        $("#upvote").html("Upvote");
       }
-    })
+    });
   }
 
 })

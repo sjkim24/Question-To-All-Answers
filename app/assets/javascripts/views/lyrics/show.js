@@ -199,7 +199,6 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     });
     var view = annoShow.render().$el;
     view.css("margin-top", top);
-
     this.$rootEl.append(view);
   },
 
