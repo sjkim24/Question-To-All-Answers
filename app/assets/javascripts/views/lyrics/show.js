@@ -6,6 +6,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
 
   events: {
     "mouseup #lyric": "getRange",
+    "click .lyric-show": "hideDiv",
     "click .annotation": "renderAnno"
   },
 
@@ -14,6 +15,10 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     this.annotations = options.annotations;
     this.listenTo(this.model, "sync", this.render);
     this.upvotes = options.upvotes;
+  },
+
+  hideDiv: function (event) {
+    alert("hello")
   },
 
   render: function () {
