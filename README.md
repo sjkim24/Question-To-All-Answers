@@ -28,5 +28,3 @@ Annotation is the main feature of this app and was definitely the hardest to bui
 - Comments
 - Multi-search search bar
 - Follow lyrics/users
-- Add "Hottest Tracks" to root page
-- Add Genius IQ Leaderboard, showing users with top Genius IQ
