@@ -171,7 +171,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
       sel: sel
     });
     var view = annoForm.render().$el
-    view.css("margin-top", coords.top - 338);
+    view.css("margin-top", coords.top - 344);
     $("#main").append(view);
   },
 
@@ -180,7 +180,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     var annoExists = new Genius.Views.AnnotationExists ();
     var view = annoExists.render().$el;
     debugger
-    view.css("margin-top", coords.top - 338);
+    view.css("margin-top", coords.top - 344);
 
     this.$rootEl.append(view);
   },
@@ -189,7 +189,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     this.clearPage();
     event.preventDefault();
     var id = $(event.currentTarget).attr("data-id");
-    var top = $('[data-id=' + id + ']').offset().top - 338;
+    var top = $('[data-id=' + id + ']').offset().top - 344;
     var annotation = this.annotations.getOrFetch(id);
     var annoShow = new Genius.Views.AnnotationShow ({
       $rootEl: this.$rootEl,
@@ -200,10 +200,6 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     var view = annoShow.render().$el;
     view.css("margin-top", top);
     this.$rootEl.append(view);
-  },
-
-  checkForAnno: function () {
-
   }
 
   // renderCommentForm: function () {
