@@ -12,7 +12,6 @@ $colorWhite: #FFFFFF;
   #artist, #user, #edit {
     border-bottom: 1px solid transparent;
     color: $colorRed;
-    text-decoration: none;
     transition: all ease-in-out .3s;
 
     &:hover {

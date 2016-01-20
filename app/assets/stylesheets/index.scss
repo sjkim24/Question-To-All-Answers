@@ -4,7 +4,7 @@ $colorRed: #CE1141;
 .index {
   display: block;
   margin: 0 auto;
-  width: 1142px;
+  width: 1141px;
 
   .index-left {
     float: left;
@@ -13,7 +13,7 @@ $colorRed: #CE1141;
 
     .lyrics-index-lyric:last-child #li-bot-border, .username-iq:last-child #li-bot-border {
       border-bottom: 2px solid #d0d8e1;
-      width: calc(100% - 40px);
+      width: 510px
     }
   }
 
@@ -29,7 +29,7 @@ $colorRed: #CE1141;
 
       #li-top-border {
         border-top: 2px solid #d0d8e1;
-        width: calc(100% - 40px);
+        width: 510px;
       }
 
       li {

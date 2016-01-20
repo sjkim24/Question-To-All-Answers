@@ -86,14 +86,13 @@ $colorWhite: #FFFFFF;
     }
 
     a {
+      border-bottom: 1px solid transparent;
       color: $colorBlack;
-      transition-duration: .4s;
-      transition-property: color;
+      transition: all ease-in-out .4s;
 
       &:hover {
+        border-color: $colorRed;
         color: $colorRed;
-        transition-duration: .3s;
-        transition-property: color;
       }
     }
   }
