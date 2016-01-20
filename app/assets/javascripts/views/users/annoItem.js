@@ -1,7 +1,5 @@
 Genius.Views.UserAnnoItem = Backbone.View.extend ({
 
-  tagName: 'li',
-
   template: JST['users/anno'],
 
   initialize: function () {

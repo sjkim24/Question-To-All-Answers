@@ -1,7 +1,7 @@
 $colorBlack: #000000;
-$colorGreyBlue: #D0D8E1;
+$colorLightGrey: #D0D8E1;
 $colorRed: #CE1141;
-$colorLightGrey: #E9E9E9;
+$colorLighterGrey: #E9E9E9;
 
 .user-show {
 
@@ -16,7 +16,7 @@ $colorLightGrey: #E9E9E9;
 
     #username {
       color: $colorRed;
-      border-bottom: 5px solid $colorGreyBlue;
+      border-bottom: 5px solid $colorLightGrey;
       font-size: 28px;
       font-weight: bold;
       padding-bottom: 10px;
@@ -32,7 +32,7 @@ $colorLightGrey: #E9E9E9;
     }
 
     #lyrics-iq, #about-me {
-      border-top: 5px solid $colorGreyBlue;
+      border-top: 5px solid $colorLightGrey;
       padding: 10px 0;
     }
 
@@ -42,7 +42,7 @@ $colorLightGrey: #E9E9E9;
     }
 
     #about-me {
-      border-bottom: 5px solid $colorGreyBlue;
+      border-bottom: 5px solid $colorLightGrey;
       margin-bottom: 40px;
 
       #about {
@@ -55,22 +55,125 @@ $colorLightGrey: #E9E9E9;
 
         #desc { font-size: 18px; }
 
-        .user-about-me{
+        .user-about-me {
+
           textarea {
-            background: $colorLightGrey;
-            height: 300px;
+            background: $colorLighterGrey;
+            height: 240px;
             padding: 5px;
             resize: none;
             width: 240px;
           }
-          button { margin: 10px auto; }
+
+          .buttons {
+            display: block;
+            margin: 0 auto;
+            width: 120px;
+
+            button { float: left; }
+
+            #save-about-me { margin-right: 10px; }
+          }
         }
       }
-
     }
   }
 
   .right-side {
     float: left;
+    width: 660px;
+
+    #tabs {
+
+      #tab-lyrics, #tab-annotations {
+        float: left;
+        font-size: 26px;
+        font-weight: bold;
+        margin-right: 10px;
+
+        .tab {
+          padding: 6px;
+          transition-duration: .125s;
+          transition-property: padding;
+
+          &:hover {
+            padding: 11px 6px 1px 6px;
+            transition-duration: .125s;
+            transition-property: padding;
+          }
+        }
+
+        .tab-border {
+          border-top: 5px solid $colorLightGrey;
+        }
+
+        .clicked {
+          border-top: 5px solid $colorRed;
+        }
+
+        &:hover {
+          cursor: pointer;
+
+          .tab-border {
+            border-top: 5px solid $colorRed;
+          }
+        }
+      }
+    }
+
+    #under-tabs {
+      ul {
+        margin-top: 10px;
+
+        #li-bot-border {
+          border-top: 2px solid #d0d8e1;
+        }
+
+        li {
+          color: $colorRed;
+          height: 26px;
+          padding: 5px 0 5px 0px;
+          transition-duration: 0.125s;
+          transition-property: padding;
+
+          &:hover {
+            border-left: 3px solid $colorRed;
+            padding: 5px 0 5px 5px;
+            transition-duration: 0.125s;
+            transition-property: padding;
+          }
+
+          section { float: left; }
+
+          section:first-child {
+            font-size: 22px;
+            font-weight: bold;
+          }
+
+          section:last-child {
+            color: $colorBlack;
+            font-size:18px;
+            font-weight: bold;
+            margin-top: 2.5px;
+          }
+        }
+      }
+
+      .prof-pic-form {
+        margin-top: 10px;
+
+        h1 {
+          color: $colorRed;
+          font-size: 22px;
+        }
+
+        label { margin-top: 10px; }
+
+        .buttons {
+          float: left;
+          margin-right: 10px;
+        }
+      }
+    }
   }
 }

@@ -4,7 +4,7 @@
     <img src="<%= user.escape("image_url") %>">
   </div>
   <% if (currentUserId === user.id) { %>
-    <button id="edit-prof-pic">Edit Profile Picture</button>
+    <button id="edit-prof-pic">Change Profile Picture</button>
   <% } %>
   <div id="lyrics-iq">
     Lyrics IQ: <%= user.escape("genius_iq") %>
@@ -14,20 +14,21 @@
     <div class="box">
       <div id="desc"><%= user.escape("about_me") %></div>
       <% if (currentUserId === user.id) { %>
-        <button id="edit-about-me">Edit About Me</button>
+        <button class="buttons" id="edit-about-me">Edit About Me</button>
       <% } %>
     </div>
   </div>
 </div>
 <div class="right-side">
-  <div class="tabs">
-    <div id="lyrics">
-      Lyrics
+  <div class="group" id="tabs">
+    <div id="tab-lyrics">
+      <div class="tab">Lyrics</div>
+      <div class="tab-border clicked" id="lyrics-border"></div>
     </div>
-    <div id="annotations">
-      Annotations
+    <div id="tab-annotations">
+      <div class="tab">Annotations</div>
+      <div class="tab-border" id="annos-border"></div>
     </div>
   </div>
-  <div class="tabs-material">
-  </div>
+  <div id="under-tabs"></div>
 </div>

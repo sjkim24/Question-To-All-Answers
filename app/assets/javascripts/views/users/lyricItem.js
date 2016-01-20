@@ -1,6 +1,6 @@
 Genius.Views.UserLyricItem = Backbone.View.extend ({
 
-  tagName: 'li',
+  className: "user-lyric-item",
 
   template: JST['users/lyric'],
 

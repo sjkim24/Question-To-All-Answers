@@ -1,3 +1,7 @@
 <a href="#/lyrics/<%= anno.escape("lyric_id") %>">
-  <%= anno.escape("track_title") %>
-</a> - <%= anno.escape("lyric_text") %>
+  <li class="lyric-track-title group">
+    <section><%= anno.escape("track_title") %>&nbsp;</section>
+    <section><%= anno.escape("lyric_text") %></section>
+  </li>
+  <div id="li-bot-border"></div>
+</a>

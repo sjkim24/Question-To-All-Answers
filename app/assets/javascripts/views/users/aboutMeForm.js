@@ -2,12 +2,12 @@ Genius.Views.UserAboutMeForm = Backbone.View.extend ({
 
   tagName: 'form',
 
-  className: 'user-about-me',
+  className: 'user-about-me group',
 
   template: JST['users/aboutMeForm'],
 
   events: {
-    'click .submit-about-me': 'submitAboutMe'
+    'click #save-about-me': 'saveAboutMe'
   },
 
   render: function () {
@@ -16,7 +16,7 @@ Genius.Views.UserAboutMeForm = Backbone.View.extend ({
     return this;
   },
 
-  submitAboutMe: function (event) {
+  saveAboutMe: function (event) {
     event.preventDefault();
     var attrs = this.$el.serializeJSON().user;
     var that = this;
@@ -28,4 +28,4 @@ Genius.Views.UserAboutMeForm = Backbone.View.extend ({
     })
   }
 
-})
+});
