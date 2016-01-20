@@ -131,7 +131,6 @@ $colorLighterGrey: #E9E9E9;
 
         li {
           color: $colorRed;
-          height: 26px;
           padding: 5px 0 5px 0px;
           transition-duration: 0.1s;
           transition-property: padding;
@@ -143,7 +142,9 @@ $colorLighterGrey: #E9E9E9;
             transition-property: padding;
           }
 
-          section { float: left; }
+          section {
+            display: inline-block;
+          }
 
           section:first-child {
             font-size: 22px;

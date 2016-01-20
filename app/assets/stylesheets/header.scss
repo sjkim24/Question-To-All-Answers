@@ -3,6 +3,7 @@ $colorRed: #CE1141;
 $colorWhite: #FFFFFF;
 
 .header {
+  border-top: 10px solid $colorRed;
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
   padding: 10px 10px 0 10px;
@@ -59,6 +60,7 @@ $colorWhite: #FFFFFF;
         background-position: 0px 5px, left;
         background-repeat: no-repeat;
         border-bottom: 2px solid $colorBlack;
+        font-weight: 400;
         transition-duration: .4s;
         transition-property: background-image, border-bottom;
         height: 25px;
