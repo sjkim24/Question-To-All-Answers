@@ -53,7 +53,20 @@ $colorWhite: #FFFFFF;
 
       .user, .create-lyric, .login-link { padding: 6px 3px 3px 3px; }
 
-      li { margin-right: 10px; }
+      li {
+        margin-right: 10px;
+
+        a {
+          border-bottom: 1px solid transparent;
+          color: $colorBlack;
+          transition: all ease-in-out .4s;
+
+          &:hover {
+            border-color: $colorRed;
+            color: $colorRed;
+          }
+        }
+      }
 
       .search-bar input {
         background-image: image-url("searchb.png");
@@ -82,17 +95,6 @@ $colorWhite: #FFFFFF;
 
       .logout-link button {
         border: none;
-      }
-    }
-
-    a {
-      border-bottom: 1px solid transparent;
-      color: $colorBlack;
-      transition: all ease-in-out .4s;
-
-      &:hover {
-        border-color: $colorRed;
-        color: $colorRed;
       }
     }
   }
