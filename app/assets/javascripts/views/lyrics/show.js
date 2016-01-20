@@ -179,7 +179,6 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     this.clearPage();
     var annoExists = new Genius.Views.AnnotationExists ();
     var view = annoExists.render().$el;
-    debugger
     view.css("margin-top", coords.top - 344);
 
     this.$rootEl.append(view);

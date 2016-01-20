@@ -15,4 +15,4 @@ Genius.Views.LyricIndexItem = Backbone.View.extend ({
     return this;
   }
 
-})
+});

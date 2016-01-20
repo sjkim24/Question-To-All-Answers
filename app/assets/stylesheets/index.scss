@@ -2,49 +2,64 @@ $colorBlack: #000000;
 $colorRed: #CE1141;
 
 .index {
-  border-right: 1px solid $colorRed;
-  width: calc(50% - 40px);
+  display: block;
+  margin: 0 auto;
+  width: 1142px;
 
-  .lyrics-index-lyric:last-child #li-bot-border {
-    border-bottom: 2px solid #d0d8e1;
-    width: calc(100% - 40px);
-  }
+  .index-left {
+    float: left;
+    width: 550px;
+    border-right: 1px solid $colorRed;
 
-  ul {
-    margin-top: 10px;
-
-    #li-top-border {
-      border-top: 2px solid #d0d8e1;
+    .lyrics-index-lyric:last-child #li-bot-border, .username-iq:last-child #li-bot-border {
+      border-bottom: 2px solid #d0d8e1;
       width: calc(100% - 40px);
     }
+  }
 
-    li {
-      color: $colorRed;
-      height: 26px;
-      padding: 5px 0 5px 0px;
-      transition-duration: .1s;
-      transition-property: padding;
-      width: calc(100% - 40px);
+  .index-right {
+    float: left;
+    margin-left: 40px;
+    width: 550px;
+  }
 
-      &:hover {
-        border-left: 5px solid $colorRed;
-        padding: 5px 0 5px 5px;
+  .index-left, .index-right {
+    ul {
+      margin-top: 10px;
+
+      #li-top-border {
+        border-top: 2px solid #d0d8e1;
+        width: calc(100% - 40px);
+      }
+
+      li {
+        color: $colorRed;
+        height: 26px;
+        padding: 5px 0 5px 0px;
         transition-duration: .1s;
         transition-property: padding;
-      }
+        width: calc(100% - 40px);
 
-      section { float: left; }
+        &:hover {
+          border-left: 5px solid $colorRed;
+          padding: 5px 0 5px 5px;
+          transition-duration: .1s;
+          transition-property: padding;
+        }
 
-      section:first-child {
-        font-size: 22px;
-        font-weight: bold;
-      }
+        section { float: left; }
 
-      section:last-child {
-        color: $colorBlack;
-        font-size:18px;
-        font-weight: bold;
-        margin-top: 2.5px;
+        section:first-child {
+          font-size: 22px;
+          font-weight: bold;
+        }
+
+        section:last-child {
+          color: $colorBlack;
+          font-size:18px;
+          font-weight: bold;
+          margin-top: 2.5px;
+        }
       }
     }
   }

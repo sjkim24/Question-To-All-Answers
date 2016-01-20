@@ -23,7 +23,6 @@ Genius.Routers.Router = Backbone.Router.extend({
   index: function () {
     this.lyrics.fetch();
     this.users.fetch();
-    debugger
     var indexView = new Genius.Views.Index ({
       lyrics: this.lyrics,
       users: this.users
