@@ -1,15 +1,15 @@
-Genius.Views.LyricsIndex = Backbone.CompositeView.extend ({
-
-  tagName: 'div',
+Genius.Views.Index = Backbone.CompositeView.extend ({
 
   className: 'index',
 
   template: JST['lyrics/index'],
 
-  initialize: function () {
-    this.listenTo(this.collection, 'sync', this.render);
-    this.listenTo(this.collection, 'add', this.addLyricView);
-    this.collection.each(this.addLyricView.bind(this));
+  initialize: function (options) {
+    this.lyrics = options.lyrics;
+    this.users = options.users
+    this.listenTo(this.lyrics, 'sync', this.render);
+    this.listenTo(this.lyrics, 'add', this.addLyricView);
+    this.lyrics.each(this.addLyricView.bind(this));
   },
 
   addLyricView: function (lyric) {
@@ -18,6 +18,7 @@ Genius.Views.LyricsIndex = Backbone.CompositeView.extend ({
   },
 
   render: function () {
+    debugger
     var content = this.template();
     this.$el.html(content);
     this.attachSubviews();

@@ -11,7 +11,7 @@ Genius.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    '': 'lyricsIndex',
+    '': 'index',
     'lyrics/new': 'lyricNew',
     'lyrics/:id': 'lyricShow',
     'lyrics/:id/edit': 'lyricEdit',
@@ -20,9 +20,15 @@ Genius.Routers.Router = Backbone.Router.extend({
     'search': 'search'
   },
 
-  lyricsIndex: function () {
+  index: function () {
     this.lyrics.fetch();
-    var indexView = new Genius.Views.LyricsIndex ({ collection: this.lyrics });
+    this.users.fetch();
+    debugger
+    var indexView = new Genius.Views.Index ({
+      lyrics: this.lyrics,
+      users: this.users
+    });
+
     this._swapView(indexView);
   },
 
@@ -46,6 +52,7 @@ Genius.Routers.Router = Backbone.Router.extend({
       upvotes: this.upvotes,
       comments: this.comments
      });
+
     this._swapView(showView);
   },
 
@@ -54,7 +61,8 @@ Genius.Routers.Router = Backbone.Router.extend({
     var formView = new Genius.Views.LyricForm ({
       model: lyric,
       collection: this.lyrics
-    })
+    });
+
     if (formView.currentUserChecker()){
       this._swapView(formView);
     }
@@ -65,6 +73,7 @@ Genius.Routers.Router = Backbone.Router.extend({
     var showView = new Genius.Views.ArtistShow ({
       model: artist
     });
+
     this._swapView(showView);
   },
 
@@ -91,4 +100,4 @@ Genius.Routers.Router = Backbone.Router.extend({
     $('#search-bar-header').html(searchView.render().$el)
   }
 
-})
+});
