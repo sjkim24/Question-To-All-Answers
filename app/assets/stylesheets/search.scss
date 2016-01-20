@@ -1,6 +1,12 @@
+$colorBlack: #000000;
+$colorRed: #CE1141;
+
 .search-results {
 
   ul {
+    color: $colorRed;
+    font-size: 26px;
+    font-weight: bold;
     margin-top: 10px;
 
     #li-top-border {
