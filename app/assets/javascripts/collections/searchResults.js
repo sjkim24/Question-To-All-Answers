@@ -20,6 +20,4 @@ Genius.Collections.SearchResults = Backbone.Collection.extend ({
     return newModel;
   }
 
-
-
-})
+});

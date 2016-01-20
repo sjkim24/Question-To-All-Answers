@@ -1,5 +1,13 @@
-<a href="/#/lyrics/<%= lyric.id %>">
+<!-- <a href="/#/lyrics/<%= lyric.id %>">
   <%= lyric.escape("track_title") %>
-</a> - <a href="/#/artists/<%= lyric.escape("artist_id") %>">
+</a> by <a href="/#/artists/<%= lyric.escape("artist_id") %>">
          <%= lyric.escape("artist_name") %>
-       </a>
+       </a> -->
+<a href="/#/lyrics/<%= lyric.id %>">
+  <div id="li-top-border"></div>
+  <li class="lyric-track-title group">
+    <section><%= lyric.escape("track_title") %>&nbsp;</section>
+    <section>by <%= lyric.escape("artist_name") %></section>
+  </li>
+  <div id="li-bot-border"></div>
+</a>

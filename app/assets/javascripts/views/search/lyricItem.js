@@ -1,8 +1,6 @@
 Genius.Views.SearchLyricItem = Backbone.View.extend ({
 
-  tagName: 'li',
-
-  className: 'lyric-search-item',
+  className: 'search-item',
 
   template: JST['lyrics/searchItem'],
 

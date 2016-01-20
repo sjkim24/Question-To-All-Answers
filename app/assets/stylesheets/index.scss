@@ -22,14 +22,14 @@ $colorRed: #CE1141;
       color: $colorRed;
       height: 26px;
       padding: 5px 0 5px 0px;
-      transition-duration: .125s;
+      transition-duration: .1s;
       transition-property: padding;
       width: calc(100% - 40px);
 
       &:hover {
-        border-left: 3px solid $colorRed;
+        border-left: 5px solid $colorRed;
         padding: 5px 0 5px 5px;
-        transition-duration: .125s;
+        transition-duration: .1s;
         transition-property: padding;
       }
 

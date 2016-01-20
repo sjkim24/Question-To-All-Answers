@@ -93,12 +93,12 @@ $colorLighterGrey: #E9E9E9;
 
         .tab {
           padding: 6px;
-          transition-duration: .125s;
+          transition-duration: .1s;
           transition-property: padding;
 
           &:hover {
             padding: 11px 6px 1px 6px;
-            transition-duration: .125s;
+            transition-duration: .1s;
             transition-property: padding;
           }
         }
@@ -133,13 +133,13 @@ $colorLighterGrey: #E9E9E9;
           color: $colorRed;
           height: 26px;
           padding: 5px 0 5px 0px;
-          transition-duration: 0.125s;
+          transition-duration: 0.1s;
           transition-property: padding;
 
           &:hover {
-            border-left: 3px solid $colorRed;
+            border-left: 5px solid $colorRed;
             padding: 5px 0 5px 5px;
-            transition-duration: 0.125s;
+            transition-duration: 0.1s;
             transition-property: padding;
           }
 

@@ -1,20 +1,62 @@
-h1.search-results {
-  font-size: 32px;
-  font-weight: bold;
-  margin: 20px 0 0 0;
+.search-results {
+
+  ul {
+    margin-top: 10px;
+
+    #li-top-border {
+      border-top: 2px solid #d0d8e1;
+      width: 600px;
+    }
+
+    li {
+      color: $colorRed;
+      height: 26px;
+      padding: 5px 0 5px 0px;
+      transition-duration: .1s;
+      transition-property: padding;
+      width: calc(100% - 40px);
+
+      &:hover {
+        border-left: 5px solid $colorRed;
+        padding: 5px 0 5px 5px;
+        transition-duration: .1s;
+        transition-property: padding;
+      }
+
+      section { float: left; }
+
+      section:first-child {
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      section:last-child {
+        color: $colorBlack;
+        font-size:18px;
+        font-weight: bold;
+        margin-top: 2.5px;
+      }
+    }
+  }
 }
 
-.lyric-search-item {
-  font-size: 22px;
-  color: #04529C;
-  margin: 10px 0 0 0;
-
-}
-.lyric-search-item a:hover{
-  text-decoration: underline;
-}
-
-.searched-lyrics {
-  margin: 10px 0 0 0;
-  font-size: 22px;
-}
+// h1.search-results {
+//   font-size: 32px;
+//   font-weight: bold;
+//   margin: 20px 0 0 0;
+// }
+//
+// .lyric-search-item {
+//   font-size: 22px;
+//   color: #04529C;
+//   margin: 10px 0 0 0;
+//
+// }
+// .lyric-search-item a:hover{
+//   text-decoration: underline;
+// }
+//
+// .searched-lyrics {
+//   margin: 10px 0 0 0;
+//   font-size: 22px;
+// }

@@ -4,7 +4,6 @@ Genius.Views.Search = Backbone.View.extend ({
 
   events: {
     'keyup .search-bar': 'processKey'
-    // 'click .next-page': 'nextPage'
   },
 
   initialize: function (options) {
@@ -29,7 +28,8 @@ Genius.Views.Search = Backbone.View.extend ({
 
   search: function () {
 		var $input = this.$("#query");
-		this.collection.searchInfo.query = $input.val();
+    var inputVal = $input.val();
+		this.collection.searchInfo.query = inputVal;
 		this.collection.searchInfo.page = 1;
 
 		var that = this;
@@ -41,9 +41,11 @@ Genius.Views.Search = Backbone.View.extend ({
 	},
 
   renderResults: function () {
+    var searchInput = $("#query").val();
 		this.renderSearchInfo();
     var view = new Genius.Views.SearchLyricsIndex ({
-      collection: this.collection
+      collection: this.collection,
+      searchInput: searchInput
     })
 
     this.$rootEl.html(view.render().$el);
@@ -52,13 +54,6 @@ Genius.Views.Search = Backbone.View.extend ({
       $('.searched-lyrics').html("No Lyrics Were Found")
     }
 	},
-
-  // nextPage: function () {
-	// 	this.collection.searchInfo.page++;
-	// 	this.collection.fetch({
-	// 		data: this.collection.searchInfo
-	// 	});
-	// },
 
 	renderSearchInfo: function () {
 		this.$("#pages").html(this.collection.searchInfo.totalPages);
