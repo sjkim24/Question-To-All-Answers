@@ -15,6 +15,7 @@ Genius.Views.LyricForm = Backbone.View.extend ({
   },
 
   currentUserChecker: function () {
+    debugger
     var currentUser = Genius.CurrentUser.get("loggedin");
     if (currentUser) {
       return currentUser;
