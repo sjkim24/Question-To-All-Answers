@@ -14,27 +14,23 @@ Genius.Views.AnnotationForm = Backbone.View.extend ({
   initialize: function (options) {
     this.listenTo(this.model, "sync", this.render);
     this.lyricId = options.lyricId;
+    this.sel = options.sel;
     this.startPos = options.startPos;
     this.endPos = options.endPos;
-    this.sel = options.sel;
-  },
-
-  currentUserChecker: function () {
-    var currentUser = Genius.CurrentUser.get("loggedin");
-    if (currentUser) {
-      return currentUser;
-    } else {
-      window.location = "/session/redirect"
-    }
   },
 
   render: function () {
-    var content = this.template({
-      annotation: this.model,
-      sel: this.sel
-    });
-    this.$el.html(content);
-    return this;
+    var currentUser = Genius.CurrentUser.get("loggedin");
+    if (currentUser) {
+      var content = this.template({
+        annotation: this.model,
+        sel: this.sel
+      });
+      this.$el.html(content);
+      return this;
+    } else {
+      window.location = "/session/redirect";
+    }
   },
 
   saveAnnotation: function (event) {
