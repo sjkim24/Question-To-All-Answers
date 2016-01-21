@@ -100,33 +100,34 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     var selLength = sel.toString().length;
     var selRange = sel.getRangeAt(0);
     var charRange = selRange.toCharacterRange(lyric);
-    var startPos = charRange.start;
-    var endPos = charRange.end;
+    var hStart = charRange.start;
+    var hEnd = charRange.end;
     var that = this;
-    var exists = false;
+    var overLap = false;
+    debugger
+    if (selLength > 0) {
+      this.model.annotations().each(function(annotation) {
+        var aStart = annotation.get("start_pos")
+        var aEnd = annotation.get("end_pos")
+        if ((hStart >= aStart && hStart <= aEnd) || (hEnd >= aStart && hEnd <= aEnd)) {
+          overLap = true;
+          that.addSpanTag();
+          var coords = that.getOffsetRect($("span")[0]);
+          that.removeSpanTag();
+          that.renderAnnoExists(coords);
+          return false;
+        }
+      });
 
-    this.model.annotations().each(function(annotation) {
-      var existingStart = annotation.get("start_pos")
-      var existingEnd = annotation.get("end_pos")
-
-      if ((startPos >= existingStart && startPos <= existingEnd) || (endPos >= existingStart && endPos <= existingEnd)) {
-        exists = true;
-        that.addSpanTag();
-        var coords = that.getOffsetRect($("span")[0]);
-        that.removeSpanTag();
-        that.renderAnnoExists(coords);
-        return false;
+      if (overLap === false && (annotated && charRange.start >= 0)) {
+        var selString = sel.toString().trim()
+        var selSpaced = this.insertSpace(selString);
+        this.addSpanTag();
+        var coords = this.getOffsetRect($("span")[0]);
+        this.removeSpanTag();
+        this.renderAnnoForm(hStart, hEnd, selSpaced, coords);
+        $(".anno-textarea").elastic();
       }
-    });
-
-    if (!exists && (annotated && charRange.start >= 0)) {
-      var selString = sel.toString().trim()
-      var selSpaced = this.insertSpace(selString);
-      this.addSpanTag();
-      var coords = this.getOffsetRect($("span")[0]);
-      this.removeSpanTag();
-      this.renderAnnoForm(startPos, endPos, selSpaced, coords);
-      $(".anno-textarea").elastic();
     }
   },
 

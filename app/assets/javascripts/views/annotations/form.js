@@ -19,9 +19,14 @@ Genius.Views.AnnotationForm = Backbone.View.extend ({
     this.endPos = options.endPos;
   },
 
+  validUser: function () {
+    var validUser = Genius.CurrentUser.get("loggedin");
+
+    return validUser;
+  },
+
   render: function () {
-    var currentUser = Genius.CurrentUser.get("loggedin");
-    if (currentUser) {
+    if (this.validUser()) {
       var content = this.template({
         annotation: this.model,
         sel: this.sel
@@ -35,7 +40,7 @@ Genius.Views.AnnotationForm = Backbone.View.extend ({
 
   saveAnnotation: function (event) {
     event.preventDefault();
-    if (this.currentUserChecker()){
+    if (this.validUser()){
       var attrs = this.$el.serializeJSON().annotation;
       var that = this;
       this.model.set(attrs);
