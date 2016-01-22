@@ -70,7 +70,7 @@ Genius.Views.AnnotationShow = Backbone.View.extend ({
       var view = annoEdit.render().$el;
       view.css("margin-top", this.topMargin);
       $("#main").append(view);
-      // $(".anno-textarea").elastic();
+      $(".anno-textarea").elastic();
     }
   },
 
