@@ -99,7 +99,6 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     var annotated = sel.toString().trim()
     var selLength = sel.toString().length;
     var selRange = sel.getRangeAt(0);
-    debugger
     var charRange = selRange.toCharacterRange(lyric);
     var hStart = charRange.start;
     var hEnd = charRange.end;
@@ -109,7 +108,6 @@ Genius.Views.LyricShow = Backbone.View.extend ({
       this.model.annotations().each(function(annotation) {
         var aStart = annotation.get("start_pos")
         var aEnd = annotation.get("end_pos")
-        debugger
         if ((hStart >= aStart && hStart <= aEnd) || (hEnd >= aStart && hEnd <= aEnd) || (hStart <= aStart && hEnd >= aEnd)) {
           overLap = true;
           that.addSpanTag();
