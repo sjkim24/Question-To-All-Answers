@@ -99,6 +99,7 @@ Genius.Views.LyricShow = Backbone.View.extend ({
     var annotated = sel.toString().trim()
     var selLength = sel.toString().length;
     var selRange = sel.getRangeAt(0);
+    debugger
     var charRange = selRange.toCharacterRange(lyric);
     var hStart = charRange.start;
     var hEnd = charRange.end;
