@@ -3394,9 +3394,7 @@
         }
 
         selProto.getRangeAt = function(index) {
-          debugger
             if (index < 0 || index >= this.rangeCount) {
-              debugger
                 throw new DOMException("INDEX_SIZE_ERR");
             } else {
                 // Clone the range to preserve selection-range independence. See issue 80.

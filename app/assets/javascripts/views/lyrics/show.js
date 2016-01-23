@@ -109,7 +109,8 @@ Genius.Views.LyricShow = Backbone.View.extend ({
       this.model.annotations().each(function(annotation) {
         var aStart = annotation.get("start_pos")
         var aEnd = annotation.get("end_pos")
-        if ((hStart >= aStart && hStart <= aEnd) || (hEnd >= aStart && hEnd <= aEnd) || (hStart > aStart && hEnd > aEnd)) {
+        debugger
+        if ((hStart >= aStart && hStart <= aEnd) || (hEnd >= aStart && hEnd <= aEnd) || (hStart <= aStart && hEnd >= aEnd)) {
           overLap = true;
           that.addSpanTag();
           var coords = that.getOffsetRect($("span")[0]);
