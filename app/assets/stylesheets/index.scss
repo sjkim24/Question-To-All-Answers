@@ -11,9 +11,9 @@ $colorRed: #CE1141;
     width: 550px;
     border-right: 1px solid $colorRed;
 
-    .lyrics-index-lyric:last-child #li-bot-border, .username-iq:last-child #li-bot-border {
+    .lyrics-index-lyric:last-child #li-bot-border {
       border-bottom: 2px solid #d0d8e1;
-      width: 510px
+      width: 510px;
     }
   }
 
@@ -21,6 +21,11 @@ $colorRed: #CE1141;
     float: left;
     margin-left: 40px;
     width: 550px;
+
+    .user-index-item:last-child #li-bot-border {
+      border-bottom: 2px solid #d0d8e1;
+      width: 510px;
+    }
   }
 
   .index-left, .index-right {
