@@ -9,12 +9,14 @@ of this app is the annotation; by highlighting a portion of a lyric and
 annotating it, the app allows users a more social way to discuss specific
 sections of an artist's lyrics.
 
-![screenshot](assets/screenshot.png)
+![screenshot](http://i.imgur.com/wooecjc.png)
 
 ## Implmentation
 
 ### Gems
-- [Paperclip](https://github.com/thoughtbot/paperclip), - [Figaro](https://github.com/laserlemon/figaro), [AWS](https://github.com/aws/aws-sdk-ruby) for file uploads
+- [Paperclip](https://github.com/thoughtbot/paperclip)
+- [Figaro](https://github.com/laserlemon/figaro)
+- [AWS](https://github.com/aws/aws-sdk-ruby) for file uploads
 - [pg_search](https://github.com/Casecommons/pg_search) for search bar
 
 ### Javascript Libraries
