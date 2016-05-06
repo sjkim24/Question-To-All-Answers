@@ -1,7 +1,7 @@
 class Api::UsersController < Api::ApiController
 
   def index
-    @users = User.all.last(10).reverse
+    @users = User.order(genius_iq: :desc).first(10)
 
     render :index
   end
