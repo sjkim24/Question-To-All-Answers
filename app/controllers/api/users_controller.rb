@@ -1,7 +1,7 @@
 class Api::UsersController < Api::ApiController
 
   def index
-    @users = User.all.last(10)
+    @users = User.all.last(10).reverse
 
     render :index
   end
