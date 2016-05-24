@@ -22,6 +22,10 @@ $colorWhite: #FFFFFF;
         transition-duration: .4s;
         transition-property: color;
 
+        .header-word {
+          width: 300px;
+        }
+
         .header-pic {
           background-size: cover;
           background-image: image-url("featherb.png");
@@ -102,6 +106,7 @@ $colorWhite: #FFFFFF;
 
 .header-img {
   background-image: image-url("logic.png");
+  background-position: center;
   background-size: cover;
   border-bottom: 3px solid #D0D8E1;
   height: 200px;
