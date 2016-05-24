@@ -1,30 +1,23 @@
 $colorBlack: #000000;
 $colorRed: #CE1141;
-
 .index {
   display: block;
   margin: 0 auto;
-  width: 1141px;
 
   .index-left {
     float: left;
-    width: 550px;
     border-right: 1px solid $colorRed;
 
     .lyrics-index-lyric:last-child #li-bot-border {
       border-bottom: 2px solid #d0d8e1;
-      width: 510px;
     }
   }
 
   .index-right {
     float: left;
-    margin-left: 40px;
-    width: 550px;
 
     .user-index-item:last-child #li-bot-border {
       border-bottom: 2px solid #d0d8e1;
-      width: 510px;
     }
   }
 
@@ -34,7 +27,6 @@ $colorRed: #CE1141;
 
       #li-top-border {
         border-top: 2px solid #d0d8e1;
-        width: 510px;
       }
 
       li {
@@ -55,15 +47,111 @@ $colorRed: #CE1141;
         section { float: left; }
 
         section:first-child {
-          font-size: 22px;
           font-weight: bold;
         }
 
         section:last-child {
           color: $colorBlack;
-          font-size:18px;
           font-weight: bold;
-          margin-top: 2.5px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1000px) {
+  .index {
+    width: 1141px;
+
+    .index-left {
+      float: left;
+      width: 550px;
+
+      .lyrics-index-lyric:last-child #li-bot-border {
+        width: 510px;
+      }
+    }
+
+    .index-right {
+      margin-left: 40px;
+      width: 550px;
+
+      .user-index-item:last-child #li-bot-border {
+        width: 510px;
+      }
+    }
+
+    .index-left, .index-right {
+      ul {
+        margin-top: 10px;
+
+        #li-top-border {
+          width: 510px;
+        }
+
+        li {
+
+          section:first-child {
+            font-size: 22px;
+          }
+
+          section:last-child {
+            font-size:18px;
+            margin-top: 2.5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 850px) and (max-width: 999px) {
+  #main {
+    margin: 20px;
+
+    h1 {
+      font-size: 26px;
+    }
+  }
+
+  .index {
+    width: 850px;
+
+    .index-left {
+      float: left;
+      width: 420px;
+
+      .lyrics-index-lyric:last-child #li-bot-border {
+        width: 400px;
+      }
+    }
+
+    .index-right {
+      margin-left: 20px;
+      width: 400px;
+
+      .user-index-item:last-child #li-bot-border {
+        width: 400px;
+      }
+    }
+
+    .index-left, .index-right {
+      ul {
+        margin-top: 10px;
+
+        #li-top-border {
+          width: 400px;
+        }
+
+        li {
+
+          section:first-child {
+            font-size: 22px;
+          }
+
+          section:last-child {
+            font-size:18px;
+            margin-top: 2.5px;
+          }
         }
       }
     }
